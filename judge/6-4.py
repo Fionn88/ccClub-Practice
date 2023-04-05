@@ -28,3 +28,9 @@ Sample Output 2
 Source
 ccClub Judge
 """
+
+N = input()
+ans = 0
+for i in N:
+  ans += int(i)
+print(ans)

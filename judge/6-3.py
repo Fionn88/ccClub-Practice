@@ -28,3 +28,12 @@ Sample Output 2
 Source
 ccClub Judge
 """
+
+s = input()
+L = ['a','e','i','o','u','A','E','I','O','U']
+ansList = []
+for i in s:
+  if i in L:
+    ansList.append(i)
+print(len(set(ansList)))
+

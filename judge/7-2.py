@@ -51,3 +51,32 @@ Sample Output 4
 Source
 ccClub Judge
 """
+
+point=int(input()) 
+line=int(input()) 
+
+if point%2!=0:
+    for i in range (line):
+        if i != 0:
+          print(end="\n")     
+        if i%2!=0:
+            for x in range (point):
+                if x%2!=0:
+                    print("+",end="")
+                elif x%2==0:
+                    print("-",end="")
+        elif i%2==0:
+            for n in range (point):
+                if n%2!=0:
+                    print("-",end="")
+                elif n%2==0:
+                    print("+",end="")       
+elif point%2==0:
+    for i in range (line):
+        if i != 0:
+          print(end="\n")
+        for a in range(point):
+            if a%2!=0:
+                print("-",end="")
+            elif a%2==0:
+                print("+",end="")

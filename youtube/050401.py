@@ -43,6 +43,7 @@ Hint
 Source
 ccClub Judge
 """
+# n = input()
 n = int(input())
 number = input()
 # 請接續作答

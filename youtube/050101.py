@@ -45,4 +45,13 @@ ccClub Judge
 
 # print(coupon, remain, __ = ',')
 
+points = int(input())
+coupon = points // 10 * 100
+remain = points % 10
+
+print(coupon, remain, sep = ',')
+
+
+
+
 

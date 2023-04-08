@@ -38,8 +38,9 @@ ccClub Judge
 """
 
 # 輸入數字
-# num1 = int(input())   # 阿緯猜的數字
-# num2 = int(input())   # 小美猜的數字
+num1 = int(input())   # 阿緯猜的數字
+num2 = int(input())   # 小美猜的數字
 
 # 輸出結果
 # print(num1 __ num2)
+print(num1 == num2)

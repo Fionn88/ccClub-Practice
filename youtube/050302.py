@@ -28,3 +28,5 @@ Sample Output 2
 Source
 ccClub Judge
 """
+s = input()
+print(len(s))

@@ -47,17 +47,19 @@ ccClub Judge
 
 # 輸入各科成績
 # chinese = int(input())
-# english = int(input())
-# math = int(input())
-# social = int(input())
-# science = int(input())
+english = int(input())
+math = int(input())
+social = int(input())
+science = int(input())
 
 # 計算段考總分
 # total = _________
+total = chinese+english+math+social+science
 
 # 計算段考平均
 # average = __________
+average = (chinese+english+math+social+science)/5
 
 # 輸出
-# print(total)
-# print(average)
+print(total)
+print(average)

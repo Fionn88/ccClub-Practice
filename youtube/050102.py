@@ -40,14 +40,15 @@ ccClub Judge
 """
 
 # 輸入各餐點份數
-# chicken_fillet = int(input())
-# fried_chicken = int(input())
-# tempura = int(input())
-# tofu = int(input())
-# beans = int(input())
+chicken_fillet = int(input())
+fried_chicken = int(input())
+tempura = int(input())
+tofu = int(input())
+beans = int(input())
 
 # 計算總金額
 # total = ＿＿＿＿
+total = chicken_fillet*65+fried_chicken*60+tempura*30+tofu*30+beans*35
 
 # 輸出
-# print(total)
+print(total)

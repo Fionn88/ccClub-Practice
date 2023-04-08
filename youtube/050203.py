@@ -30,3 +30,6 @@ True
 Source
 ccClub Judge
 """
+correct = input()
+student_ans = input()
+print(correct == student_ans)

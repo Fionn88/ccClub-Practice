@@ -44,3 +44,20 @@ Hint
 Source
 ccClub Judge
 """
+
+# 輸入各科成績
+# chinese = int(input())
+# english = int(input())
+# math = int(input())
+# social = int(input())
+# science = int(input())
+
+# 計算段考總分
+# total = _________
+
+# 計算段考平均
+# average = __________
+
+# 輸出
+# print(total)
+# print(average)

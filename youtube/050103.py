@@ -46,7 +46,7 @@ ccClub Judge
 """
 
 # 輸入各科成績
-# chinese = int(input())
+chinese = int(input())
 english = int(input())
 math = int(input())
 social = int(input())

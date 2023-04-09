@@ -30,10 +30,11 @@ Source
 ccClub Judge
 """
 # 輸入祝福語
-# s = input()
+s = input()
 
 # 轉換字串大寫
 # s_upper = s._____
+s_upper = s.upper()
 
 # 輸出結果
-# print(s_upper)
+print(s_upper)

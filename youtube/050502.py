@@ -43,7 +43,7 @@ keyword = input()
 text = input()
 
 # 標記關鍵字
-# marked_text = text.replace(______, _________)
+marked_text = text.replace(keyword, '\"'+ keyword + '\"')
 
 # 輸出結果
-# print(marked_text)
+print(marked_text)

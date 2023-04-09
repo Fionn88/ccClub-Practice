@@ -28,3 +28,5 @@ Sample Output 2
 Source
 ccClub Judge
 """
+l = input().split(',')
+print(l)

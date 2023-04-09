@@ -31,3 +31,8 @@ Hint
 Source
 ccClub Judge
 """
+i = int(input())
+if i % 3 == 0:
+  print(True)
+else:
+  print(False)

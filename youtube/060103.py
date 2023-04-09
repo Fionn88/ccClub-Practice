@@ -30,9 +30,14 @@ ccClub Judge
 """
 Asia = ['Taiwan', 'Japan', 'Korea', 'Singapore', 'India']
 Europe = ['French', 'Italy', 'England', 'Germany', 'Austria']
+America = ['USA', 'Canada', 'Mexico']
+Asia_copy = Asia
+Europe_copy = Europe
+World = []
+World = [Asia_copy]+[Europe_copy]+[America]
 
 # your code here
 
-# print(Asia_copy)
-# print(Europe_copy)
-# print(World)
+print(Asia_copy)
+print(Europe_copy)
+print(World)

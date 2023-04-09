@@ -32,7 +32,11 @@ ccClub Judge
 # student = ['小明', _____]
 # ______ = ['國文', _____, '美術', _____]
 # bag = [_____, _____, 'breakfast']
+student = ['小明', 15]
+course = ['國文', '體育', '美術', '物理']
+bag = ['book', 'pencil box', 'breakfast']
 
-# print(student)
-# print(course)
-# print(bag)
+print(student)
+print(course)
+print(bag)
+

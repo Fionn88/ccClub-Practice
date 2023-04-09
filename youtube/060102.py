@@ -23,4 +23,5 @@ Source
 ccClub Judge
 """
 # your code here
-# print(my_list)
+my_list = ['Python', '/程式語言/', 2021, 3.1415, True, ['Dog', 'Cat', 'Elephant']]
+print(my_list)

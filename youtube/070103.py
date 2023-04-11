@@ -38,3 +38,12 @@ Sample Output 2
 Source
 ccClub Judge
 """
+weather = input()
+frind = int(input())
+if weather == '雨天':
+  print('自己在家玩')
+elif weather == '陰天' or weather == '晴天':
+  if frind > 0:
+    print('跟朋友出去玩')
+  else:
+    print('自己出去玩')

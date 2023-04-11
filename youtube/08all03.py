@@ -28,3 +28,9 @@ Sample Output 2
 Source
 ccClub Judge
 """
+l = input().split()
+sum = 0
+for i in range(len(l)):
+  if int(l[i]) > 0:
+    sum += int(l[i])
+print(sum)

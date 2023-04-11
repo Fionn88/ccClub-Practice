@@ -32,3 +32,10 @@ ccClub Judge
 lst = ['p', 'y', 't', 'h', 'o', 'n']
 
 # your code here
+i = 0
+ans = []
+while i < len(lst):
+  ans.append(lst[i])
+  i = i + 2
+print(ans)
+

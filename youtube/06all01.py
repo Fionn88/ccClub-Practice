@@ -32,8 +32,10 @@ Source
 ccClub Judge
 """
 lst = ['a', 'b', 'c', 'd']
-# lst_copy = 
+lst_copy = lst_copy = lst[:]
 # your code here
+lst_copy.append(lst[0])
+lst_copy.append(lst[-1])
 
 print(lst)
-# print(lst_copy)
+print(lst_copy)

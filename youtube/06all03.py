@@ -36,5 +36,11 @@ menu = ["bread", "salad"]
 dessert = ["cake", "chocolate"]
 
 # your code here
+menu.insert(1,'soup')
+menu.insert(len(menu),'steak')
+dessert.remove('chocolate')
+for i in dessert:
+  menu.append(i)
 
 print(menu)
+

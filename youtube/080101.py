@@ -30,3 +30,18 @@ Sample Output 2
 Source
 ccClub Judge
 """
+# input
+num = int(input())
+
+# calcuation
+summation = 0
+product = 1
+
+for n in range(1,num+1):
+	summation += n
+	product *= n
+  
+
+# output
+print(summation)
+print(product)

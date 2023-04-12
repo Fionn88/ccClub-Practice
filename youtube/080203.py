@@ -28,3 +28,9 @@ Sample Output 2
 Source
 ccClub Judge
 """
+n = int(input())
+if n % 5 == 0:
+  print(n)
+else:
+  x = n // 5
+  print(5*(x+1))

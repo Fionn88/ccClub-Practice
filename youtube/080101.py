@@ -34,9 +34,12 @@ ccClub Judge
 num = int(input())
 
 # calcuation
+# summation = ____
+# product = _____
 summation = 0
 product = 1
 
+# for n in _______:
 for n in range(1,num+1):
 	summation += n
 	product *= n

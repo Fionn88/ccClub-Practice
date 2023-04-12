@@ -32,3 +32,10 @@ Sample Output 2
 Source
 ccClub Judge
 """
+n = input().split(',')
+nList = input().split(',')
+ans = 0
+for i in nList:
+  if int(n[0]) <= int(i) <= int(n[1]):
+    ans += 1
+print(ans)

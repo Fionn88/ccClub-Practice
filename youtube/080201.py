@@ -40,6 +40,11 @@ n = 1
 # 	product *= n
 # 	n _____
 
+while n < num+1:
+	summation += n
+	product *= n
+	n += 1
+
 # output
 print(summation)
 print(product)

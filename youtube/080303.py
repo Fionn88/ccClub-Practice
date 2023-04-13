@@ -28,3 +28,5 @@ Sample Output 2
 Source
 ccClub Judge
 """
+l = map(int,list(set(input().split())))
+print(sorted(l))

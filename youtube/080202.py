@@ -39,6 +39,9 @@ res = ''
 # while _____:
 # 	res _______
 # 	n _______
+while n > 0:
+	res += str(n % 2)
+	n = n // 2
 
 # output
-print(res)
+print(res[::-1])

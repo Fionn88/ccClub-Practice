@@ -32,3 +32,10 @@ Sample Output 2
 Source
 ccClub Judge
 """
+s1 = set(input())
+s2 = input().lower().split()
+n = 0
+for i in s2:
+  if s1 & set(i) == set():
+    n += 1
+print(n)

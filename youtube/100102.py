@@ -28,9 +28,17 @@ Sample Output 2
 Source
 ccClub Judge
 """
-# def square_check(x):
-#   // your code here
+def square_check(x):
+  if x == 1:
+    print(0)
+  elif x == 2:
+    print(1)
+  else:
+    for i in range(1,x):
+      if i*i >= x:
+        print((i-1)*(i-1))
+        break
 
 n = int(input())
-# square_check(n)
+square_check(n)
 

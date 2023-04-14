@@ -33,5 +33,14 @@ Source
 ccClub Judge
 """
 
-# def social_distance(x, y):
-#   // your code here
+def social_distance(x, y):
+  if x == '室外':
+    if y <= 100:
+      print('請維持社交距離')
+    else:
+      print('')
+  elif x == '室內':
+    if y <= 150:
+       print('請維持社交距離')
+    else:
+       print('')

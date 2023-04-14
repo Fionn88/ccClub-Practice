@@ -37,6 +37,8 @@ output = []
 n = int(input())
 data = [int(i) for i in input().replace('[', '').replace(']', '').split(',')]
 for i in range(len(data) - n + 1):
-    output.append(sum(data[i : i+n]) / n)
+#     output.append(sum(data[i : i+n]) / n)
+    if n != 0:
+      output.append(sum(data[i : i+n]) / n)
 
 print(output)

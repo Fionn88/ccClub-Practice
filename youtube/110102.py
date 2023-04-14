@@ -36,3 +36,6 @@ Chiin Hwang
 Source
 ccClub Judge
 """
+numbers = input().split(',')
+for i in sorted(numbers, key = len):
+  print(i)

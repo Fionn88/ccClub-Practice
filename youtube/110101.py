@@ -33,3 +33,19 @@ Hint
 Source
 ccClub Judge
 """
+key = int(input())
+numbers = list(map(int,input().split()))
+if key == 0:
+  numbers.sort(reverse = False)
+  for i in range(len(numbers)):
+    if i == len(numbers)-1:
+      print(numbers[i])
+    else:
+      print(numbers[i], end=' ')
+else:
+  numbers.sort(reverse = True)
+  for i in range(len(numbers)):
+    if i == len(numbers)-1:
+      print(numbers[i])
+    else:
+      print(numbers[i], end=' ')

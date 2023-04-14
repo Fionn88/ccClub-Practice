@@ -28,7 +28,11 @@ Hint
 Source
 ccClub
 """
-# def hello():
-#   // your code here
+def hello():
+# Your Code Here
+  print('哈囉你好嗎')
+  print('衷心感謝')
+  print('珍重再見')
+  print('期待再相逢')
     
-# hello()
+hello()

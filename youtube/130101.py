@@ -37,3 +37,15 @@ Sample Output 3
 Source
 ccClub Judge
 """
+word_dict = {}
+
+words = input().split()
+search = input()
+for word in words:
+    key, value = word.split(',')
+    word_dict[key] = value
+
+if word_dict.get(search) == None:
+  print('單字不存在')
+else:
+  print(word_dict.get(search))

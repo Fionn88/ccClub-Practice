@@ -46,3 +46,20 @@ Hint
 Source
 ccClub Judge
 """
+dictItem = {}
+ans = []
+while True:
+    s = input()
+    if s == 'end':
+        break
+    name, price = s.split(',')
+    price = int(price)
+    dictItem[name] = price
+
+sortedItem = {k: v for k, v in sorted(dictItem.items(), key=lambda item: item[1])}
+if len(sortedItem) < 4:
+  for i in range(len(sortedItem)):
+    print(list(sortedItem)[i],list(sortedItem.values())[i])
+else:
+  for i in range(3):
+    print(list(sortedItem)[i],list(sortedItem.values())[i])

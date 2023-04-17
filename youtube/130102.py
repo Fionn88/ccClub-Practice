@@ -34,3 +34,13 @@ Sample Output 2
 Source
 ccClub Judge
 """
+idol = input().split()
+search = input()
+idol_dict = {}
+for idolItem in idol:
+   name,tall,blood= idolItem.split(',')
+   idol_array = []
+   idol_array.append(tall)
+   idol_array.append(blood)
+   idol_dict[name] = idol_array
+print(idol_dict.get(search))

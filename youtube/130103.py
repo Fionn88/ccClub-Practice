@@ -35,16 +35,20 @@ ccClub Judge
 """
 n = int(input())
 sentence = []
-# for i in range(n):
-    # sentences.append(input().split())
+for i in range(n):
+    sentence.append(input().split())
 
-# d = {}
+d = {}
 
-# for i in sentence:
-#     for word in i:
-        # if word not in d:
-        #     ___________
-        # else:
-        #     ____________
+for i in sentence:
+    for word in i:
+        if word not in d:
+            d[word] = 1
+#             ___________
+        else:
+            count = d.get(word)
+            count += 1
+            d[word] = count
+#             ____________
 
-# print(d)
+print(d)

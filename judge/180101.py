@@ -103,3 +103,35 @@ ccClub Judge
 # exit_h
 # exit_m
 # is_vip
+
+entry_h,entry_m = map(int,input().split(':'))
+exit_h,exit_m = map(int,input().split(':'))
+is_vip = input()
+
+hour = exit_h - entry_h
+min = exit_m - entry_m
+
+# 分鐘為負數的話
+if min < 0:
+  hour -= 1
+  min = 60 + min
+
+# 調整分鐘
+if min <= 30 and min > 0:
+  min = 30
+elif min > 30:
+  min = 60
+
+# 全轉換為分鐘
+all_min = hour*60 + min
+price = 0
+# print(all_min)
+# 是否為台大
+if is_vip == 'Y':
+  if all_min <= 30:
+    price = 0
+  else:
+    price = int(all_min / 30 * 10)
+else:
+  price = int(all_min / 30 * 20)
+print(price)

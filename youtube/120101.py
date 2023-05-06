@@ -30,11 +30,14 @@ Sample Output 2
 Source
 ccClub Judge
 """
-# def fact(m):
-#     if m == 0 or _________:
-#         return ____ 
-#     else:
-#         return ____ * ____       
+def fact(m):
+    # if m == 0 or _________:
+    if m == 0 or m == 1:
+        # return ____ 
+        return 1 
+    else:
+        # return ____ * ____ 
+        return m * fact(m-1)             
 
 num = int(input())
-# print(fact(num))
+print(fact(num))

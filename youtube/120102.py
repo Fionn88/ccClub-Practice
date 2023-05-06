@@ -30,13 +30,16 @@ Sample Output 2
 Source
 ccClub Judge
 """
-# def f(m):
-#     if m == 0:
-#         return ____ 
-#     elif m == 1:
-#         return ____
-#     else:
-#         return _______    
+def f(m):
+    if m == 0:
+        # return ____ 
+        return 0
+    elif m == 1:
+        # return ____
+        return 1
+    else:
+        # return _______ 
+        return f(m-1) + f(m-2)   
 
 num = int(input())
-# print(f(num))
+print(f(num))

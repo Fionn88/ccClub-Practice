@@ -36,6 +36,8 @@
 來源
 ccClub Judge
 """
+# 在原本用遞迴的寫法裡會出現 `Time Limit Exceeded`
+# 可參考 `https://www.youtube.com/watch?v=5dRGRueKU3M`，大大的降低時間複雜度
 def fibonacci(n):
     if n == 0:
         return [0]

@@ -28,3 +28,10 @@ Sample Output 2
 Source
 ccClub Judge
 """
+digits = [int(d) for d in input().split()]  # 轉換成 List
+if len(digits) < 3:
+  print('串列長度小於3')
+else:
+  digits.sort(reverse=True)  # 進行排序，reverse=True 表示遞減排序
+  third = digits[2]  # 第三大
+  print(third)

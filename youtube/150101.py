@@ -32,9 +32,9 @@ ccClub Judge
 """
 num1 = input()
 num2 = input()
-# ___:
-# 	num1 = int(num1)
-# 	num2 = int(num2)
-# 	print(num1 + num2)
-# ______________:
-# 	print("請輸入阿拉伯數字")
+try:
+	num1 = int(num1)
+	num2 = int(num2)
+	print(num1 + num2)
+except:
+	print("請輸入阿拉伯數字")

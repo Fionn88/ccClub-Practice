@@ -28,3 +28,11 @@ Sample Output 2
 Source
 ccClub Judge
 """
+try:
+    digits = [int(d) for d in input().split()]  # 轉換成 List
+    if len(digits) < 3:
+      print('串列長度不足')
+    else:
+      print(digits[-1]+digits[-2]+digits[-3])
+except:
+	print("資料型態不為整數")

@@ -52,19 +52,18 @@ ccClub Judge
 def people_sort(s):
     return int(s[1])
 
-n = int(input())
-s = [input().split() for i in range(n)]
-wish = input().split()
+M = int(input())
+complete_list = [input().split() for i in range(M)]
+wish_list = input().split()
 N = int(input())
 
-s.sort(key=people_sort)
-print(s)
-new_list = [item for item in s if item[0] in wish]
+complete_list.sort(key=people_sort)
+filtered_list = [item for item in complete_list if item[0] in wish_list]
 
 for i in range(N):
     if i == N - 1:  
-        print(new_list[i][0])
+        print(filtered_list[i][0])
     else:
-        print(new_list[i][0], end=' ')
+        print(filtered_list[i][0], end=' ')
 
     

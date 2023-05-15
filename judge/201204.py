@@ -65,5 +65,3 @@ for i in range(N):
         print(filtered_list[i][0])
     else:
         print(filtered_list[i][0], end=' ')
-
-    

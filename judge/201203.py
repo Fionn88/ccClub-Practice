@@ -55,27 +55,44 @@ https://medium.com/ccclub/ccclub-python-for-beginners-tutorial-f3148ebb33a4
 來源
 ccClub Judge
 """
+# ========================================== 此解法花了 24ms ====================================
+# n = int(input())
+# temp = {}
+# ans = {}
+# ansReal = {}
+# for i in range(n):
+#   s = input().split()
+  
+#   distance = int(s[1]) ** 2 + int(s[2]) ** 2
+#   war = int(s[3]) / distance
+#   ans[s[0]] = war
+#   temp[s[0]] = int(s[3])
+
+# sorted_temp = sorted(temp.items(), key=lambda x:x[1],reverse=True)
+
+# for i in range(n):
+#   anGet = ans.get(list(dict(sorted_temp))[i])
+#   ansReal[list(dict(sorted_temp))[i]] = anGet
+
+
+# sorted_ansReal = sorted(ansReal.items(), key=lambda x:x[1],reverse=True)
+  
+# for i in list(dict(sorted_ansReal)):
+#   print(i)
+
+# ========================================== 此解法花了 23ms，更簡潔的寫法 ====================================
+def dist_sort(s):
+    distance = int(s[1]) ** 2 + int(s[2]) ** 2
+    average = int(s[3]) / distance
+    return average
+
+def war_sort(s):
+    return s[3]
 
 n = int(input())
-temp = {}
-ans = {}
-ansReal = {}
-for i in range(n):
-  s = input().split()
-  
-  distance = int(s[1]) ** 2 + int(s[2]) ** 2
-  war = int(s[3]) / distance
-  ans[s[0]] = war
-  temp[s[0]] = int(s[3])
+s = [input().split() for i in range(n)]
+s.sort(key=war_sort)
+s.sort(key=dist_sort,reverse=True)
 
-sorted_temp = sorted(temp.items(), key=lambda x:x[1],reverse=True)
-
-for i in range(n):
-  anGet = ans.get(list(dict(sorted_temp))[i])
-  ansReal[list(dict(sorted_temp))[i]] = anGet
-
-
-sorted_ansReal = sorted(ansReal.items(), key=lambda x:x[1],reverse=True)
-  
-for i in list(dict(sorted_ansReal)):
-  print(i)
+for i in s:
+  print(i[0])

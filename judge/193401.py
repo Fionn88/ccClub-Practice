@@ -78,3 +78,41 @@ TheLordoftheRings=> 館藏已有書名為TheLordoftheRings 的書，前三碼為
 來源
 ccClub Judge
 """
+books = []
+
+while True:
+    user_input = input()
+    books.append(user_input)
+
+    if user_input == "0":
+        break
+books.pop()
+
+# 取前三碼
+bookmark = {}
+j = 0
+for i in range(len(books)):
+  if books[i] not in bookmark:
+    j += 1
+    bookmark[books[i]] = str(j).zfill(3)
+
+
+# 取後面三碼
+order = {}
+for i, value in enumerate(books):
+    if value in order:
+        order[value].append(i+1)
+    else:
+        order[value] = [i+1]
+
+for i in range(len(bookmark)):
+  g = 0
+  for l in order.get(list(bookmark)[i]):
+    g += 1
+    if g == 1:
+      print(list(bookmark)[i],end=' ')
+      print(bookmark.get(list(bookmark)[i])+str(g).zfill(3)+str(l).zfill(4),end=' ')
+    elif g != len(order.get(list(bookmark)[i])):
+      print(bookmark.get(list(bookmark)[i])+str(g).zfill(3)+str(l).zfill(4),end=' ')
+    else:
+      print(bookmark.get(list(bookmark)[i])+str(g).zfill(3)+str(l).zfill(4))

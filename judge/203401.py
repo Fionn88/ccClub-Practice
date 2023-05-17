@@ -43,3 +43,25 @@ end
 Bird
 Check again!
 """
+infoDic = {}
+while True:
+    user_input = input()
+    if user_input == 'end':
+        break
+    else:
+        info = user_input.split(',')
+        name = info[2]
+        muti_key = info[0][7:],info[1]
+        infoDic.update({muti_key:name})
+        
+        muti_key = info[0][7:],info[2]
+        name = info[1]
+        infoDic.update({muti_key:name})
+
+while True:
+    try:
+        user_input = input().split(' ',1)
+        search = user_input[0],user_input[1]
+        print(infoDic.get(search,'Check again!'))
+    except:
+        break

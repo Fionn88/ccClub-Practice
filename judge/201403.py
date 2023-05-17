@@ -55,3 +55,27 @@ b
 來源
 ccClub Judge
 """
+def number_sort(s):
+    return len(s)
+
+
+n = int(input())
+s = [input().split() for _ in range(n)]
+m = int(input())
+k = [input() for _ in range(m)]
+product = {}
+itemAllPrice = 0
+sotedS = sorted(s,key=number_sort)
+
+for i in range(n):
+  if len(sotedS[i]) > 2:
+    for j in sotedS[i][2:]:
+      price = product.get(j,0)
+      itemAllPrice += int(price)
+    product[sotedS[i][0]] = str(itemAllPrice+int(sotedS[i][1]))
+  else:
+    product[sotedS[i][0]] = sotedS[i][1]
+
+for i in k:
+    print(product.get(i))
+

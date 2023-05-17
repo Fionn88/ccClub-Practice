@@ -38,17 +38,37 @@ ccClub Judge
 """
 
 
-def swap_nums(num):
-  s = list(str(num))
-  hash_map = {digit:idx for idx,digit in enumerate(s)}
-  for idx, digit in enumerate(s):
-    for number in range(9, int(digit),-1):
-      temp_str = str(number)
+# def swap_nums(num):
+#   s = list(str(num))
+#   hash_map = {digit:idx for idx,digit in enumerate(s)}
+#   for idx, digit in enumerate(s):
+#     for number in range(9, int(digit),-1):
+#       temp_str = str(number)
 
-      if temp_str in hash_map and hash_map[temp_str] > idx:
-        s[idx], s[hash_map[temp_str]] = s[hash_map[temp_str]],s[idx]
-        return int(''.join(s))
-  return int(num)
-num = input()
-res = swap_nums(num)
-print(res)
+#       if temp_str in hash_map and hash_map[temp_str] > idx:
+#         s[idx], s[hash_map[temp_str]] = s[hash_map[temp_str]],s[idx]
+#         return int(''.join(s))
+#   return int(num)
+# num = input()
+# res = swap_nums(num)
+# print(res)
+
+# ==================================== 使用雙指標 ====================================
+
+n = input()
+l_idx, r_idx = -1, -1 
+max_idx, max_val = -1, ''
+
+for i in range(len(n)-1, -1, -1):
+    if n[i] > max_val:
+        max_idx, max_val = i, n[i]
+        
+    elif n[i] < max_val: 
+        l_idx, r_idx = i, max_idx
+
+if l_idx == -1:
+    print(n)
+else:
+    n = list(n)
+    n[l_idx], n[r_idx] = n[r_idx], n[l_idx]
+    print(''.join(n))

@@ -55,27 +55,33 @@ b
 來源
 ccClub Judge
 """
-def number_sort(s):
-    return len(s)
+def calculate_cost(item, formulas):
+    if item not in formulas:
+        return 0
 
+    formula = formulas[item]
+    cost = formula[0]
+
+
+    for required_item in formula[1:]:
+        cost += calculate_cost(required_item, formulas)
+
+    return cost
 
 n = int(input())
 s = [input().split() for _ in range(n)]
 m = int(input())
-k = [input() for _ in range(m)]
-product = {}
-itemAllPrice = 0
-sotedS = sorted(s,key=number_sort)
+items = [input() for _ in range(m)]
 
-for i in range(n):
-  if len(sotedS[i]) > 2:
-    for j in sotedS[i][2:]:
-      price = product.get(j,0)
-      itemAllPrice += int(price)
-    product[sotedS[i][0]] = str(itemAllPrice+int(sotedS[i][1]))
-  else:
-    product[sotedS[i][0]] = sotedS[i][1]
+product,formulas = {},{}
 
-for i in k:
-    print(product.get(i))
+# 轉變資料結構
+for item_data in s:
+    item = item_data[0]
+    cost = int(item_data[1])
+    requirements = item_data[2:]
+    formulas[item] = [cost] + requirements
 
+for item in items:
+    total_cost = calculate_cost(item, formulas)
+    print(total_cost)

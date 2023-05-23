@@ -48,16 +48,9 @@ sort_dict("budget branch beware bargain boast beneath")
 ccClub Judge
 """
 def sort_dict(s):
-    # do something
-    
-    # print(s.lower())
-    
-    for i in s.lower().split():
-        count = 0
-        for j in i:
-            count += ord(j)
-    
-    print(count)
-    # return count
+  sorted_words = sorted(s.split(), key=get_word_value)
+  return sorted_words
 
-sort_dict("budget branch beware bargain boast beneath")
+def get_word_value(word):
+    total = sum(ord(c.lower()) - ord('a') + 1 for c in word)
+    return total

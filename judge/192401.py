@@ -43,3 +43,18 @@ Cannot find BETHANY
 來源
 ccClub Judge
 """
+infoDic = {}
+while True:
+    user_input = input()
+    if user_input == 'end':
+        break
+    else:
+      user_input = user_input.split()
+      if user_input[0] == 'a':
+        infoDic[user_input[1]] = user_input[2]
+        infoDic[user_input[2]] = user_input[1]
+      elif user_input[0] == 's':
+        if infoDic.get(user_input[1]) == None:
+          print('Cannot find',user_input[1])
+        else:
+          print(infoDic.get(user_input[1]))

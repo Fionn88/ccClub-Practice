@@ -24,3 +24,13 @@ a,a,c,b,a
 輸出範例 1
 c,b
 """
+from collections import Counter
+
+def get_unique_letters(s):
+    letter_counts = Counter(s)  # 計算字母出現次數
+    unique_letters = [letter for letter, count in letter_counts.items() if count == 1]  # 找出只出現一次的字母
+    return unique_letters
+
+s = input()
+result = get_unique_letters(s)
+print(','.join(result))

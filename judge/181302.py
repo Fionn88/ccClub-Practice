@@ -33,11 +33,23 @@
 來源
 ccClub Judge
 """
+
+# ================= 此做法未考慮到三個數字的西元年，會出現Runtime Error =====================
+# from datetime import datetime, timedelta
+
+# date_str = input()
+# n = int(input())
+# date = datetime.strptime(date_str, '%Y %m %d')
+# new_date = date + timedelta(days=n)
+# formatted_date = new_date.strftime('%Y-%m-%d')
+# print(formatted_date)
+
+
 from datetime import datetime, timedelta
 
-date_str = input()
+year, month, day = map(int, input().split())
 n = int(input())
-date = datetime.strptime(date_str, '%Y %m %d')
+date = datetime(year, month, day)
 new_date = date + timedelta(days=n)
-formatted_date = new_date.strftime('%Y-%m-%d')
-print(formatted_date)
+print(new_date.strftime('%Y-%m-%d'))
+

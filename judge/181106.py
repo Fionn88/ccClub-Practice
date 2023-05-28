@@ -28,7 +28,7 @@
 來源
 ccClub Judge
 """
-
+# >>>>>>>>> 相關題目： ID 180303  連續整數分堆
 
 lst = [int(i) for i in input().split()]
 j,k,re,ans = 0,0,[],[]

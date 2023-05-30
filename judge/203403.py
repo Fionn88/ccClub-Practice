@@ -110,13 +110,12 @@ while True:
 for index,i in enumerate(label_data):
     flag = False
     for j in raw_data:
-        if re.sub(r'[^\w]', '', i) in re.sub(r'[^\w]', '', j.lower()):
+        if re.sub(r'[^a-zA-Z0-9\s]+', '', i) == re.sub(r'[^a-zA-Z0-9\s]+', '', j.lower()):
             ans.append(label[index]+"\t"+j)
             flag = True
             break
 
     if not flag:
         ans.append(label[index]+"\t"+i)
-print(ans)
 for i in ans:
     print(i)

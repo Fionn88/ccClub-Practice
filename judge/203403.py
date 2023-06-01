@@ -80,21 +80,16 @@ label__7	Good...Bye...
 本題可以嘗試看看用 python 套件 re 試試看！
 google 關鍵字：python re replace symbol 之類的
 """
-
-# ===================== Partial Accepted ====================
 import re
-label_data = []
-label = []
-raw_data = []
-ans = []
+label_data,label,raw_data,ans = [],[],[],[]
 
 while True:
     try:
         line = input()
         if line == "label-data.tsv":
             continue
-        label.append(line.split("\t")[0].strip())
-        label_data.append(line.split("\t")[1].strip())
+        label.append(line.split("\t")[0])
+        label_data.append(line.split("\t")[1])
     except:
         break
 
@@ -107,15 +102,15 @@ while True:
     except:
         break
 
-for index,i in enumerate(label_data):
+for index,label_value in enumerate(label_data):
     flag = False
-    for j in raw_data:
-        if re.sub(r'[^a-zA-Z0-9\s]+', '', i) == re.sub(r'[^a-zA-Z0-9\s]+', '', j.lower()):
-            ans.append(label[index]+"\t"+j)
+    for raw_value in raw_data:
+        if label_value.lower() == re.sub(r'[^a-zA-Z0-9\s]+', '', raw_value.lower()):
+            ans.append(label[index]+"\t"+raw_value)
             flag = True
             break
 
     if not flag:
-        ans.append(label[index]+"\t"+i)
-for i in ans:
-    print(i)
+        ans.append(label[index]+"\t"+label_value)
+for value in ans:
+    print(value)

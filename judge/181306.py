@@ -30,11 +30,11 @@
 來源
 ccClub Judge
 """
-# =========================== Wrong Answer =========================
 s = []
 while True:
   try:
-    s.extend(input().split())
+    s.extend(list(map(int,input().split())))
   except:
     break
-print(' '.join(sorted(s)))
+s.sort()
+print(' '.join(map(str,s)))

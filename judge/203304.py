@@ -43,17 +43,19 @@ d e b c a
 """
 
 # ============================== Keep Trying =========================
-def get_learning_path(course, prerequisites):
+def get_learning_path(course, prerequisites,ans=[]):
     
     if course not in prerequisites:
         return [course]
     
     path = []
+    # Trying to find out the same level course
+    ans[:0] = sorted(prerequisites[course])
     for prerequisite in prerequisites[course]:
-        sub_path = get_learning_path(prerequisite, prerequisites)
+        sub_path = get_learning_path(prerequisite, prerequisites,ans)
         path += sub_path
     
-    return path + [course]
+    return path + [course],ans
 
 # 讀取輸入
 prerequisites = {}
@@ -63,25 +65,10 @@ for _ in range(4):
 
 target_course = input().strip()
 
+ans = []
 # 取得學習歷程和遞迴次數
-learning_path = get_learning_path(target_course, prerequisites)
+learning_path,ans = get_learning_path(target_course, prerequisites,ans)
+ans.append(target_course)
 
-sort_full,ans = [],[]
-for key,value in reversed(prerequisites.items()):
-    if not value:
-        sort_full.append(key)
-    else:
-        sort_full.extend(value)
-if not prerequisites[target_course]:
-    pass
-else:
-    sort_full.append(target_course)
-
-
-
-# print(sort_full,learning_path)
-for sort_full_value in sort_full:
-    if sort_full_value in learning_path:
-        ans.append(sort_full_value)
 # 輸出結果
 print(' '.join(ans))

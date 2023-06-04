@@ -43,32 +43,48 @@ d e b c a
 """
 
 # ============================== Keep Trying =========================
-def get_learning_path(course, prerequisites,ans=[]):
-    
+def get_learning_path(course, prerequisites,count = 0,level = {}):
+
     if course not in prerequisites:
         return [course]
-    
-    path = []
+    count += 1
     # Trying to find out the same level course
-    ans[:0] = sorted(prerequisites[course])
+    if level.get(count) == None:
+        level[count] = prerequisites[course]
+    else:
+        temp = level[count]
+        temp.extend(prerequisites[course])
+        level[count] = temp
     for prerequisite in prerequisites[course]:
-        sub_path = get_learning_path(prerequisite, prerequisites,ans)
-        path += sub_path
+        get_learning_path(prerequisite, prerequisites,count,level)
     
-    return path + [course],ans
+    return count,level
+
+def group_elements(groups, elements):
+    result = []
+    index = 0
+    for num in groups:
+        group = elements[index:index+num]
+        result.append(group)
+        index += num
+    return result
 
 # 讀取輸入
-prerequisites = {}
+prerequisites,ans,sort_by_ans = {},[],[]
 for _ in range(4):
     course, *prereqs = input().split()
     prerequisites[course] = prereqs
 
-target_course = input().strip()
+target_course = input()
 
-ans = []
 # 取得學習歷程和遞迴次數
-learning_path,ans = get_learning_path(target_course, prerequisites,ans)
-ans.append(target_course)
+count,level = get_learning_path(target_course, prerequisites)
 
-# 輸出結果
-print(' '.join(ans))
+for key,value in level.items():
+    ans[:0] = sorted(value)
+
+for i in ans:
+    sort_by_ans.extend(i)
+
+sort_by_ans.append(target_course)
+print(' '.join(sort_by_ans))

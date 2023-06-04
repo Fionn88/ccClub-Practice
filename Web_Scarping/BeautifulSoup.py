@@ -1,5 +1,5 @@
 """
-使用 BeautifulSoup 去取得功課有公告的日蓻
+使用 BeautifulSoup 去取得功課有公告的日期
 """
 import requests
 from bs4 import BeautifulSoup

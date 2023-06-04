@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 
 url = 'https://web.archive.org/web/20211010120951/https://www.ccclub.io/course/2019Spring'
 re = requests.get(url)
+soup = BeautifulSoup(re.text,"html.parser")
 trs = soup.find_all("tr")
 ccClub = []
 for tr in trs:

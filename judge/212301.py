@@ -42,7 +42,7 @@ s2 = input()
 length = len(s1)
 Acount = 0
 Bcount = 0
-answer_counter = Counter(s1))
+answer_counter = Counter(s1)
 guess_counter = Counter(s2)
 
 for i,j in zip(s1,s2):

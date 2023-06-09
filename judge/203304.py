@@ -42,7 +42,6 @@ a
 d e b c a
 """
 
-# ============================== Keep Trying =========================
 def get_learning_path(course, prerequisites,count = 0,level = {}):
 
     if course not in prerequisites:

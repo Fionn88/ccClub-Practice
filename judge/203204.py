@@ -51,7 +51,6 @@ def binary_search(code, key):
     upper = len(code) - 1
     while low <= upper:
         mid = (low + upper) // 2  #取中間索引的值
-        # print(mid)
         if code[mid] < key:    #若搜尋值比中間的值大，將中間索引+1，取右半
             low = mid + 1
         elif code[mid] > key:  #若搜尋值比中間的值小，將中間索引+1，取左半

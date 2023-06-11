@@ -55,41 +55,67 @@ c c a f f z a c
 輸出範例 4
 2 3 4 6 5 1 7 8
 """
-student = input().split()
-grade = input().split()
-lst = [[k,v] for k, v in zip(student, grade)]
+# ======================== 解法一 =======================
+# student = input().split()
+# grade = input().split()
+# lst = [[k,v] for k, v in zip(student, grade)]
 
-ans = []
-def sort_up(l):
-    sorted_up_lst = sorted(l, reverse = False, key = lambda item:item[1])
-    return sorted_up_lst
+# ans = []
+# def sort_up(l):
+#     sorted_up_lst = sorted(l, reverse = False, key = lambda item:item[1])
+#     return sorted_up_lst
 
-def sort_down(l):
-    sorted_down_lst = sorted(l, reverse = True, key = lambda item:item[1])
-    return sorted_down_lst
+# def sort_down(l):
+#     sorted_down_lst = sorted(l, reverse = True, key = lambda item:item[1])
+#     return sorted_down_lst
 
-def find_duplicate_item(l, temp_l):
-    for i in range(len(l)-1):
-        try:
-            while ord(l[i][1]) ==  ord(l[i+1][1]):
-                temp_l.append(l.pop(i+1))
-        except:
-            continue
-    return temp_l
+# def find_duplicate_item(l, temp_l):
+#     for i in range(len(l)-1):
+#         try:
+#             while ord(l[i][1]) ==  ord(l[i+1][1]):
+#                 temp_l.append(l.pop(i+1))
+#         except:
+#             continue
+#     return temp_l
 
-def append_to_ans(l):
-    for item in l:
-        ans.append(item)
-    l.clear()
-    return(l)
+# def append_to_ans(l):
+#     for item in l:
+#         ans.append(item)
+#     l.clear()
+#     return(l)
 
-lst_sort_up = sort_up(lst)
-lst_sort_down = []
-while(len(lst_sort_up) != 0 or len(lst_sort_down) != 0):
-    lst_sort_down = sort_down(find_duplicate_item(lst_sort_up,lst_sort_down))
-    append_to_ans(lst_sort_up)
-    lst_sort_up = sort_up(find_duplicate_item(lst_sort_down,lst_sort_up))
-    append_to_ans(lst_sort_down)
+# lst_sort_up = sort_up(lst)
+# lst_sort_down = []
+# while(len(lst_sort_up) != 0 or len(lst_sort_down) != 0):
+#     lst_sort_down = sort_down(find_duplicate_item(lst_sort_up,lst_sort_down))
+#     append_to_ans(lst_sort_up)
+#     lst_sort_up = sort_up(find_duplicate_item(lst_sort_down,lst_sort_up))
+#     append_to_ans(lst_sort_down)
 
-for answer in ans:
-    print(answer[0], end=" ")
+# for answer in ans:
+#     print(answer[0], end=" ")
+
+
+# ======================== 解法二 =======================
+from collections import defaultdict
+
+student_dict = defaultdict(list)
+ans_list = []
+
+id_lst = [_ for _ in input().split()]
+grade_lst = [_ for _ in input().split()]
+
+for student_id,grade in zip(id_lst,grade_lst):
+    student_dict[grade].append(student_id)
+
+reverse = False
+while len(student_dict) > 0:
+    order = sorted(student_dict.keys(), reverse=reverse)
+    for grade in order:
+        ans_list.append(student_dict[grade].pop(0))
+        if len(student_dict[grade]) == 0:
+            del student_dict[grade]
+
+    reverse = not reverse
+
+print(' '.join(ans_list))

@@ -7,13 +7,18 @@
 
 ### Step By Step
 
-- 啟動 Docker
+- 啟動 Docker，Volume 請依照自己喜好設定路徑 -v {外部路徑}:{內部路徑}，為了在關掉Container的同時能保留py檔
 ```
 docker run --name test-project -d -v /Users/FionnKuo/Documents/Developer/backend/python-by-docker:/app python:3.8 sleep infinity
 ```
 
-- 安裝主角 => selenium
-在這邊同時應該就會同時安裝 webdriver，這邊的路徑是 `/root/.wdm/drivers/chromedriver/linux64/114.0.5735.90/chromedriver`
+- 進入Container
+```
+docker exec -it test-project bash
+```
+
+- 安裝我們的主角selenium
+> 在這邊同時應該就會同時安裝 webdriver，這邊Container內部路徑是 `/root/.wdm/drivers/chromedriver/linux64/114.0.5735.90/chromedriver`
 ```
 pip install selenium
 ```
@@ -22,7 +27,7 @@ pip install selenium
 - 安裝 google-chrome binary
 ```
 wget -qO - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/googlechrome-linux-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/googlechrome-linux-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/googlechrome-linux-keyring.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google-chrome.list
 apt update
 apt install google-chrome-stable
 ```

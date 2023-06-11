@@ -21,6 +21,7 @@ docker exec -it test-project bash
 > 在這邊同時應該就會同時安裝 webdriver，這邊Container內部路徑是 `/root/.wdm/drivers/chromedriver/linux64/114.0.5735.90/chromedriver`
 ```
 pip install selenium
+pip install webdriver-manager
 ```
 
 

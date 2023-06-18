@@ -46,7 +46,6 @@ AABBABAB
 來源
 ccClub Judge
 """
-# ======================== Wrong Answer =======================
 n = list(input())
 A = int(input())
 B = int(input())
@@ -59,5 +58,7 @@ while len(n) > 0 and A >= 0 and B >= 0:
     B -= 1
 if A < 0 or B < 0:
   print(A+B+1)
+elif A > 0 or B > 0:
+  print(A+B)
 else:
   print(0)

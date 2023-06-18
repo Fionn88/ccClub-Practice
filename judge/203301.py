@@ -56,8 +56,6 @@ c
 提示
 可以試試使用 set！
 """
-
-# ======================== Wrong Answer ===================
 import collections
 
 threshold = int(input())
@@ -93,6 +91,7 @@ for customer, purchases in customers.items():
                         recommendations[customer].append(i)  
             
 for customer, recs in recommendations.items():
-    print(customer, " ".join(recs))
-
-    
+    if recs:
+        print(customer, " ".join(recs))
+    else:
+        print(customer)

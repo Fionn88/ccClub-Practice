@@ -98,7 +98,7 @@ for _ in range(n):
     for timePoint in timeList:
         value_of_people_have_spare_time[int(timePoint)] += 1
 
-for timePoint in range(len(value_of_people_have_spare_time)):
+for timePoint in range(25):
     if value_of_people_have_spare_time[timePoint] >= 12 and timePoint <= mink:
         num += 1
         mink = timePoint

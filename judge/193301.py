@@ -109,7 +109,7 @@ for timePoint in range(25):
     elif valueOfPeopleHaveSpareTime[timePoint] < 12:
         constantTimeCount = 0
         initGraterTwelvePeopleTimePoint = 25
-print(ans)
+
 if ans:
     print(max(ans, key=ans.get))
 else:

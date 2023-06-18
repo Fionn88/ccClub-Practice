@@ -88,3 +88,29 @@
 來源
 ccClub Judge
 """
+n = int(input())
+value_of_people_have_spare_time = [0] * 25
+ans = {}
+mink,num = 25,0
+
+for _ in range(n):
+    timeList = input().split()
+    for timePoint in timeList:
+        value_of_people_have_spare_time[int(timePoint)] += 1
+
+for timePoint in range(len(value_of_people_have_spare_time)):
+    if value_of_people_have_spare_time[timePoint] >= 12 and timePoint <= mink:
+        num += 1
+        mink = timePoint
+        ans[mink] = num
+    elif value_of_people_have_spare_time[timePoint] >= 12 and timePoint > mink:
+        num += 1
+        ans[mink] = num
+    elif value_of_people_have_spare_time[timePoint] < 12:
+        num = 0
+        mink = 25
+
+if ans:
+    print(max(ans, key=ans.get))
+else:
+    print(value_of_people_have_spare_time.index(max(value_of_people_have_spare_time)))

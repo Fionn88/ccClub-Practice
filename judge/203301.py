@@ -56,6 +56,7 @@ c
 提示
 可以試試使用 set！
 """
+
 import collections
 
 threshold = int(input())

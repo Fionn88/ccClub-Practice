@@ -77,3 +77,33 @@ stay at home
 來源
 ccClub Judge
 """
+route_dict,ans = {},-1
+block = input()
+for i in range(0, int(block)):
+    route = input()
+    tol_height,gazebo_distance,wc_distance = 0,0,0
+    accept_flag = True
+    for j in range(0, int(route)):
+        info = input().split(",")
+        tol_height += int(info[0])
+            
+        if info[1] == 'True':
+            gazebo_distance = 0
+        else:
+            gazebo_distance += 100
+            
+        if info[2] == 'True':
+            wc_distance = 0
+        else:
+            wc_distance += 100
+            
+        if gazebo_distance >= 300 or wc_distance >= 300:
+            accept_flag = False
+    route_dict [i] = {'height': tol_height, 'flag': accept_flag}
+for i in range(0, len(route_dict)):
+    if route_dict[i]['flag']:
+        ans = i
+if ans == -1:
+    print("stay at home")
+else:
+    print(ans)

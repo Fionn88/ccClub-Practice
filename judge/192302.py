@@ -86,22 +86,23 @@ for i in range(0, int(block)):
     for j in range(0, int(route)):
         info = input().split(",")
         tol_height += int(info[0])
-            
+
         if info[1] == 'True':
             gazebo_distance = 0
         else:
             gazebo_distance += 100
-            
+
         if info[2] == 'True':
             wc_distance = 0
         else:
             wc_distance += 100
-            
+
         if gazebo_distance >= 300 or wc_distance >= 300:
             accept_flag = False
     route_dict [i] = {'height': tol_height, 'flag': accept_flag}
+min = float("inf")
 for i in range(0, len(route_dict)):
-    if route_dict[i]['flag']:
+    if route_dict[i]['flag'] and route_dict[i]['height'] < min:
         ans = i
 if ans == -1:
     print("stay at home")

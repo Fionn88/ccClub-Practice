@@ -2,7 +2,7 @@ import pymysql
 
 
 #資料庫連線設定
-db = pymysql.connect(host='localhost', port=3306, user='root', passwd='0624', db='fastapi', charset='utf8')
+db = pymysql.connect(host='{replace_me}', port=3306, user='{replace_me}', passwd='{replace_me}', db='{replace_me}', charset='utf8')
 #建立操作游標
 cursor = db.cursor()
 #SQL語法

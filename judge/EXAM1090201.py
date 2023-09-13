@@ -22,31 +22,45 @@
 
 
 輸入範例 1 
-
 R
 SS
+
 輸出範例 1
-
 拉打
-輸入範例 2 
 
+輸入範例 2 
 R
 RF
+
 輸出範例 2
-
 推打
-輸入範例 3 
 
+輸入範例 3 
 L
 1B
+
 輸出範例 3
-
 拉打
-輸入範例 4 
 
+輸入範例 4 
 L
 3B
-輸出範例 4
 
+輸出範例 4
 推打
 """
+hand = input()
+point = input()
+
+if hand == 'R':
+    if point == 'SS' or point == '3B' or point == 'LF':
+        print('拉打')
+    if point == 'RF' or point == '2B' or point == '1B':
+        print('推打')
+elif hand == 'L':
+    if point == 'SS' or point == '3B' or point == 'LF':
+        print('推打')
+    if point == 'RF' or point == '2B' or point == '1B':
+        print('拉打')
+else:
+    print('None')

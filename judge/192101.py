@@ -34,3 +34,7 @@ I'm Little Ming's brother, I'm 43 years old.
 來源
 ccClub Judge
 """
+ming_age = int(input())
+age_difference  = int(input())
+print(f"I'm Little Ming, I'm {ming_age} years old.")
+print(f"I'm Little Ming's brother, I'm {ming_age+age_difference} years old.")

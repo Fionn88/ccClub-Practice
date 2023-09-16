@@ -34,3 +34,14 @@ F
 來源
 ccClub Judge
 """
+i,j,k = map(int,input().split())
+if i + 1 == j and j + 1 == k:
+    print("T")
+elif i + 3 == j and j + 3 == k:
+    print("T")
+elif i + 4 == j and j + 4 == k:
+    print("T")
+elif i == 3 and j == 5 and k == 7:
+    print("T")
+else:
+    print("F")

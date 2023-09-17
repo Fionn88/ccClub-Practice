@@ -31,3 +31,13 @@
 輸出範例 2
 6
 """
+full=list(input())
+hate=list(input())
+
+count=0
+
+for num in full:
+	if num in hate:
+		count+=1
+
+print(count)

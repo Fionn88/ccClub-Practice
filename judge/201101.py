@@ -72,3 +72,10 @@ dd 33 yy
 來源
 ccClub Judge
 """
+s = input().split()
+v = input().split()
+o = input().split()
+for i in s:
+    for j in v:
+        for k in o:
+            print(i, j, k)

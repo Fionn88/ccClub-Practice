@@ -35,3 +35,37 @@ True
 輸出範例 3
 False
 """
+
+n = int(input())
+x = n
+while x >= 1:
+    x = x / 4
+
+y = n
+while y >= 1:
+    y = y / 2
+
+
+z = n
+while z >= 1:
+    z = z / 5
+
+
+fac = [] 
+for i in range(2, n):
+    if n % i == 0:
+        fac.append(i) 
+    else:
+        pass
+
+if n == 1:
+    print(True)
+else:
+    for i in fac:
+        if i == 2 or i == 3 or i == 5:
+            output = True
+        else:
+            output = False
+            break
+    print(x == 0.25 or y == 0.5 or z == 0.2 or output)
+    

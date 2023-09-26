@@ -39,3 +39,15 @@ Sample input 1 的情況：最終大賣場規定活動為集滿 3 個空瓶可�
 小葉喝完可樂後，可再換 3 瓶可樂，而這 3 瓶可樂喝完後，又可以再換一瓶可樂。
 因此小葉可以喝到的可樂數量為 9 + 3 + 1 = 13
 """
+init = int(input())
+free_to_change = int(input())
+
+total_colas = init  
+empty_bottles = init 
+
+while empty_bottles >= free_to_change: 
+    new_colas = empty_bottles // free_to_change  
+    total_colas += new_colas
+    empty_bottles = new_colas + (empty_bottles % free_to_change) 
+
+print(total_colas)

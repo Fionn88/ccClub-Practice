@@ -33,9 +33,9 @@ False
 
 來源
 ccClub Judge
-"""
-"""
-RunTime Error
+
+提示：
+不需要寫 input()，只需要實現函數即可
 """
 def isSubStr(s, t):
     s_ptr = 0 
@@ -47,7 +47,3 @@ def isSubStr(s, t):
         t_ptr += 1
 
     return s_ptr == len(s) 
-
-s = input()
-t = input()
-print(isSubStr(s, t))

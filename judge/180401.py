@@ -33,11 +33,9 @@
 
 ccClub Judge
 """
-# =============== Wrong Answer ================
 def fibonacci(n):
-    print(n)
     if n >= 1 and n <= 4:
         return n
     else:
-        return fibonacci(n-1) + fibonacci(n-2)*n + fibonacci(n-3)*n + fibonacci(n-4)*n
+        return fibonacci(n-1) + fibonacci(n-2)*2 + fibonacci(n-3)*3 + fibonacci(n-4)*4
 print(fibonacci(int(input())))

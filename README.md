@@ -2,6 +2,15 @@
 
 > 紀錄每天練習的紀錄
 
+## TODO
+
+> 0928
+```
+1092HW0102
+EXAM11020201
+EXAM11020201e
+```
+
 #### Installing virtualenv
 - Windows
 ```

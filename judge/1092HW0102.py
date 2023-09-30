@@ -42,3 +42,14 @@
 輸出範例 2
 2135,4
 """
+import math
+all = int(input())
+chocolateCake = int(input())
+strawberryCake = int(input())
+strachocolateCake = all - chocolateCake - strawberryCake
+
+cocoa = math.ceil(chocolateCake * 0.5 + strachocolateCake * 1.25) * 300
+flour = math.ceil((chocolateCake * 90 + strawberryCake * 50 + strachocolateCake * 120) / 220) * 50
+egg = math.ceil((chocolateCake * 3 + strawberryCake * 2 + strachocolateCake * 4) / 8) 
+strawberry = (strawberryCake * 10 + strachocolateCake * 6) // 10 * 25 + (strawberryCake * 10 + strachocolateCake * 6) % 10 * 3
+print(cocoa+flour+strawberry+egg*76,egg,sep=',')

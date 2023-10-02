@@ -40,3 +40,12 @@ Wei Huang Wei Lee Huang Lee Huang Wei Wei
 來源
 ccClub Judge
 """
+dInt = int(input())
+D = {}
+for _ in range(dInt):
+    dKey,dValue = input().split()
+    D[dKey] = dValue
+
+searched = input().split()
+for word in searched:
+    print(D[word],end=' ')

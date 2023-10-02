@@ -81,3 +81,36 @@
 輸出範例 4
 雨傘 毛帽 太陽眼鏡
 """
+def sunglasses(rainrateAug,rayAug):
+    if rainrateAug  <= 20 and rayAug >= 3:
+        return True
+    else:
+        return False
+
+def umbrella(rainrateAug,rayAug):
+    if rainrateAug  >= 70 or rayAug >= 6:
+        return True
+    else:
+        return False
+
+def hat(rainrateAug,hAug, lAug):
+    avg = (hAug + lAug) / 2
+    if avg <= 18:
+        return [True,"毛帽"]
+    elif rainrateAug > 20  and rainrateAug < 70 and lAug <= 20:
+        return [True,"棒球帽"]
+    else:
+        return [False]
+    
+h, l = map(int,input().split())
+rainrate = int(input())
+ray = int(input())
+    
+if umbrella(rainrate,ray):
+    print("雨傘",end=" ")
+if hat(rainrate,h, l)[0]:
+    print(hat(rainrate,h, l)[1],end=" ")
+if sunglasses(rainrate,ray):
+    print("太陽眼鏡")
+if not (umbrella(rainrate,ray) or hat(rainrate,h, l)[0] or sunglasses(rainrate,ray)):
+    print("空手出門")

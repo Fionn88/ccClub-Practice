@@ -58,3 +58,47 @@ cc大學
 輸出範例 2
 10
 """
+name = input()
+school = input()
+department = input()
+email = input()
+introduce = input()
+motivate = input()
+spend_time = input().split('小時')
+notes = input()
+breakOrNot = False
+
+if name == "小華":
+    print(1)
+    breakOrNot = True
+elif email == "":
+    print(1)
+    breakOrNot = True
+
+count = 5
+if not breakOrNot:
+    if "會計" in department:
+        count += 1
+    if len(introduce) > 200 or len(introduce) < 50:
+        count -= 1
+    if len(motivate) > 100:
+        count += 1
+
+    timeToSpendInt = int(spend_time[0])
+
+    if timeToSpendInt < 5:
+        count -= 1
+    elif timeToSpendInt >= 10 and timeToSpendInt <= 16:
+        count += 1
+    elif timeToSpendInt >= 17:
+        count += 3
+
+    if len(notes) > 30:
+        count += 1
+
+    if count > 10:
+        count = 10
+    
+    print(count)
+
+

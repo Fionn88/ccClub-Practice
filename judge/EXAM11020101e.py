@@ -61,3 +61,20 @@ Y
 輸出範例 4
 8000
 """
+hotel,connect = input().split()
+partner = input()
+
+level = [1600, 1800, 2200, 2600, 2800, 3200, 3600, 6000, 6600, 8000]
+hotelD = {"流水席": 1600, "宴會廳": 2200, "五星級飯店": 2800}
+connectD = {"泛泛之交": 0, "普通朋友": 1, "好朋友": 2, "死黨": 3}
+money = 0
+
+if partner == "Y":
+    money = level[level.index(hotelD.get(hotel))+connectD.get(connect) + 2]
+else:
+    money = level[level.index(hotelD.get(hotel))+connectD.get(connect)]
+
+if connect == "死黨" and money < 6000:
+    money = 6000
+
+print(money)

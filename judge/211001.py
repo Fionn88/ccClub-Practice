@@ -35,3 +35,22 @@
 輸出範例 2
 1
 """
+department = {"會計系":["國英數社",57,"國",15], "公衛系":["英數自",38], "經濟系": ["社自",26,"數",15],"資工系":["英自",27,"數",15]}
+line = ["國","英","數","社","自"]
+score = input().split(",")
+target = input()
+breakOrNot = False
+
+for index,value in enumerate(department.get(target)):
+    if index % 2 == 0:
+        subject = value
+    else:
+        sumTheScore = 0
+        for i in subject:
+            sumTheScore += int(score[line.index(i)])
+        if sumTheScore < value:
+            print(0)
+            breakOrNot = True
+            break
+if not breakOrNot:
+    print(1)        

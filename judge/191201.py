@@ -38,3 +38,12 @@
 來源
 ccClub Judge
 """
+n = input()
+n = sorted(n)
+swapIndex = n.index(next(filter(lambda x: x!='0', n)))
+for index,value in enumerate(n):
+    if index == 0 and value == '0':
+        n[0], n[swapIndex] = n[swapIndex], n[0]
+
+for i in n:
+    print(i, end='')

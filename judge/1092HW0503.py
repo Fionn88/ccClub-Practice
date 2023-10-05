@@ -30,3 +30,14 @@
 範例一：紫藍藍紅紅紫綠 -> 紫紅紅紫綠 -> 紫紫綠 -> 綠
 範例二：黑紫紫紅紅紅黑 -> 黑紅紅紅黑 -> 黑紅黑
 """
+
+the_string_input = input()
+res = []
+
+for index, value in enumerate(the_string_input):
+    if not res or value != res[-1]: 
+        res.append(value)
+    else:
+        res.pop()
+
+print(''.join(res))

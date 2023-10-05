@@ -29,3 +29,22 @@ dog,cat,does
 輸出範例 2
 No common
 """
+def find_common_prefix(words):
+    if not words:
+        return "No common"
+        
+    min_word = min(words, key=len)
+    
+    for i, char in enumerate(min_word):
+        if not all(word[i] == char for word in words):
+            min_word =  min_word[:i]
+    
+    if min_word:
+        return min_word
+    else:
+        return "No common"
+
+input_words = input().split(",")
+common_prefix = find_common_prefix(input_words)
+print(common_prefix)
+

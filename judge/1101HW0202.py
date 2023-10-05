@@ -48,3 +48,12 @@ input_words = input().split(",")
 common_prefix = find_common_prefix(input_words)
 print(common_prefix)
 
+
+# ================ The Other Solution ================
+import os
+lst = input().split(',')
+result = os.path.commonprefix(lst)
+if result:
+    print(result)
+else:
+    print('No common')

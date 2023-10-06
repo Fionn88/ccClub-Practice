@@ -21,15 +21,25 @@ an end to live for >>> An End to Live For
 
 
 輸入範例 1 
-
 a diamond is forever
+
 輸出範例 1
-
 A Diamond Is Forever
+
 輸入範例 2 
-
 under the dome an affair to remember
-輸出範例 2
 
+輸出範例 2
 Under the Dome an Affair to Remember
 """
+import string
+s = input().split()
+for index,value in enumerate(s):
+    if index == 0 or index == len(s) - 1:
+        print(string.capwords(value),end=' ')
+    elif value == 'to' or value == 'a' or value == 'an' or value == 'the' or value == 'from' or value == 'for' or value=='of' or value=='and' or value=='in':
+        print(value,end=' ')
+    else:
+        print(string.capwords(value),end=' ')
+
+    

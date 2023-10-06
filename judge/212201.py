@@ -46,3 +46,50 @@ v=0.0, v0=1.0, a=-0.25, S=2.0, t=4.0
 所有的測資必定有解
 不一定所有公式都會用到
 """
+def caculateV(augA,augT):
+    return 1.0 + augA*augT
+
+def caculateA(augV,augT,augS):
+    if augT and augT != 0:
+        return (augV - 1.0) / augT
+    else:
+        return (augV * augV - 1.0) / 2 * augS
+    
+def caculateS(augA,augT):
+    
+    return augT + 0.5*augA*augT*augT
+
+def caculateT(augA,augV,augS):
+    if not augA and augS != 0:
+        return (2*augS) / (augV+1)
+
+    elif augA and augA != 0:
+        return (augV - 1.0)/augA
+
+        
+v,a,s,t = input().split(',')
+
+if not v:
+    v = caculateV(float(a),float(t))
+    print('v='+str(v),end=', ')
+else:
+    print('v='+str(float(v)),end=', ')
+
+print('v0=1.0',end=', ')
+if not a:
+    a = caculateA(float(v),float(t),float(s))
+    print('a='+str(a),end=', ')
+else:
+    print('a='+str(float(a)),end=', ')
+
+if not s:
+    s = caculateS(float(a),float(t))
+    print('S='+str(s),end=', ')
+else:
+    print('S='+str(float(s)),end=', ')
+
+if not t:
+    t = caculateT(float(a),float(v),float(s))
+    print('t='+str(t))
+else:
+    print('t='+str(float(t)))

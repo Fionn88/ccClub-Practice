@@ -20,3 +20,18 @@ LVIII
 輸出範例 1
 58
 """
+D = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M':1000}
+s = input()
+ans = []
+l,r,count = 0,1,0
+for i in s:
+    ans.append(D.get(i))
+while r < len(ans):
+    if ans[l] < ans[r]:
+        ans[l] = -ans[l]
+    l += 1
+    r += 1
+for i in ans:
+    count += i
+
+print(count)

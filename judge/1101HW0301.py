@@ -50,3 +50,49 @@ B11000000
 提示
 可以試試看利用函式讓清理的過程更清楚易讀！
 """
+def validateEmail(student_id):
+    if '@' in student_id:
+        student_list = student_id.split('@')
+        if student_list[1] == 'ntu.edu.tw':
+            return (True,student_list[0])
+        else:
+            return [False]
+    else:
+        return (True,student_id)
+
+def validateTitle(student_id):
+    if student_id[0].islower():
+        student_id = ' '.join(sub[:1].upper() + sub[1:] for sub in student_id.split(' '))
+        return student_id
+    else:
+        return student_id
+
+
+n = int(input())
+res = []
+for i in range(n):
+    student_id = input()
+    if student_id == "":
+        continue
+    ansList = validateEmail(student_id)
+
+    if ansList[0]:
+        student_id = ansList[1]
+    else:
+        continue
+
+    student_id = validateTitle(student_id)
+    if len(student_id) != 9:
+        continue
+    if student_id[0] == 'B' or student_id[0] == 'R' or student_id[0] == 'D' or student_id[0] == 'F':
+        res.append(student_id)
+    else:
+        continue
+
+if res:
+    res = list(dict.fromkeys(res))
+    for i in res:
+        print(i)
+else:
+    print('')
+

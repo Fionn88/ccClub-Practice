@@ -43,3 +43,13 @@ innocuous iconoclastic
 來源
 ccClub Judge
 """
+words = input().split()
+prefix = input()
+res = []
+for word in words:
+    if len(word) >= len(prefix) and word[0:len(prefix)] == prefix:
+            res.append(word)
+
+for ans in res:
+      print(ans,end=' ')
+    

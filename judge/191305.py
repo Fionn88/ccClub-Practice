@@ -36,3 +36,16 @@ True
 來源
 ccClub Judge
 """
+numbers = list(map(float,input().split(',')))
+
+total_sum = sum(numbers)
+
+left_sum = 0
+
+for i in range(len(numbers)):
+    left_sum += numbers[i]
+    if left_sum == total_sum / 2:
+        print("True")
+        break
+else:
+    print("False")

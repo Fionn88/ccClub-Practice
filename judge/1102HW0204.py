@@ -48,3 +48,41 @@
 圖片至 judge 查看
 ====================
 """
+prizeNumber = input().split(',')
+potentialNumber = input().split(',')
+res = []
+prizes = 0
+for i in potentialNumber:
+    if i == prizeNumber[0]:
+        prizes += 10000000
+        res.append(i)
+    elif i == prizeNumber[1]:
+        prizes += 2000000
+        res.append(i)
+    elif i == prizeNumber[2] or i == prizeNumber[3] or i == prizeNumber[4]:
+        prizes += 200000
+        res.append(i)
+    elif i[-7:] == prizeNumber[2][-7:] or i[-7:] == prizeNumber[3][-7:] or i[-7:] == prizeNumber[4][-7:]:
+        prizes += 40000
+        res.append(i)
+    elif i[-6:] == prizeNumber[2][-6:] or i[-6:] == prizeNumber[3][-6:] or i[-6:] == prizeNumber[4][-6:]:
+        prizes += 10000
+        res.append(i)
+    elif i[-5:] == prizeNumber[2][-5:] or i[-5:] == prizeNumber[3][-5:] or i[-5:] == prizeNumber[4][-5:]:
+        prizes += 4000
+        res.append(i)
+    elif i[-4:] == prizeNumber[2][-4:] or i[-4:] == prizeNumber[3][-4:] or i[-4:] == prizeNumber[4][-4:]:
+        prizes += 1000
+        res.append(i)
+    elif i[-3:] == prizeNumber[2][-3:] or i[-3:] == prizeNumber[3][-3:] or i[-3:] == prizeNumber[4][-3:]:
+        prizes += 200
+        res.append(i)
+    elif i[-3:] == prizeNumber[5]:
+        prizes += 200
+        res.append(i)
+if res:
+    res.sort()
+    print(res)
+else:
+    print("No match numbers")
+print(prizes)

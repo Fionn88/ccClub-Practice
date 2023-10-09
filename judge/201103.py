@@ -31,3 +31,11 @@ Hello, world!
 來源
 ccClub Judge
 """
+s = input().split()
+word = 0
+for i in s:
+    for j in i:
+        if j.isalpha():
+            word += 1
+print(len(s))
+print(word)

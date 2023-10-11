@@ -64,3 +64,16 @@ True
 提示
 關於ISBN的更多介紹請看 https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E6%A0%87%E5%87%86%E4%B9%A6%E5%8F%B7
 """
+def validTaiwan(firstThree, NextThree):
+    if firstThree == "978" and (NextThree == "986" or NextThree == "957"):
+        return True
+
+s = input()
+if not validTaiwan(s[:3],s[3:6]):
+    print(False)
+else:
+    sumNumber = int(s[0]) + int(s[1])*3 + int(s[2]) + int(s[3])*3 + int(s[4]) + int(s[5])*3 + int(s[6]) + int(s[7])*3 + int(s[8]) + int(s[9])*3 + int(s[10]) + int(s[11])*3 
+    if str(10 - sumNumber % 10)[-1] == s[12]:
+        print(True)
+    else:
+        print(False)

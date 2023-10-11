@@ -41,3 +41,18 @@
 輸出範例 2
 上上下下下下左左
 """
+input_data = input().split(',')
+characters = input_data[:-1]
+password = int(input_data[-1])
+
+question = input()
+
+directions = "上下左右"
+transforms = {} 
+for char in characters:
+    transforms[char] = directions[(directions.index(char) + password) % 4]
+
+answer = ''.join([transforms.get(char, char) for char in question])
+
+print(answer)
+

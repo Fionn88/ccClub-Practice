@@ -4,12 +4,10 @@
 
 ## TODO
 
-> 1010
+> 1011
 ```
-1102HW0205
 1092HW0105
 1111EXAM0104
-212002
 ```
 
 #### Installing virtualenv

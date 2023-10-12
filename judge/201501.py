@@ -10,21 +10,21 @@ EX2: s = ‘adc’, t = ‘abcde’, t 無論刪掉什麼 element 都無法變�
 
 
 輸入
-請實作一函式isSubStr，輸入包含兩行，各包含一個字串，分別為字串 s 以及字串 t。
+函式有兩個參數 s 和 t，型態皆為字串。
 
 
 輸出
-輸出包含一行，回傳 True 或 False。
+函式有一回傳值 True 或 False。
 
 
-輸入範例 1 
+輸入範例 1
 ace
 abcde
 
 輸出範例 1
 True
 
-輸入範例 2 
+輸入範例 2
 adc
 abcde
 
@@ -33,9 +33,6 @@ False
 
 來源
 ccClub Judge
-
-提示：
-不需要寫 input()，只需要實現函數即可
 """
 def isSubStr(s, t):
     s_ptr = 0 

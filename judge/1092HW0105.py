@@ -40,3 +40,14 @@ bc
 輸出範例 2
 fhi
 """
+characters = input()
+password = input()
+
+for index,char in enumerate(characters):
+    # 找到該 characters index
+    # print(ord(characters[index]) - ord('a') + 1)
+    # 找到該密文 index
+    # print(ord(password[index % len(password)]) - ord('a') + 1)
+    # 找到密文 index+1
+    # print(ord(password[(index+1) % len(password)]) - ord('a') + 1)
+    print(chr((ord(characters[index]) - ord('a') + 1 + ord(password[index % len(password) ]) - ord('a') + 1 + ord(password[(index+1) % len(password)]) - ord('a') + 1) % 26 + ord('a') - 1),end='')

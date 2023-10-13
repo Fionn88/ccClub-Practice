@@ -12,7 +12,7 @@
 
 2. 若某位玩家發球得分，則下一球也會由同一位發球，但因為分數奇偶數變化
 所以那隊的站位會交換。舉例來說，站位如下圖，現在 ab 隊是 2 分，由站右邊的 a 發球後得分，
-下一球也由 a 發球，但ab 隊是 3 分，應該由左方發球，所以 a b 的站位會交換。
+下一球也由 a 發球，但 ab 隊是 3 分，應該由左方發球，所以 a b 的站位會交換。
 
 3.若某位玩家發球由對方得分，則下一球由另一隊依照分數奇偶對應站位的玩家發球
 
@@ -57,3 +57,56 @@ cd
 輸出範例 2
 c
 """
+team = input()
+score = input()
+abTeamScore,cdTeamScore = 0,0
+abPosition,cdPosition = 0,0 # 0ab 1ba 0cd 1dc
+start = 0 # 0ab 1dc
+ans = ''
+if team == 'ab':
+  start = 0
+else:
+  start = 1
+
+for s in score:
+  # ab 得分
+  if s == '0':
+    # 連續得分交換位置
+    if start == 0:
+      abPosition ^= 1  
+    # 非連續得分
+    else:
+      start ^= 1
+    abTeamScore += 1
+  # cd 得分
+  else:
+    # 連續得分交換位置
+    if start == 1:
+      cdPosition ^= 1  
+    # 非連續得分
+    else:
+      start ^= 1
+    cdTeamScore += 1
+
+# ab 方發球
+if start == 0:
+  # 位置
+  if abPosition == 0:
+    ans = 'ab'
+  else:
+    ans = 'ba'
+  # 偶為面對往右方
+  if abTeamScore % 2 == 0:
+    print(ans[0])
+  else:
+    print(ans[1])
+# cd 方發球
+else:
+  if cdPosition == 0:
+    ans = 'cd'
+  else:
+    ans = 'dc'
+  if cdTeamScore % 2 == 0 :
+    print(ans[1])
+  else:
+    print(ans[0])

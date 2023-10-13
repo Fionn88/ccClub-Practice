@@ -4,18 +4,18 @@
 
 ## TODO
 
-> 1012
+> 1014
 ```
-1111EXAM0104
-211002
-191302
-EXAM11020102e
 1092HW0203
 193502
 193201
 200501
 1102HW0301
 203205
+```
+- Retry The Problem
+```
+1111EXAM0104.py
 ```
 
 #### Installing virtualenv

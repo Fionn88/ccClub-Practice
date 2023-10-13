@@ -28,3 +28,21 @@ False
 來源
 ccClub Judge
 """
+import collections
+
+s = input()
+countS = collections.Counter(s)
+tag = True
+if len(s) % 2 == 0:
+    for value in countS.values():
+        if value % 2 != 0:
+            tag = False
+else:
+    count = 0
+    for value in countS.values():
+        if value % 2 != 0:
+            count += 1
+    if count != 1:
+        tag = False
+print(tag)
+        

@@ -39,3 +39,15 @@ A B
 輸出範例 2
 A
 """
+time = input().split()
+name = input().split()
+ans = []
+for i in time:
+    i = int(i)
+    if ans:
+        ans.append(i - sum(ans))
+    else:
+        ans.append(i)
+
+print(name[ans.index(min(ans))])
+

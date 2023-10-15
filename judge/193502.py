@@ -28,3 +28,11 @@
 來源
 ccClub Judge
 """
+n = list(map(int,input().split()))
+n.sort()
+length = len(n)
+index = int(length / 2)
+if length % 2 == 0:
+    print((n[index-1] + n[index])/2)
+else:
+    print(float(n[index]))

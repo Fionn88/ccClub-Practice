@@ -43,3 +43,17 @@
 來源
 ccClub Judge
 """
+ans = []
+while True:
+    num = input()
+    if num == '0':
+        break
+    else:
+        count = 0
+        num = list(map(int,num.split()))
+        ans.append(sum(num))
+
+maxCount = max(ans)
+print(ans.index(maxCount)+1,end=' ')
+print(maxCount)
+

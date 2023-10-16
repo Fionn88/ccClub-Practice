@@ -32,3 +32,13 @@
 輸出範例 2
 怎麼了你累了說好的幸福呢
 """
+full_sentence = ""
+
+while True:
+    try:
+        line = input()
+        full_sentence += line
+    except EOFError:
+        break
+
+print(full_sentence)

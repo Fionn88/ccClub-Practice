@@ -63,3 +63,14 @@ Allegra
 1
 10
 """
+names = input().split()
+debts = input().split()
+D = {}
+for name, money in zip(names, debts):
+    D[name] = money
+while True:
+    try:
+        n = input()
+        print(D.get(n))
+    except:
+        break

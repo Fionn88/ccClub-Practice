@@ -29,7 +29,7 @@ Q 指令的格式為:Q
 
 
 輸入
-輸入有數行，格式如題幹，最後一行為一個字串Q。
+輸入有數行，格式如題幹，最後一行為一個字串 Q。
 
 
 輸出
@@ -56,3 +56,27 @@ computer
 來源
 ccClub Judge
 """
+C = {}
+E = {}
+while True:
+    n = input()
+    if n == 'Q':
+        break
+    n = n.split()
+    if n[0] == 'I':
+        if C.get(n[1]):
+            print("[fail]")
+        else:
+            C[n[1]] = n[2]
+            E[n[2]] = n[1]
+            print("[succeed]")
+    elif n[0] == 'C' :
+        if C.get(n[1]):
+            print(C.get(n[1]))
+        else:
+            print("[fail]")
+    elif n[0] == 'E':
+        if E.get(n[1]):
+            print(E.get(n[1]))
+        else:
+            print("[fail]")

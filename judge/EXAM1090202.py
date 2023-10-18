@@ -6,7 +6,7 @@
 
 由於很滿意房東附的家具，凱凱只需要再多買個桌子、電腦椅以及書櫃共三個品項的家具，這樣房間就完美了。
 
-於是他上了北歐知名家具連鎖店的網站逛了一下，因為預算有限，他希望可以寫一個程式把符合預算的家具組合列出來，方便他做決定。
+於是他上了北歐知名家具連鎖店的網站逛了一下，因為預算有限，他希望可以寫一個程式把符合預算的家具組合列出來，方便他做決定。
 
 
 輸入
@@ -125,3 +125,57 @@ MICKE 書桌/LIDKULLEN 椅凳/FINNBY 書櫃:13279
 MICKE 書桌/LIDKULLEN 椅凳/GERSBY 書櫃:18470
 MICKE 書桌/LIDKULLEN 椅凳/MORLIDEN 書櫃:18470
 """
+# Approach 1: Using Package
+import itertools
+budget = int(input())
+
+desk = input().split()
+deskItem = desk[0::2]
+deskUnit = desk[1]
+deskPrice = list(map(int,input().split()))
+
+chair = input().split()
+chairItem = chair[0::2]
+chairUnit = chair[1]
+chairPrice = list(map(int,input().split()))
+
+bookshelf = input().split()
+bookshelfItem = bookshelf[0::2]
+bookshelfUnit = bookshelf[1]
+bookshelfPrice = list(map(int,input().split()))
+
+deskDict = {}
+chairDict = {}
+bookshelfDict = {}
+
+for itemPrice, itemList in zip(deskPrice,deskItem):
+    deskDict[itemPrice] = itemList + " " + deskUnit
+
+for itemPrice, itemList in zip(chairPrice,chairItem):
+    chairDict[itemPrice] = itemList + " " + chairUnit
+
+for itemPrice, itemList in zip(bookshelfPrice,bookshelfItem):
+    bookshelfDict[itemPrice] = itemList + " " + bookshelfUnit
+
+all_combinations = itertools.product(deskPrice, chairPrice, bookshelfPrice)
+
+valid_combinations = [combo for combo in all_combinations if sum(combo) <= budget]
+
+for combo in valid_combinations:
+    print(deskDict.get(combo[0])+"/"+chairDict.get(combo[1])+ "/"+bookshelfDict.get(combo[2])+":"+str(sum(combo)))
+
+# Approach 2: Using three layer for loop
+budget = int(input())
+deskItem = input().split()
+deskPrice = [int(i) for i in input().split()]
+chairItem = input().split()
+chairPrice = [int(j) for j in input().split()]
+shelfItem = input().split()
+shelfPrice = [int(k) for k in input().split()]
+
+    
+for k in range(len(deskItem)):
+    for j in range(len(chairItem)):
+        for i in range(len(shelfItem)):
+            if int(deskPrice[k]+chairPrice[j]+shelfPrice[i]) <= budget:
+                print(deskItem[k]+'/'+chairItem[j]+'/'+shelfItem[i]+':'+str(deskPrice[k]+chairPrice[j]+shelfPrice[i]))

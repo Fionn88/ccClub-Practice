@@ -33,3 +33,15 @@
 輸出範例 2
 2 1 5 3 7 4
 """
+name_list = input().split()
+
+middle = len(name_list) // 2
+
+result_list = []
+for i in range(middle):
+    result_list.append(name_list[i])
+    result_list.append(name_list[i + middle])
+
+result = ' '.join(result_list)
+
+print(result)

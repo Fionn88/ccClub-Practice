@@ -41,3 +41,49 @@
 輸出範例 2
 肉肉 菜菜
 """
+# Time Limit Exceeded
+# from itertools import combinations
+# menu = input().split()
+# prices = list(map(int,input().split()))
+# budget = int(input())
+# ans = []
+# ansPrice = []
+# for r in range(1, len(prices) + 1):
+#     for combo in combinations(prices, r):
+#         if sum(combo) == budget:
+#             ansPrice = combo
+#             break
+
+# for result in ansPrice:
+#     ans.append(menu[prices.index(result)])
+
+# print(' '.join(ans))
+
+
+# Time Complexity：O(nlogn)
+# Space Complexity：O(1)
+# Approach 1：Find the target price using Two Pointer.
+menu = input().split()
+prices = list(map(int,input().split()))
+budget = int(input())
+
+combined = list(zip(prices, menu))
+sorted_combined = sorted(combined)
+sorted_prices, sorted_items = zip(*sorted_combined)
+
+l = 0
+r = len(menu) -1
+while l < r:
+    if sorted_prices[l] + sorted_prices[r] == budget:
+        indexLeft = prices.index(sorted_prices[l])
+        indexRight = prices.index(sorted_prices[r])
+        if indexLeft < indexRight:
+            print(menu[prices.index(sorted_prices[l])],menu[prices.index(sorted_prices[r])])
+        else:
+            print(menu[prices.index(sorted_prices[r])],menu[prices.index(sorted_prices[l])])     
+        
+        break
+    elif sorted_prices[l] + sorted_prices[r] < budget:
+        l += 1
+    else:
+        r -= 1

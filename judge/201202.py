@@ -34,3 +34,28 @@ tie
 來源
 ccClub Judge
 """
+player1 = input().split()
+player2 = input().split()
+
+namePlayer1 = player1[0]
+namePlayer2 = player2[0]
+attributePlayer1 = list(map(int,player1[1:]))
+attributePlayer2 = list(map(int,player2[1:]))
+
+while True:
+    if attributePlayer1[1] <= 0 or attributePlayer2[1] <= 0:
+        break
+    attributePlayer1[1] = attributePlayer1[1] - attributePlayer2[0]
+    attributePlayer2[1] = attributePlayer2[1] - attributePlayer1[0]
+
+if attributePlayer1[1] <= 0 and  attributePlayer2[1] <= 0:
+    print("tie")
+elif attributePlayer1[1] > attributePlayer2[1]:
+    attributePlayer1 = list(map(str,attributePlayer1))
+    print(namePlayer1,' '.join(attributePlayer1))
+else:
+    attributePlayer2 = list(map(str,attributePlayer2))
+    print(namePlayer2,' '.join(attributePlayer2))
+
+        
+

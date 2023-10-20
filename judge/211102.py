@@ -20,13 +20,12 @@
 
 
 輸入範例 1 
-
 9
+
 輸出範例 1
-
 5
-輸入範例 2 
 
+輸入範例 2 
 88
 
 輸出範例 2
@@ -47,3 +46,17 @@
 
 依照題意，吉吉總共需要 5 個步驟才能把 9 變成 0，因此輸出 5。
 """
+n = int(input())
+count = 0
+while True:
+    if n == 0:
+        break
+    if n % 2 == 1:
+        count += 1
+        n -= 1
+    if n == 0:
+        break
+    n = int(n / 2)
+    count += 1
+
+print(count)

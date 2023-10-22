@@ -125,6 +125,7 @@ MICKE書桌/LIDKULLEN椅凳/FINNBY書櫃:13279
 MICKE書桌/LIDKULLEN椅凳/GERSBY書櫃:18470
 MICKE書桌/LIDKULLEN椅凳/MORLIDEN書櫃:18470
 """
+
 budget = int(input())
 deskItem = input().split()
 deskPrice = [int(i) for i in input().split()]
@@ -139,3 +140,4 @@ for k in range(len(deskItem)):
         for i in range(len(shelfItem)):
             if int(deskPrice[k]+chairPrice[j]+shelfPrice[i]) <= budget:
                 print(deskItem[k]+'/'+chairItem[j]+'/'+shelfItem[i]+':'+str(deskPrice[k]+chairPrice[j]+shelfPrice[i]))
+                

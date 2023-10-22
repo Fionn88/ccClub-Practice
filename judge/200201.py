@@ -34,3 +34,15 @@
 來源
 ccClub Judge
 """
+
+n = list(map(int,input().split()))
+ans = []
+for i in range(n[0],n[1],n[2]):
+    ans.append(i)
+
+for index,value in enumerate(ans):
+    if index == len(ans) - 1:
+        print(value)
+    else:
+        print(value,end=' ')
+print(sum(ans))

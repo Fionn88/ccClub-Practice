@@ -47,3 +47,4 @@ if s in lst1 or s in lst2:
     print(True)
 else:
     print(False)
+    

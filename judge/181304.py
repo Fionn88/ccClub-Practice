@@ -28,6 +28,7 @@
 來源
 ccClub Judge
 """
+
 s = input()
 flag = False
 count = 0

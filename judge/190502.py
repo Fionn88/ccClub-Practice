@@ -29,7 +29,6 @@
 ccClub Judge
 """
 
-
 def max_sort_num(str1):
   inp = [s for s in str1]
   inp.sort(reverse = True)

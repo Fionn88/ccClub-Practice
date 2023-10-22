@@ -56,6 +56,7 @@ computer
 來源
 ccClub Judge
 """
+
 C = {}
 E = {}
 while True:

@@ -34,6 +34,7 @@ idJpxh
 來源
 ccClub Judge
 """
+
 s = input()
 n = input()
 

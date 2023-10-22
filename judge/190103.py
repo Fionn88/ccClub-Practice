@@ -28,6 +28,7 @@ ccClub
 來源
 ccClub Judge
 """
+
 s = input()
 for index,value in enumerate(s):
   if index == len(s) -1:

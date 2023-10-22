@@ -29,6 +29,7 @@ dog,cat,does
 輸出範例 2
 No common
 """
+
 def find_common_prefix(words):
     if not words:
         return "No common"

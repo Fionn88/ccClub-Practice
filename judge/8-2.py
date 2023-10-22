@@ -29,7 +29,6 @@ Source
 ccClub Judge
 """
 
-
 def longest_str(l):
     MaxValue = 0
     ans = ""

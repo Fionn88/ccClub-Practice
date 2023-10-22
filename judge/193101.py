@@ -28,5 +28,6 @@
 來源
 ccClub Judge
 """
+
 s = list(map(int,input().split()))
 print(sum(s))

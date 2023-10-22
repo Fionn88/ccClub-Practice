@@ -42,6 +42,7 @@
 輸出範例 2
 2135,4
 """
+
 import math
 all = int(input())
 chocolateCake = int(input())

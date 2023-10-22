@@ -28,5 +28,6 @@ Sample Output 2
 Source
 ccClub Judge
 """
+
 s = input()
 print(s,s[::-1], sep="")

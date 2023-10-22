@@ -64,6 +64,7 @@ True
 提示
 關於ISBN的更多介紹請看 https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E6%A0%87%E5%87%86%E4%B9%A6%E5%8F%B7
 """
+
 def validTaiwan(firstThree, NextThree):
     if firstThree == "978" and (NextThree == "986" or NextThree == "957"):
         return True
@@ -77,3 +78,4 @@ else:
         print(True)
     else:
         print(False)
+        

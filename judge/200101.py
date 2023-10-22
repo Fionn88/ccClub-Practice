@@ -31,6 +31,7 @@ B
 來源
 ccClub Judge
 """
+
 s = input()
 if s == 'social science':
     print('A')

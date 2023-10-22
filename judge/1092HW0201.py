@@ -33,6 +33,7 @@
 輸出範例 2
 2 1 5 3 7 4
 """
+
 name_list = input().split()
 
 middle = len(name_list) // 2

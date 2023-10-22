@@ -34,6 +34,7 @@ tie
 來源
 ccClub Judge
 """
+
 player1 = input().split()
 player2 = input().split()
 
@@ -56,6 +57,3 @@ elif attributePlayer1[1] > attributePlayer2[1]:
 else:
     attributePlayer2 = list(map(str,attributePlayer2))
     print(namePlayer2,' '.join(attributePlayer2))
-
-        
-

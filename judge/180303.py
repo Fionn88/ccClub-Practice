@@ -54,6 +54,7 @@ sample 1 中，輸入為「1 2 3 5 6 7」，過程中你會得到 lst = [[1, 2, 
 來源
 ccClub Judge
 """
+
 # >>>>>>>>> 相關題目： ID 181106  幾連霸
 # 使用 Two Pointer 解題
 lst = [int(i) for i in input().split()]

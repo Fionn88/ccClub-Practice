@@ -78,6 +78,7 @@ TheLordoftheRings=> 館藏已有書名為TheLordoftheRings 的書，前三碼為
 來源
 ccClub Judge
 """
+
 books = []
 
 while True:

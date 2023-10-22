@@ -61,6 +61,7 @@ Y
 輸出範例 4
 8000
 """
+
 hotel,connect = input().split()
 partner = input()
 

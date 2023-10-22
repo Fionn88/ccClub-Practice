@@ -36,6 +36,7 @@
 輸出範例 3
 1A1B
 """
+
 from collections import Counter
 s1 = input()
 s2 = input()

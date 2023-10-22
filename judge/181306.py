@@ -30,6 +30,7 @@
 來源
 ccClub Judge
 """
+
 s = []
 while True:
   try:

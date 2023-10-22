@@ -40,7 +40,6 @@ A B C D E F G H I J
 not found
 """
 
-
 code = list(map(int,input().split()))
 name = input().split()
 search = int(input())
@@ -64,3 +63,4 @@ if index >= 0:
     print(name[index])
 else:
     print("not found")
+    

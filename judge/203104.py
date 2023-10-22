@@ -41,6 +41,7 @@
 輸出範例 2
 肉肉 菜菜
 """
+
 # Time Limit Exceeded
 # from itertools import combinations
 # menu = input().split()
@@ -63,6 +64,7 @@
 # Time Complexity：O(nlogn)
 # Space Complexity：O(1)
 # Approach 1：Find the target price using Two Pointer.
+
 menu = input().split()
 prices = list(map(int,input().split()))
 budget = int(input())
@@ -87,3 +89,4 @@ while l < r:
         l += 1
     else:
         r -= 1
+        

@@ -27,10 +27,12 @@
 來源
 ccClub Judge
 """
+
 nums = list(map(int, input().split()))
 n = len(nums)
 if n % 2 == 0:
     median = (nums[n//2 - 1] + nums[n//2]) / 2
 else:
     median = nums[n//2]
+    
 print(float(median))

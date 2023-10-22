@@ -80,6 +80,7 @@ label__7	Good...Bye...
 本題可以嘗試看看用 python 套件 re 試試看！
 google 關鍵字：python re replace symbol 之類的
 """
+
 import re
 label_data,label,raw_data,ans = [],[],[],[]
 

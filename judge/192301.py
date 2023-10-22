@@ -32,6 +32,7 @@ CeQAeNYBXaRb
 來源
 ccClub Judge
 """
+
 s1 = input()  
 s2 = input()  
 

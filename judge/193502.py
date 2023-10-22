@@ -28,6 +28,7 @@
 來源
 ccClub Judge
 """
+
 n = list(map(int,input().split()))
 n.sort()
 length = len(n)

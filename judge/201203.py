@@ -55,6 +55,7 @@ https://medium.com/ccclub/ccclub-python-for-beginners-tutorial-f3148ebb33a4
 來源
 ccClub Judge
 """
+
 # ========================================== 此解法花了 24ms ====================================
 # n = int(input())
 # temp = {}
@@ -96,3 +97,4 @@ s.sort(key=dist_sort,reverse=True)
 
 for i in s:
   print(i[0])
+  

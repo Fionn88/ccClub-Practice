@@ -43,6 +43,7 @@
 來源
 ccClub Judge
 """
+
 ans = []
 while True:
     num = input()
@@ -56,4 +57,3 @@ while True:
 maxCount = max(ans)
 print(ans.index(maxCount)+1,end=' ')
 print(maxCount)
-

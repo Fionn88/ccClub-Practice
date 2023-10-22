@@ -40,6 +40,7 @@ kevin810214ccclub@ccclub.io
 來源
 ccClub Judge
 """
+
 import re
 s = input().split('@')
 print(re.sub("[+-.]",'', s[0]),'@',s[1],sep='')

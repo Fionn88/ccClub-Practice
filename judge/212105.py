@@ -25,6 +25,7 @@ ABCXYZ
 輸出範例 2
 ABCxyz
 """
+
 s = input()
 for i in s:
     if ord(i.lower()) <= ord('m'):

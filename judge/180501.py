@@ -44,6 +44,7 @@ Léon
 來源
 ccClub Judge
 """
+
 grouped_data,data,flag = [],[],True
 label = {"Fantasy":10,"Drama":9,"Action":8,"Thriller":7,"Comedy":6,"Crime":5,"History":4,"Romance":3,"Adventure":2,"Biography":1}
 while True:

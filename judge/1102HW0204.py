@@ -48,6 +48,7 @@
 圖片至 judge 查看
 ====================
 """
+
 prizeNumber = input().split(',')
 potentialNumber = input().split(',')
 res = []
@@ -80,9 +81,11 @@ for i in potentialNumber:
     elif i[-3:] == prizeNumber[5]:
         prizes += 200
         res.append(i)
+
 if res:
     res.sort()
     print(res)
 else:
     print("No match numbers")
+    
 print(prizes)

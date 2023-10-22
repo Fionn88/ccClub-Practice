@@ -28,6 +28,7 @@ a2c6e1i6l3m2n4o9p2r2s4t1u2v1
 來源
 ccClub Judge
 """
+
 s = input()
 d = {}
 for i in s:

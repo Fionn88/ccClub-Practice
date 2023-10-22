@@ -32,6 +32,7 @@ Sample Output 2
 Source
 ccClub Judge
 """
+
 a = int(input())
 b = int(input())
 print(str(a)*b)

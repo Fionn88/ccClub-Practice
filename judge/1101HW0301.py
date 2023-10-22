@@ -50,6 +50,7 @@ B11000000
 提示
 可以試試看利用函式讓清理的過程更清楚易讀！
 """
+
 def validateEmail(student_id):
     if '@' in student_id:
         student_list = student_id.split('@')
@@ -66,7 +67,6 @@ def validateTitle(student_id):
         return student_id
     else:
         return student_id
-
 
 n = int(input())
 res = []
@@ -95,4 +95,3 @@ if res:
         print(i)
 else:
     print('')
-

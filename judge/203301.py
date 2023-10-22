@@ -72,7 +72,6 @@ while True:
 for customer, purchases in customers.items():
     recommendations[customer] = []  
 
-    
     for other_customer, other_purchases in customers.items():
         if customer == other_customer:
             continue  
@@ -96,3 +95,4 @@ for customer, recs in recommendations.items():
         print(customer, " ".join(recs))
     else:
         print(customer)
+        

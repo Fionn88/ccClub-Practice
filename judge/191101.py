@@ -40,6 +40,7 @@ False
 來源
 ccClub Judge
 """
+
 s = input()
 j = 0
 alpha = False

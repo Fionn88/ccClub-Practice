@@ -50,6 +50,7 @@ g34l[v4
 來源
 ccClub Judge
 """
+
 def string_password(s):
   upper,lower,digit,other = 0,0,0,0
   for i in s:

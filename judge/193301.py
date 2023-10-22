@@ -88,6 +88,7 @@
 來源
 ccClub Judge
 """
+
 n = int(input())
 valueOfPeopleHaveSpareTime = [0] * 25
 ans = {}

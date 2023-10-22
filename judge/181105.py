@@ -39,8 +39,6 @@ a05303009
 ccClub Judge
 """
 
-
-
 def domain(department):
   if department == '902':
     return 200
@@ -80,3 +78,4 @@ elif score_s1 > score_s2:
   print(s1)
 else:
   print(s2)
+  

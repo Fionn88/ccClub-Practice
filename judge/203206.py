@@ -26,3 +26,8 @@
 輸出範例 2
 5
 """
+
+n = list(map(int,input().split()))
+for i in range(1,len(n)-1):
+    if n[i] < n[i-1] and n[i] < n[i+1]:
+        print(i)

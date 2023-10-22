@@ -33,7 +33,9 @@ Sample Output 2
 Source
 ccClub Judge
 """
+
 l = int(input())
 w = int(input())
 for j in range(w):
   print('*'*l)
+  

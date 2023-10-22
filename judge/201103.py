@@ -31,6 +31,7 @@ Hello, world!
 來源
 ccClub Judge
 """
+
 s = input().split()
 word = 0
 for i in s:

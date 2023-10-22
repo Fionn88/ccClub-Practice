@@ -35,6 +35,7 @@
 輸出範例 2
 1
 """
+
 department = {"會計系":["國英數社",57,"國",15], "公衛系":["英數自",38], "經濟系": ["社自",26,"數",15],"資工系":["英自",27,"數",15]}
 line = ["國","英","數","社","自"]
 score = input().split(",")
@@ -54,3 +55,4 @@ for index,value in enumerate(department.get(target)):
             break
 if not breakOrNot:
     print(1)        
+    

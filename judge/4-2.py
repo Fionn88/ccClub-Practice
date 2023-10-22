@@ -28,6 +28,7 @@ Error
 Source
 ccClub Judge
 """
+
 n = int(input())
 if n < 60:
     print("Fail")
@@ -35,3 +36,4 @@ elif n > 100:
     print("Error")
 else:
     print("Pass")
+    

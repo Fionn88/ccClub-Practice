@@ -41,7 +41,6 @@ sample input 1 中，若分別把代表男性（1）和女性（2）的數字代
 ccClub Judge
 """
 
-
 head = input()
 number = list(map(int,input()))
 verify = [7, 6, 5, 4, 3, 2, 1, 1]

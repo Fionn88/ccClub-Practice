@@ -37,6 +37,7 @@
 輸出範例 2
 222666/147852
 """
+
 frontNumer = input()
 behindNumer = input()
 print(frontNumer+behindNumer+"/"+str(int(frontNumer)*int(behindNumer)))

@@ -51,6 +51,7 @@ Sample Output 4
 Source
 ccClub Judge
 """
+
 # point 如是偶數每一行則會一樣
 point=int(input()) 
 line=int(input()) 
@@ -80,3 +81,4 @@ elif point%2==0:
                 print("-",end="")
             elif a%2==0:
                 print("+",end="")
+                

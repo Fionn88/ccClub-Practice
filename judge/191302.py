@@ -28,6 +28,7 @@ False
 來源
 ccClub Judge
 """
+
 import collections
 
 s = input()
@@ -45,4 +46,3 @@ else:
     if count != 1:
         tag = False
 print(tag)
-        

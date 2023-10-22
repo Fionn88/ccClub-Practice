@@ -37,7 +37,6 @@
 ccClub Judge
 """
 
-
 # def swap_nums(num):
 #   s = list(str(num))
 #   hash_map = {digit:idx for idx,digit in enumerate(s)}

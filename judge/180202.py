@@ -28,6 +28,7 @@
 來源
 ccClub Judge
 """
+
 s = list(map(int,input().split()))
 sortS = sorted(s)
 print(abs(sortS[-1]-sortS[-2]))

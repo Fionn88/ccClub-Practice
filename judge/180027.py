@@ -28,6 +28,7 @@
 來源
 ccClub Judge
 """
+
 def fibonacci(n):
     if n == 0:
         return 0
@@ -37,4 +38,5 @@ def fibonacci(n):
       return 2
     else:
         return fibonacci(n-1) + fibonacci(n-2) + fibonacci(n-3)
+    
 print(fibonacci(int(input())))

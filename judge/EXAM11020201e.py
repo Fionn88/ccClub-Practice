@@ -51,10 +51,10 @@ sample input 1 為 108 學年度入學，故為三年級。
 sample input 2 為 110 學年度入學，故為一年級。
 sample input 3 為 104 學年度入學，故為七年級。
 """
+
 student_number = input()
 level = {'B': '學士班','R':'碩士班','D':'博士班'}
 gradeD = {'1': '一年級','2':'二年級','3':'三年級','4':'四年級','5':'五年級','6':'六年級','7':'七年級'}
 grade = 110 - int('1' + student_number[1:3]) + 1
 print(level.get(student_number[0]))
 print(gradeD.get(str(grade)))
-

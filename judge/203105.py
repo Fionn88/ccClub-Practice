@@ -41,5 +41,3 @@ for index,value in enumerate(s):
         print(value,end=' ')
     else:
         print(string.capwords(value),end=' ')
-
-    

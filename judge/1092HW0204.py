@@ -25,10 +25,10 @@ False
 輸出範例 2
 True
 """
+
 n = int(input())
 while n >= 1:
     n = n / 4
 
 print(n == 0.25)
     
-

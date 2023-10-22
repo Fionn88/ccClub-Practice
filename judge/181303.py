@@ -31,6 +31,7 @@ Output
 來源
 ccClub Judge
 """
+
 from datetime import datetime
 
 timestamp = int(input())

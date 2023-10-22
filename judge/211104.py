@@ -27,7 +27,9 @@
 輸出範例 2
 1 8 15 20 27 55 2020
 """
+
 n = list(map(int,input().split()))
 sort_n = sorted(n)
 for index,value in enumerate(sort_n):
     print(value,end=' ')
+    

@@ -43,6 +43,7 @@ Cannot find BETHANY
 來源
 ccClub Judge
 """
+
 infoDic = {}
 while True:
     user_input = input()

@@ -24,6 +24,7 @@ a,a,c,b,a
 輸出範例 1
 c,b
 """
+
 from collections import Counter
 
 def get_unique_letters(s):

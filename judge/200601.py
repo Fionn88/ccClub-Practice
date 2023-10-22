@@ -64,6 +64,7 @@ A
 來源
 ccClub Judge
 """
+
 def sortCP(item):
   cpItem = int(item[1])/int(item[2])
   return cpItem

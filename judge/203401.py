@@ -43,6 +43,7 @@ end
 Bird
 Check again!
 """
+
 infoDic = {}
 while True:
     user_input = input()
@@ -65,3 +66,4 @@ while True:
         print(infoDic.get(search,'Check again!'))
     except:
         break
+    

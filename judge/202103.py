@@ -25,6 +25,7 @@ he has no chance
 輸出範例 2
 he ha$ no chance
 """
+
 s = input()
 for index,value in enumerate(s):
     if index == len(s)-1:

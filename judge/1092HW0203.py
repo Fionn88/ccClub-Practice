@@ -39,6 +39,7 @@ A B
 輸出範例 2
 A
 """
+
 time = input().split()
 name = input().split()
 ans = []
@@ -50,4 +51,3 @@ for i in time:
         ans.append(i)
 
 print(name[ans.index(min(ans))])
-

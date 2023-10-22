@@ -32,6 +32,7 @@ B
 來源
 ccClub Judge
 """
+
 count = 0
 s = []
 while True:

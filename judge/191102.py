@@ -49,6 +49,7 @@ Pig
 來源
 ccClub Judge
 """
+
 def calculate_zodiac(year):
     zodiacs = ["Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig"]
     index = (year - 1900) % 12

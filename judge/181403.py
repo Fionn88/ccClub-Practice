@@ -36,6 +36,7 @@ error
 來源
 ccClub Judge
 """
+
 s = input().split()
 backup_s = s.copy()
 all_hour,all_minute = [],[]

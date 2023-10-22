@@ -40,6 +40,7 @@ bbcc 因為沒有母音，故最短的母音子字串不存在，此時請使用
 來源
 ccClub Judge
 """
+
 word = ['a','e','i','o','u']
 s = input()
 index = [pos for pos, char in enumerate(s) if char.lower() == 'a' or char.lower() == 'e' or char.lower() == 'i' or char.lower() == 'o' or char.lower() == 'u']
@@ -51,3 +52,4 @@ else:
         print("")
     else:
         print(s[index[0]])
+        

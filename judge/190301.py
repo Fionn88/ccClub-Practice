@@ -36,6 +36,7 @@ calculator(1111, 104, "-")
 來源
 ccClub Judge
 """
+
 def calculator(num1, num2, op):
     if op == "+":
       ans = num1 + num2

@@ -57,6 +57,7 @@ cd
 輸出範例 2
 c
 """
+
 team = input()
 score = input()
 abTeamScore,cdTeamScore = 0,0
@@ -110,3 +111,4 @@ else:
     print(ans[1])
   else:
     print(ans[0])
+    

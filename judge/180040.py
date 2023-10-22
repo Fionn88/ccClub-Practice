@@ -30,5 +30,6 @@
 來源
 ccClub Judge
 """
+
 s = input()
 print(float(eval(s)))

@@ -28,6 +28,7 @@
 來源
 ccClub Judge
 """
+
 N = input().split()
 ansDict = {}
 for i in N:

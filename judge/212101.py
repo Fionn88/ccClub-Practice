@@ -27,6 +27,7 @@ False True False True True False True
 輸出範例 2
 True False False False
 """
+
 n = input()
 for i in n:
     print(int(i) > 6,end=' ')

@@ -46,6 +46,7 @@ v=0.0, v0=1.0, a=-0.25, S=2.0, t=4.0
 所有的測資必定有解
 不一定所有公式都會用到
 """
+
 def caculateV(augA,augT):
     return 1.0 + augA*augT
 
@@ -93,3 +94,4 @@ if not t:
     print('t='+str(t))
 else:
     print('t='+str(float(t)))
+    

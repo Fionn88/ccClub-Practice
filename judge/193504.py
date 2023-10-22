@@ -72,3 +72,4 @@ for currentDay in range(len(score)):
     stack.append(currentDay)
 for i in result:
     print(i,end=' ')
+    

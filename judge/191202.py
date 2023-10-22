@@ -47,6 +47,7 @@ sort_dict("budget branch beware bargain boast beneath")
 來源
 ccClub Judge
 """
+
 def sort_dict(s):
   sorted_words = sorted(s.split(), key=get_word_value)
   return sorted_words

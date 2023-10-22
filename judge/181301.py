@@ -33,6 +33,7 @@
 來源
 ccClub Judge
 """
+
 import datetime
 d1 = [int(i) for i in input().split()]
 d2 = [int(i) for i in input().split()]

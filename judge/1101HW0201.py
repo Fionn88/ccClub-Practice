@@ -29,6 +29,7 @@
 輸出範例 2
 [4, 3, 2, 2]
 """
+
 n = int(''.join(list(input().split(','))))
 ans = []
 

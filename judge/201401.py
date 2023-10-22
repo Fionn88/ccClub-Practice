@@ -37,3 +37,15 @@
 來源
 ccClub Judge
 """
+
+period = int(input())
+possibility = [100-int(i) for i in input().split()]
+max_cumulative_probability_period = (0, 0)
+for i in range(24-period+1):
+    cumulative_probability = 1
+    for j in range(period):
+        cumulative_probability *= possibility[i+j]
+    if cumulative_probability > max_cumulative_probability_period[1]:
+        max_cumulative_probability_period = (i, cumulative_probability)
+
+print(max_cumulative_probability_period[0])

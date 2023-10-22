@@ -61,6 +61,7 @@
 來源
 ccClub Judge
 """
+
 n = int(input())
 gradeSet = {}
 for i in range(n):

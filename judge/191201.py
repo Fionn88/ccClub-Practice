@@ -38,6 +38,7 @@
 來源
 ccClub Judge
 """
+
 n = input()
 n = sorted(n)
 swapIndex = n.index(next(filter(lambda x: x!='0', n)))

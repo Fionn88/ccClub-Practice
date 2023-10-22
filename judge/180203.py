@@ -26,6 +26,7 @@ CDEFGHIJ
 來源
 ccClub Judge
 """
+
 n = int(input())
 num = ord('A')    
 for i in range(n):

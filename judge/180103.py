@@ -30,6 +30,7 @@ deFpzh
 來源
 ccClub Judge
 """
+
 s = input()
 for i in range(len(s)):
   print(chr(ord(s[i])+i+1),end='') 

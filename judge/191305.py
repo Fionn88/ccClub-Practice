@@ -36,6 +36,7 @@ True
 來源
 ccClub Judge
 """
+
 numbers = list(map(float,input().split(',')))
 
 total_sum = sum(numbers)

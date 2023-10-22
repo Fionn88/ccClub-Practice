@@ -81,6 +81,7 @@
 輸出範例 4
 雨傘 毛帽 太陽眼鏡
 """
+
 def sunglasses(rainrateAug,rayAug):
     if rainrateAug  <= 20 and rayAug >= 3:
         return True
@@ -114,3 +115,4 @@ if sunglasses(rainrate,ray):
     print("太陽眼鏡")
 if not (umbrella(rainrate,ray) or hat(rainrate,h, l)[0] or sunglasses(rainrate,ray)):
     print("空手出門")
+    

@@ -50,6 +50,7 @@ L
 輸出範例 4
 推打
 """
+
 hand = input()
 point = input()
 
@@ -65,3 +66,4 @@ elif hand == 'L':
         print('拉打')
 else:
     print('None')
+    

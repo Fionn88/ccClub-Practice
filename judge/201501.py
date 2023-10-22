@@ -34,6 +34,7 @@ False
 來源
 ccClub Judge
 """
+
 def isSubStr(s, t):
     s_ptr = 0 
     t_ptr = 0 

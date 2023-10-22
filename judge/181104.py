@@ -35,6 +35,7 @@
 來源
 ccClub Judge
 """
+
 n = int(input())
 num = 1   
 for i in range(n):

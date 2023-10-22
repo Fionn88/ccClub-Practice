@@ -55,6 +55,7 @@ b
 來源
 ccClub Judge
 """
+
 def calculate_cost(item, formulas):
     if item not in formulas:
         return 0
@@ -85,3 +86,4 @@ for item_data in s:
 for item in items:
     total_cost = calculate_cost(item, formulas)
     print(total_cost)
+    

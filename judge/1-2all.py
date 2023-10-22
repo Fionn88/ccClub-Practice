@@ -28,6 +28,7 @@
 來源
 ccClub Judge
 """
+
 sentence = input().split()
 d = {}
 

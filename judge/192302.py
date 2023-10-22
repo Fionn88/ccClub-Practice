@@ -77,6 +77,7 @@ stay at home
 來源
 ccClub Judge
 """
+
 route_dict,ans = {},-1
 block = input()
 for i in range(0, int(block)):

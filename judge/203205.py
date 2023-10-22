@@ -63,6 +63,7 @@ Allegra
 1
 10
 """
+
 names = input().split()
 debts = input().split()
 D = {}
@@ -74,3 +75,4 @@ while True:
         print(D.get(n))
     except:
         break
+    

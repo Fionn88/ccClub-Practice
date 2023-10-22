@@ -39,6 +39,7 @@ Sample input 2 中，you會被轉成You，worry因為 y 不是在第一個字元
 來源
 ccClub Judge
 """
+
 key = input()
 s = input().split()
 for index,value in enumerate(s):

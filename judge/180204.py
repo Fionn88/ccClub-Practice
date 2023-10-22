@@ -58,6 +58,7 @@ Error
 來源
 ccClub Judge
 """
+
 n = list(map(int,input().split()))
 while True:
     s = input().split()
@@ -85,3 +86,4 @@ while True:
             del n[int(s[1])]
         except:
             continue
+        

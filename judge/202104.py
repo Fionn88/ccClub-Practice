@@ -58,6 +58,7 @@ cc大學
 輸出範例 2
 10
 """
+
 name = input()
 school = input()
 department = input()
@@ -100,5 +101,3 @@ if not breakOrNot:
         count = 10
     
     print(count)
-
-

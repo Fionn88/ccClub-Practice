@@ -30,6 +30,7 @@ Sample Output 2
 Source
 ccClub Judge
 """
+
 def threshold(l,t):
     ans = []
     for i in l:

@@ -46,6 +46,7 @@
 來源
 ccClub Judge
 """
+
 def generate_valid_parentheses(n):
     def backtrack(combination, left, right):
         if len(combination) == 2 * n:

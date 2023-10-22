@@ -31,7 +31,9 @@ Sample Output 2
 Source
 ccClub Judge
 """
+
 N = int(input())
 for i in range(1,N):
     if i*i < N:
         print(i*i)
+        

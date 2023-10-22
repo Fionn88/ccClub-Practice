@@ -46,6 +46,7 @@ AABBABAB
 來源
 ccClub Judge
 """
+
 n = list(input())
 A = int(input())
 B = int(input())

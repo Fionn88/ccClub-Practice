@@ -134,4 +134,5 @@ if is_vip == 'Y':
     price = int(all_min / 30 * 10)
 else:
   price = int(all_min / 30 * 20)
+  
 print(price)

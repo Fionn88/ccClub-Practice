@@ -28,6 +28,7 @@
 輸出範例 1
 [0, 2]
 """
+
 ans = []
 n = list(map(int,input().split(',')))
 b = int(input())

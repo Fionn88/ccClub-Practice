@@ -44,7 +44,6 @@ ccClub Judge
 # formatted_date = new_date.strftime('%Y-%m-%d')
 # print(formatted_date)
 
-
 from datetime import datetime, timedelta
 
 year, month, day = map(int, input().split())
@@ -52,4 +51,3 @@ n = int(input())
 date = datetime(year, month, day)
 new_date = date + timedelta(days=n)
 print(new_date.strftime('%Y-%m-%d'))
-

@@ -34,7 +34,9 @@ So don t you worry your pretty little mind  People throw rocks at things that sh
 來源
 ccClub Judge
 """
+
 from collections import Counter
+
 key = input().split()
 s = input().replace(" ", "").lower()
 countChar = dict(Counter(s))

@@ -43,6 +43,7 @@ innocuous iconoclastic
 來源
 ccClub Judge
 """
+
 words = input().split()
 prefix = input()
 res = []

@@ -93,6 +93,7 @@ rmdir c error
 來源
 ccClub Judge
 """
+
 s = eval(input())
 locate = 'home'
 path = 'home'

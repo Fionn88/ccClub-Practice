@@ -26,6 +26,7 @@ False
 來源
 ccClub Judge
 """
+
 s = input()  # 讀入字串
 
 stack = []  # 儲存左括號的堆疊

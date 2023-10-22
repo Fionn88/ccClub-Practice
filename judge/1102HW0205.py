@@ -41,6 +41,7 @@
 輸出範例 2
 上上下下下下左左
 """
+
 input_data = input().split(',')
 characters = input_data[:-1]
 password = int(input_data[-1])
@@ -55,4 +56,3 @@ for char in characters:
 answer = ''.join([transforms.get(char, char) for char in question])
 
 print(answer)
-

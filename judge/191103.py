@@ -34,6 +34,7 @@ F
 來源
 ccClub Judge
 """
+
 grade = int(input())
 if grade >= 90:
   print('A+')

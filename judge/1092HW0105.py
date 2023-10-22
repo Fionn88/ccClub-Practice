@@ -40,6 +40,7 @@ bc
 輸出範例 2
 fhi
 """
+
 characters = input()
 password = input()
 

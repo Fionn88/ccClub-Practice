@@ -87,3 +87,4 @@ for _ in range(k):
   ans.append(flag)
 for i in ans:
   print(i)
+  

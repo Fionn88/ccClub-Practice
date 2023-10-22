@@ -29,6 +29,7 @@ True
 輸出範例 2
 False
 """
+
 n = int(input())
 while n >= 1:
     n = n / 2

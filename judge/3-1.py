@@ -30,9 +30,11 @@ False
 Source
 ccClub Judge
 """
+
 s = input()
 n = int(input())
 if len(s) == n:
     print(True)
 else:
     print(False)
+    

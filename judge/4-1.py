@@ -36,3 +36,4 @@ if len(s) >= 8:
     print("Success")
 else:
     print("Fail")
+    

@@ -30,3 +30,16 @@
 來源
 ccClub Judge
 """
+
+def countPerfectSquares(a, b):
+    count = 0
+    num = 0
+    while num * num <= b:
+        if num * num >= a:
+            count += 1
+        num += 1
+    return count
+
+a, b = map(int, input().split())
+result = countPerfectSquares(a, b)
+print(result)

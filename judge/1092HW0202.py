@@ -31,6 +31,7 @@
 輸出範例 2
 6
 """
+
 full=list(input())
 hate=list(input())
 

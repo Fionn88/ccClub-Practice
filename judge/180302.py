@@ -67,6 +67,7 @@ def max_odd_even_sub(lst):
 來源
 ccClub Judge
 """
+
 def odd_even_count_sub(lst):
     #start your code here for odd_even_count_sub
     even = 0
@@ -97,5 +98,3 @@ def max_odd_even_sub(lst):
           maxOdd = i
 
     return abs(maxEven-maxOdd)
-
-

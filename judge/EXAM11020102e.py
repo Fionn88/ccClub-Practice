@@ -95,6 +95,7 @@ T-shirt#95
 提示
 想要買的商品依照喜好度排序，凱凱會依照喜好度順序購買。
 """
+
 money = int(input())
 category = int(input())
 ans = []

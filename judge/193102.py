@@ -27,6 +27,7 @@ wtf
 來源
 ccClub Judge
 """
+
 s = input()
 swapped_string = s.swapcase()
 print(swapped_string)

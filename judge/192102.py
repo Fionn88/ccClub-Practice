@@ -34,6 +34,7 @@ F
 來源
 ccClub Judge
 """
+
 i,j,k = map(int,input().split())
 if i + 1 == j and j + 1 == k:
     print("T")

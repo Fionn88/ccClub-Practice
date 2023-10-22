@@ -40,6 +40,7 @@ C
 來源
 ccClub Judge
 """
+
 s = input()
 ans = []
 for index,value in enumerate(s):
@@ -62,4 +63,5 @@ for index,value in enumerate(s):
             ans.append(i)
     else:
         ans.append(value)
+        
 print(''.join(ans))

@@ -36,6 +36,7 @@ mac
 來源
 ccClub Judge
 """
+
 start_value = ord("a")
 end_value = ord("z")
 

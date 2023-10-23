@@ -50,3 +50,21 @@ $ 708
 來源
 ccClub Judge
 """
+
+sale = []
+for _ in range(5):
+    cost = input()
+    sale.append(cost)
+
+original_cost = int(input())
+for price in sale:
+    if "$" in price:
+        price = price.split()
+        original_cost -= int(price[1])
+    else:
+        original_cost = original_cost * int(price) / 10
+
+if original_cost < 0:
+    print(0)
+else:
+    print(int(original_cost))

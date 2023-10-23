@@ -30,3 +30,25 @@
 輸出範例 2
 4,2,1
 """
+
+n = int(input())
+count = 0
+while True:
+
+    if count == 4:
+        break
+
+    if n % 2 == 0:
+        n = int(n / 2)
+    else:
+        n = 3 * n + 1
+
+    if count == 3 or n == 1:
+        print(n)
+    else:
+        print(n,end=',')
+
+    if n == 1:
+        break
+    
+    count += 1

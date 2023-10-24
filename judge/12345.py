@@ -49,3 +49,28 @@
 12,6,8,9
 16,7,11,27
 """
+
+def transpose_matrix(a):
+    row = len(a)
+    for i in range(row):
+        for j in range(i+1,row):
+            a[i][j],a[j][i] = a[j][i],a[i][j]
+    return a
+
+n = int(input())
+res = []
+for _ in range(n):
+    sit = input().split(',')
+    res.append(sit)
+
+res.reverse()
+for i in transpose_matrix(res):
+    print(','.join(i))
+
+# Another Solution
+n = int(input())
+matrix = [list(map(int, input().split(','))) for _ in range(n)]
+rotated_matrix = list(zip(*reversed(matrix)))
+
+for row in rotated_matrix:
+    print(','.join(map(str, row)))

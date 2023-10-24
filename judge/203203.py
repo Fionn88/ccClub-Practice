@@ -32,3 +32,22 @@ O O O O O O
 輸出範例 2
 (2, 4)
 """
+
+x = 0
+found = False
+while not found:
+    try:
+        n = input().split()
+        if '小明' in n:
+            y = 0
+            for index,name in enumerate(n):
+                if name == '小明':
+                    y = index
+                    found = True
+                    break
+        if not found:
+            x += 1
+    except:
+        break
+
+print((x,y))

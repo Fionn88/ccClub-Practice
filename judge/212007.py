@@ -36,3 +36,19 @@ subway-特選雞 火雞胸肉 香烤雞肉 照燒雞肉 鮮嫩雞柳 嫩切雞�
 提示
 請使用 random 模組解題
 """
+
+import random
+n = int(input())
+if n == 0:
+    print("吃空氣")
+    exit()
+
+items = {}
+random.seed(942)
+for i in range(n):
+    food_list = input().split()
+    items[food_list[0]] = food_list[1:]
+
+shop = random.choice(list(items))
+food = random.choice(items[shop])
+print(shop, food)

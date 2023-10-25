@@ -45,3 +45,15 @@
 來源
 ccClub Judge
 """
+
+import random
+seed, nums = list(map(int,input().split()))
+
+random.seed(seed)
+a = random.randint(1,1000000000)
+b = random.randint(1,1000000000)
+c = random.randint(1,10000)
+
+for _ in range(nums):
+    seed = (a*seed+b)%c
+    print(seed)

@@ -57,3 +57,29 @@ moderna
 輸出範例 4
 2021/10/03
 """
+
+shot = input()
+date = input().split("/")
+date[1] = int(date[1])
+months = {1:31 ,2:28 ,3:31 ,4:30 ,5:31 ,6:30 ,7:31 ,8:31 ,9:30 ,10:31 ,11:30 ,12:31}
+
+count = 0
+monthAllDay = 0
+monthOfDay = months.get(date[1])
+rest = monthOfDay - int(date[2])
+monthAllDay += rest
+if not shot == "高端":
+    
+    while monthAllDay < 70:
+        count += 1
+        nextMothOfDay = months.get(date[1] + count)
+        monthAllDay += nextMothOfDay
+        
+    print(date[0]+"/"+f"{date[1]+count:02d}"+"/"+f"{70 - (monthAllDay - months.get(date[1]+count)):02d}")
+else:
+    while monthAllDay < 28:
+        count += 1
+        nextMothOfDay = months.get(date[1] + count)
+        monthAllDay += nextMothOfDay
+        
+    print(date[0]+"/"+f"{date[1]+count:02d}"+"/"+f"{28 - (monthAllDay - months.get(date[1]+count)):02d}")

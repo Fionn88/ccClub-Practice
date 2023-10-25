@@ -35,3 +35,31 @@ M20
 輸出範例 2
 不可
 """
+
+content = {"B":[50,10],"M":[20,30]}
+sugar_total = 0
+caffeine_total =0
+
+for i in range(3):
+    caffeine = 0
+    sugar = 0
+    drinkAndCup = input()
+
+    cup = int(drinkAndCup[1:])
+    drink = drinkAndCup[0]
+
+    caffeine += content.get(drink)[0] * cup
+    sugar += content.get(drink)[1] * cup
+
+    if caffeine > 300 or sugar > 60:
+        print("不可")
+        exit()
+
+    sugar_total += sugar
+    caffeine_total += caffeine
+
+if caffeine_total > 700 or sugar_total > 150:
+    print("不可")
+    exit()
+
+print("可")

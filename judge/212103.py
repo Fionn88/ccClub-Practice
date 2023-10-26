@@ -29,3 +29,14 @@ OOXX
 (   )
 (O O)
 """
+
+n = input()
+for i in range(3):
+    print("(",end="")
+    for j in range(3):
+        idx = (i)*3+j+1
+        if str(idx) in n:
+            print("O",end="")
+        else:
+            print(" ",end="")
+    print(")")

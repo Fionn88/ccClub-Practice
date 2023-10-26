@@ -26,3 +26,26 @@
 輸出範例 2
 1
 """
+
+n = list(map(int,input().split()))
+n.sort()
+
+if n[0] > 1:
+    print(1)
+    exit()
+
+l,r = 0,1
+flag = False
+while r < len(n):
+    if n[l]+1 != n[r]:
+        if n[l]+1 < 1:
+            pass
+        else:
+            print(n[l]+1)
+            flag = True
+            break
+    l += 1
+    r += 1
+
+if not flag:
+    print(n[-1]+1)

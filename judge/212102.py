@@ -27,3 +27,21 @@ True
 輸出範例 2
 False
 """
+
+c = int(input())
+other = list(map(int,input().split()))
+side = c * c
+
+l = min(other)
+r = max(other)
+flag = False
+while l <= r:
+    if l * l + r * r > side:
+        r -= 1
+    elif l * l + r * r < side:
+        l += 1
+    else:
+        flag = True
+        break
+
+print(flag)

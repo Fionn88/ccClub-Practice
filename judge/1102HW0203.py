@@ -58,3 +58,31 @@ V2
 =======
 另以 sample 2 來說，在第 2 列的時候可以發現到有兩的位置都有 "2"，因此要先輸出靠左邊的 (2, 2)，才輸入在右方的 (2, 3)，再往第三列移動。
 """
+
+level = input().replace('V', '')
+
+points = []
+while True:
+    s = input()
+    if s == '':
+        break
+    else:
+        points.append([i for i in s])
+# 確認路線
+check = True
+for i in points:
+    if level not in i:
+        check = False
+        print('Not a valid route')
+        break
+
+if check:
+    # 取得點座標
+    route = []
+    for i in range(len(points)):
+        for j in range(len(points[i])):
+            if points[i][j] == level:
+                route.append((len(points)-1-i, j))
+
+    route.sort()
+    print(route)

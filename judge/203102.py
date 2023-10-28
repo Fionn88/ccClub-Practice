@@ -40,3 +40,18 @@ True
 輸出範例 2
 False
 """
+
+# 此題目要解決的是事 二元一次方程式
+def equation(a, b, d, c):
+    a, b, c, d = int(a), int(b), int(c), int(d) 
+    if a * 1 - b * 1 != 0:
+        x = (c * 1 - b * d) / (a * 1 - b * 1)
+        y = (a * d - c * 1) / (a * 1 - b * 1)
+        if x > 0 and y > 0:
+            return int(x) == x and int(y) == y
+        else: 
+            return False 
+            
+    else:
+        return False
+print(equation(input(), input(), input(), input()))

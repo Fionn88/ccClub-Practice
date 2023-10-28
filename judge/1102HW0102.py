@@ -29,3 +29,15 @@
 輸出範例 2
 正方形
 """
+
+x1, y1, x2, y2, x3, y3, x4, y4 = [int(i) for i in input().split()]
+
+# 確保是長方形
+if y1 == y2 and y3 == y4 and x1 == x3 and x2 == x4 and x2 - x1 > 0 and y2 - y4 > 0:
+    # 垂直兩邊一樣長
+    if x2 - x1 == y1 - y3:
+        print('正方形')
+    else:
+        print('長方形')
+else:
+    print('什麼也不是')

@@ -39,3 +39,19 @@
 第八天存貨會小於出貨量（5 < 30）
 所以小明該在第 5 天下訂，補足存貨
 """
+
+stock, day = map(int,input().split(','))
+spend = input().split(',')
+
+res = 0
+count = 0
+index = 0
+while res <= stock:
+    res += int(spend[index])
+    count += 1
+    index += 1 
+
+    if index >= len(spend):
+        index = 0
+count = count - day
+print(count)

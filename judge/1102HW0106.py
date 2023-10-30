@@ -65,3 +65,36 @@ CD
 輸出範例 3
 0
 """
+
+str = input()
+prompt = input()
+res = ""
+if str.isdigit():
+    if prompt == "@":
+        if len(str) == 4:
+            res = f"{str[0]}*{10 ** (3)}+{str[1]}*{10 ** (2)}+{str[-2]}*{10 ** (1)}+{str[-1]}"
+        elif len(str) == 3:
+            res = f"{str[0]}*{10 ** (2)}+{str[1]}*{10 ** (1)}+{str[-1]}"
+        elif len(str) == 2:
+            res = f"{str[0]}*{10 ** (1)}+{str[-1]}"
+        else:
+            res = str[0]
+    elif prompt == "#":
+        res = 0
+    elif prompt == "*":
+        res = (int(str)) ** 2
+    elif prompt == "=":
+        res = str[::-1]
+elif str.isalpha():
+    if prompt == "@":
+        for i in str:
+            i = chr(ord(i) + 2)
+            res += i
+    elif prompt == "#":
+        res = ""
+    elif prompt == "*":
+        res = str * 2
+    elif prompt == "=":
+        res = "Error"
+
+print(res)

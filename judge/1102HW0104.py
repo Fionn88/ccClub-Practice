@@ -84,3 +84,24 @@
 
 茜茜今天賺到的就是吃掉的總額 [ (102*180+100*6+額外獲得的龍蝦) - (450 再打 8 折) ]
 """
+
+num = int(input())
+out = []
+cost = 0
+meal_expenses = 450
+for i in range(3):
+    p = int(input())
+    c = int(input())
+    part = num // c
+    out.append(part)
+    if part > 0:
+        cost += part*p
+        num -= part*c
+if sum(out) >= 20:
+    meal_expenses *= 0.8
+    if sum(out) >= 30:
+        cost += 900
+
+out = list(map(str,out))
+print(" ".join(out))
+print(float(cost-meal_expenses))

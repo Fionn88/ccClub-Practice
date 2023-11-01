@@ -34,3 +34,9 @@
   ***
    *
 """
+
+n = int(input())
+for i in range(n):
+    print(' ' * (n-1-i) + '*' * (1+2*i))
+for j in range(1, n):
+    print(' ' * (j) + '*' * (2*n-1-2*j))

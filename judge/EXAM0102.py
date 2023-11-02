@@ -95,3 +95,28 @@ nopqrstuvwxyzabcdefghijkl
 提示
 前 10 筆測資為 k = 1 的狀況，可先考慮簡化後的情形。
 """
+
+N = int(input())
+k = int(input())
+sum_num = 0
+sum_bigstr = 0
+sum_smallstr = 0
+for i in range(1,N + 1) :
+    if k == 0 :
+        print()
+        continue
+    for j in range(1,k + i) :
+        if i % 3 == 0 :
+            sum_num += 1
+            sum_num %= 10
+            print(chr(ord('0')+ sum_num),end = '')
+        else :
+            if i % 3 == 1 :
+                print(chr(ord('A') + sum_bigstr),end = '')
+                sum_bigstr += 1
+                sum_bigstr %= 26
+            if i % 3 == 2 :
+                print(chr(ord('a')+ sum_smallstr),end = '')
+                sum_smallstr += 1
+                sum_smallstr %= 26  
+    print()

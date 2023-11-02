@@ -62,3 +62,17 @@ QRSTUVWXY
 3456789123
 ZABCDEFGHIJ
 """
+
+layer = int(input())
+is_alpha = True
+alpha_count, digit_count = 0, 0
+for i in range(layer):
+  for j in range(i+1):
+    if is_alpha:
+      print(chr((alpha_count%26)+ord("A")),end='')
+      alpha_count += 1
+    else:
+      print((digit_count%9)+1,end='')
+      digit_count += 1
+  is_alpha = not is_alpha
+  print()

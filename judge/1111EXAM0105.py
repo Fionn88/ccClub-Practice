@@ -45,3 +45,14 @@ aedrhews
 輸出範例 2
 3
 """
+
+n, color = int(input()), input()
+p, i = [], 0
+for c in color:
+    if c in p:
+        p.remove(c)
+    elif len(p) == n:
+        p.pop(0)
+        i += 1
+    p.append(c)
+print(i)

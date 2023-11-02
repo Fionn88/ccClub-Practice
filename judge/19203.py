@@ -36,3 +36,32 @@ sample input 2 中，330 轉為二進位為 101001010，前面的 101 分別都�
 來源
 ccClub Judge
 """
+
+def to_binary(n):
+    transform = bin(n)
+    binary = transform[2:]
+    result = []
+    count = 1
+    for i in range(len(binary)):
+        if i == 0:
+            result.append(binary[i])
+        elif binary[i] == binary[i-1]:
+            count += 1
+        else:
+            if count > 1:
+                result.append(count)
+                result.append(binary[i])
+                count = 1
+            else:
+                result.append(binary[i])
+    if count > 1:
+        result.append(count)
+
+    return [int(i) for i in result]
+
+# If the code is correct, it should print:
+# [1, 2, 0, 1, 2]
+# [1, 0, 1, 0, 2, 1, 0, 1, 0]
+
+# print(to_binary(27))
+# print(to_binary(330))

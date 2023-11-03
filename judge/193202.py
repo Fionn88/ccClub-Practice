@@ -37,3 +37,19 @@ sample input 2 中，596350 轉為二進位為 10010001100101111110，去掉連�
 來源
 ccClub Judge
 """
+
+def to_binary(n):
+    # do something to transfer n to binary, and return your answer
+    # ans should be list of integers
+    ans = []
+    transform = bin(n)
+    transform = list(transform[2:])
+    for i in transform:
+        if ans and i == ans[-1]:
+            continue
+        else:
+            ans.append(i)
+            
+    return list(map(int,ans))
+
+print(to_binary(16))

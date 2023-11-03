@@ -36,3 +36,10 @@ abchilnopstuy
 來源
 ccClub Judge
 """
+
+def char_puzzle(lst):
+    #do something
+    ans = sorted(list(set(''.join(lst))))
+    return ''.join(ans)
+
+print(char_puzzle(["ccclub",  "python",  "class", "in", "ntu"]))

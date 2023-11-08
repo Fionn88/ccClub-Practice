@@ -34,3 +34,15 @@
 來源
 ccClub Judge
 """
+
+def f(x):
+    if x == 1:
+        return 1
+    elif x > 1 and x % 2 == 1:
+        k = x // 2
+        return f(k) + f(k + 1)
+    else:
+        k = x // 2
+        return f(k)
+n = int(input())
+print(f(n))

@@ -31,3 +31,22 @@
 爬完兩階樓梯的方式有：1 階 + 1 階 / 2 階 => 兩種方式
 爬完三階樓梯的方式有：1 階 + 1 階 + 1 階 / 1 階 + 2 階 / 2 階 + 1 階 => 三種方式
 """
+
+def countWays(n):
+
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    else:
+        # 創建一個列表來存儲每個階段的方式數
+        ways = [0] * (n + 1)
+        ways[1] = 1
+        ways[2] = 2
+
+        for i in range(3, n + 1):
+            ways[i] = ways[i - 1] + ways[i - 2]
+
+        return ways[n]
+
+print(countWays(int(input())))

@@ -69,3 +69,20 @@
 來源
 ccClub Judge
 """
+
+M, N = map(int, input().split())
+O, P = map(int, input().split())
+
+# 讀取矩陣
+original_matrix = []
+for _ in range(M):
+    row = list(map(int, input().split()))
+    original_matrix.extend(row) 
+
+# 轉換矩陣
+new_matrix = []
+for i in range(0, len(original_matrix), P):
+    new_matrix.append(original_matrix[i:i+P])
+
+for row in new_matrix:
+    print(' '.join(map(str, row)))

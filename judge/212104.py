@@ -25,3 +25,11 @@
 輸出範例 2
 過來一下，你又端錯4次了
 """
+
+real = [int(n) for n in input().split(",")]
+correct = sorted(real, reverse=True)
+count = 0
+for r, c in zip(real, correct):
+    if r != c:
+        count += 1
+print(f"過來一下，你又端錯{count}次了")

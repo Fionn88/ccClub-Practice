@@ -34,3 +34,17 @@
 來源
 ccClub Judge
 """
+
+n = int(input())
+lst = list(map(int,input().split(',')))
+ans = []
+for i in lst:
+    temp = i % n
+    while temp in ans:
+        temp += 1
+        temp %= n  
+    ans.append(temp)
+
+ans = list(map(str, ans))
+print(','.join(ans))
+    

@@ -52,3 +52,27 @@ zcU
 23(W) + 19(s) = 42 為偶數
 所以 (23 * 19) % 26 = 21 且要大寫字母 -> U
 """
+
+secret = input()[::-1]
+addSecret = input()
+ans = []
+
+length = len(secret)
+for i in range(length):
+    secretKey = ord(secret[i].lower()) - ord('a') + 1
+    addSecretKey = ord(addSecret[i].lower()) - ord('a') + 1
+    key = secretKey + addSecretKey
+    if key % 2 == 0:
+        index = (secretKey * addSecretKey) % 26
+        if index == 0 or index == 26:
+            ans.append('Z')
+        else:
+            ans.append(chr(index + ord('A') - 1))
+    else:
+        index = secretKey % addSecretKey
+        if index == 0 or index == 26:
+            ans.append('z')
+        else:
+            ans.append(chr(index + ord('a') - 1))
+
+print(''.join(ans))

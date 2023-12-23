@@ -44,3 +44,11 @@ end
 Unicode 的一般介紹可參考這裡
 凱薩密碼的介紹可參考這裡
 """
+
+while True:
+    s = input()
+    if s == "end":
+        break
+    else:
+        nums=[str((ord(i)+219)*2) for i in s]
+        print(" ".join(nums))

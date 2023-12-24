@@ -48,3 +48,16 @@ APP
 關於凱薩密碼可以參考這裡
 關於如何去掉字串前面的空白可以參考 .strip() 這個用法
 """
+
+state = input()
+n = input().strip().upper()
+
+if state == "True":
+    n = list(reversed(n))
+    j = sum([ord(i) for i in n]) % 26
+    if j % 2 == 0:
+        n.insert(2,"J")
+    else:
+        n.insert(2,chr(ord("A") + j))
+    n = "".join([chr(ord(i) + 3) for i in n])
+print(n)

@@ -2,8 +2,14 @@
 
 - Week 7
 ```
-181205.py
 EXAM1090204.py
+1101HW0105.py
+201105.py
+EXAM11020203e.py
+212202.py
+214504.py
+EXAM0202.py
+212006.py
 ```
 - Retry The Problem
 ```

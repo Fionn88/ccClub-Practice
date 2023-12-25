@@ -55,3 +55,32 @@ def parking_fee(fee_rate, is_vip, entry_time, exit_time):
 來源
 ccClub Judge
 """
+
+def parking_fee(fee_rate, is_vip, entry_time, exit_time):
+    # do something to calculate parking fee
+
+    entry_h,entry_m = map(int,entry_time.split(':'))
+    exit_h,exit_m = map(int,exit_time.split(':'))
+    hour = exit_h - entry_h
+    min = exit_m - entry_m
+
+    if min < 0:
+      hour -= 1
+      min = 60 + min
+
+    if min <= 30 and min > 0:
+      min = 30
+    elif min > 30:
+      min = 60
+
+    all_min = hour*60 + min
+    price = 0
+    if is_vip:
+      if all_min <= 30:
+        price = 0
+      else:
+        price = int(all_min / 30 * fee_rate/2)
+    else:
+      price = int(all_min / 30 * fee_rate)
+    
+    return price

@@ -39,3 +39,21 @@ find_prefix(["dog", "cat", "does"])
 輸出範例 2
 None
 """
+
+def find_prefix(word_lst):
+    answer = ""
+    if not word_lst:
+        return answer
+    word_lst_sort = sorted(word_lst)
+    length = len(word_lst_sort[0])
+    for i in range(length):
+        if word_lst_sort[0][i] == word_lst_sort[-1][i]:
+            answer += word_lst_sort[0][i]
+        else:
+            break
+    if not answer:
+        answer = None
+    return answer
+
+print(find_prefix(["statue", "stand", "student"]))
+print(find_prefix(["dog", "cat", "does"]))

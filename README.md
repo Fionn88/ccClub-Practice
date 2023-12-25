@@ -7,8 +7,6 @@ EXAM1090204.py
 201105.py
 EXAM11020203e.py
 212202.py
-214504.py
-EXAM0202.py
 212006.py
 ```
 - Retry The Problem

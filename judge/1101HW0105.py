@@ -38,3 +38,23 @@ BED
 10 元 3 個
 1 元 1 個
 """
+
+s = input().upper()
+amount = 0
+
+def calculate_min_payment(amount):
+    denominations = [1000, 500, 100, 50, 10, 1]
+
+    payment_counts = []
+
+    for denomination in denominations:
+        count = amount // denomination
+        amount -= count * denomination
+        payment_counts.append(count)
+
+    return list(map(str,payment_counts))
+
+for num,i in enumerate(reversed(s)):
+    amount += (ord(i) - ord('A') + 1) * (26 ** num)
+
+print(','.join(calculate_min_payment(amount)))

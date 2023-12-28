@@ -28,3 +28,21 @@ JZ
 來源
 ccClub Judge
 """
+
+def decimal_to_26_base(number):
+    if number == 0:
+        return 'A'
+
+    digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    converted = ''
+    while number > 0:
+        remainder = number % 26
+        converted = digits[remainder] + converted
+        number -= 1
+        number //= 26
+
+    return converted
+
+n = int(input())
+print(decimal_to_26_base(n))

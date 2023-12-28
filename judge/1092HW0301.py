@@ -37,3 +37,17 @@ c
 a
 b
 """
+
+D = {}
+while True:
+    s = input()
+    if s == "0":
+        break
+    for i in s:
+        if i not in D:
+            D[i] = 1
+        else:
+            D[i] += 1
+
+for key, value in D.items():
+    print(key*value)

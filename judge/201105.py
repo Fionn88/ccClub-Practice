@@ -39,7 +39,8 @@ def decimal_to_26_base(number):
     while number > 0:
         remainder = number % 26
         converted = digits[remainder] + converted
-        number -= 1
+        if remainder != 0:
+            number -= 1
         number //= 26
 
     return converted

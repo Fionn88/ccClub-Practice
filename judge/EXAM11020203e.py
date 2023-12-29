@@ -27,3 +27,21 @@ CDC
 輸出範例 2
 EJcQfr
 """
+
+def decimal_to_52_base(number):
+    if number == 0:
+        return 'A'
+
+    digits = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+
+    converted = ''
+    while number > 0:
+        remainder = number % 52
+        converted = digits[remainder] + converted
+        if remainder != 0:
+            number -= 1
+        number //= 52
+    return converted
+
+n = int(input())
+print(decimal_to_52_base(n))

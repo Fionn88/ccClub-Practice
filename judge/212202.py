@@ -35,3 +35,22 @@
 輸出範例 2
 0x000b38
 """
+
+n = list(map(int,map(float,input().split())))
+
+for i in range(len(n)):
+    if n[i] > 255:
+        n[i] = 255
+    elif n[i] < 0:
+        n[i] = 0
+
+answer = "0x"
+for i in n:
+    combined = hex(i)[2:]
+    if len(combined) == 1:
+        combined = "0" + str(combined)
+    else:
+        combined = str(combined)
+    answer = answer + combined
+
+print(answer)

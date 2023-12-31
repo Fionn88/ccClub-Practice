@@ -26,3 +26,20 @@
 輸出範例 2
 3
 """
+
+lst = [int(i) for i in input().split(",")]
+max_len = 0
+for i in lst:
+    index_set = {i}
+    while True:
+        try:
+            i = lst[i]
+        except:
+            break
+        else:
+            if i in index_set:
+                break
+            else:
+                index_set.add(i)
+    max_len = max(len(index_set),max_len)
+print(max_len)

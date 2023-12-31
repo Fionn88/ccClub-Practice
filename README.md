@@ -1,9 +1,10 @@
 ## TODO
 
-- Week 7
+- Week 8
 ```
-212006.py
 EXAM1090204.py
+211203.py
+211007.py
 ```
 - Retry The Problem
 ```
@@ -17,6 +18,7 @@ EXAM1090204.py
 1102HW0203.py
 EXAM0102.py
 EXAM1090203.py
+212006.py
 ```
 
 #### Installing virtualenv

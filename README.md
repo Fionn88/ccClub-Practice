@@ -25,49 +25,6 @@ EXAM1090203.py
 212006.py
 ```
 
-#### Installing virtualenv
-- Windows
-```
-py -m pip install --user virtualenv
-```
-- Unix/macOS
-```
-pip install --user virtualenv
-```
+#### 如有看到請至 judge 查看題目或圖片，到以下連結，在 keyword 貼上檔名 ID 即可找到題目
 
-#### Creating a virtual environment
-- Windows
-```
-py -m venv ccClub-Practice
-```
-- Unix/macOS
-```
-python3 -m venv ccClub-Practice
-```
-
-#### Activating a virtual environment
-- Unix/macOS
-```
-source ccClub-Practice/bin/activate
-```
-- Windows
-```
-.\ccClub-Practice\Scripts\activate
-```
-
-#### Install Requirements
-- Unix/macOS
-```
-pip install -r requirements.txt
-```
-- Windows
-```
-py -m pip install -r requirements.txt
-```
-
-
-#### Getting Started
-
-```
-python3 {File Name}
-```
+> https://judge.ccclub.io/problem

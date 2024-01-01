@@ -1,6 +1,5 @@
 """
 Description
-
 輸入兩個字串 s1 和 s2，將兩個字串串接起來，並輸出兩次
 
 Input
@@ -8,7 +7,6 @@ Input
 
 Output
 請將兩字串串接起來以後輸出兩次。
-
 
 Sample Input 1 
 Pine

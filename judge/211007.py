@@ -32,18 +32,15 @@ datetime.datetime 中的 strptime, fromtimestamp
 """
 
 # Wrong Answer
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 
 def compute_desired_time(computer_time, shopping_time, timestamp):
     computer_time = datetime.strptime(computer_time, "%Y-%m-%d %H:%M:%S.%f%z")
     shopping_time = datetime.strptime(shopping_time, "%Y-%m-%d %H:%M:%S.%f%z")
-    website_time = datetime.fromtimestamp(timestamp, timezone.utc)
-    time_difference = website_time - shopping_time
+    website_time = datetime.fromtimestamp(timestamp)
+    website_time = website_time.replace(tzinfo=timezone.utc)
     
-    desired_time = computer_time + time_difference
-    desired_time_str = desired_time.strftime("%Y-%m-%d %H:%M:%S.%f%z")
-    
-    return desired_time_str
+    return shopping_time - website_time + computer_time
 
 computer_time = input()
 shopping_time = input()

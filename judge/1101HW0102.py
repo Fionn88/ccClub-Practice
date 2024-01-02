@@ -40,3 +40,16 @@ C+
 輸出範例 2
 3.25
 """
+
+# 三堂課的(一堂的等第積分 * 一堂的學分數) / 三堂課的(學分數)
+D = {"A+":4.3,"A":4.0,"A-":3.7,"B+":3.3,"B":3.0,"B-":2.7,"C+":2.3,"C":2.0,"C-":1.7,"F":0}
+credit = 0
+weighted_grade = 0
+for i in range(3):
+    grade = D[input()]
+    weight = int(input())
+    credit += weight
+    weighted_grade += weight * grade
+avg = weighted_grade / credit
+str_avg = str(avg)[:4]
+print(f"{float(str_avg):.2f}")

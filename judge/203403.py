@@ -1,7 +1,7 @@
 """
 資料比對
-描述
 
+描述
 小明最近在處理資料的問題，他手上有一份別人傳來處理過的資料。
 每一行是一個資料點，每行以 TAB 區隔，TAB 之前是句子的分類，TAB 之後是去除過符號、全部轉成小寫的句子。
 但今天小明因為看了達文西密碼，覺得符號也是重要的一件事。因此他想要取回符號去除前完整版的原始句子，同時又要讓標記好的分類不要遺失。
@@ -20,7 +20,6 @@ You should see THE SEA!
 Kevin's Artis is very...large...
 label-data.tsv 代表標註過後轉成小寫的資料，raw-data.txt 代表沒有經過任何處理的資料。其中，label-data.tsv 資料中的第一句跟第三句可以在 raw-data.txt 中找到，故輸出時按順序輸出找回符號的資料，搭配標記的標籤輸出；i am a bad boy 這句因為找不到，所以就輸出 label-data.tsv 中沒有符號的版本就可以了。
 
-
 輸入
 輸入有 n + m + 2 行。
 第一行是 "label-data.tsv"，代表標記過的資料檔案名稱。
@@ -28,10 +27,8 @@ label-data.tsv 代表標註過後轉成小寫的資料，raw-data.txt 代表沒�
 再來是 "raw-data.txt"，代表原始資料檔案名稱。
 最後 m 行是原始資料。
 
-
 輸出
 輸出有 n 行，以 label-data.tsv 的資料讀取順序輸出，每行以 TAB 區隔分類及句子內容。
-
 
 輸入範例 1 
 label-data.tsv

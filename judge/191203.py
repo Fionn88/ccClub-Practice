@@ -75,3 +75,19 @@ sample input 1 從 Q 開始，Q 會對到 B，B 會對到 V，V 會對到 G，G 
 來源
 ccClub Judge
 """
+
+D = {}
+answer = []
+for i in range(20):
+    n = input().split()
+    D[n[0]] = n[1]
+query = input()
+answer.append(query)
+original = query
+while True:
+    getAnswer = D.get(query)
+    if getAnswer == original:
+        break
+    answer.append(getAnswer)
+    query = getAnswer
+print(' '.join(answer))

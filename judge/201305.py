@@ -40,3 +40,22 @@ K 行，每行為預估使用者的下載時間。請無條件捨去至整數
 來源
 ccClub Judge
 """
+
+download,group = {},{}
+answer = []
+resourceCount = int(input())
+resource = input().split()
+for i in range(resourceCount):
+    download[resource[i+i]] = resource[i+i+1]
+groupCount = int(input())
+for _ in range(groupCount):
+    groupList = input().split()
+    group[groupList[0]] = groupList[1:]
+queryCount = int(input())
+for _ in range(queryCount):
+    query = input().split()
+    nameList = group.get(query[0])
+    speed = 0
+    for name in nameList:
+        speed += int(download.get(name))
+    print(speed // int(query[1]))        

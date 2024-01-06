@@ -37,3 +37,26 @@ BC
 輸出範例 2
 AC
 """
+
+n, m = [int(i) for i in input().split()]
+ans = [input() for _ in range(n)]
+ans_trans = ['' for _ in range(m)]
+
+for j in range(m):
+    for i in range(n):
+        ans_trans[j] += ans[i][j]
+
+for i in range(len(ans_trans)):
+    bag, counter = [], []
+    for j in ans_trans[i]:
+        if j not in bag:
+            bag.append(j)
+            counter.append([ans_trans[i].count(j), j])
+        
+        else:
+            continue
+
+    counter = sorted(counter, reverse=True, key=lambda x: x[0])
+    ans_trans[i] = counter[0][1]
+
+print(''.join(ans_trans))

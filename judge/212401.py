@@ -45,3 +45,24 @@ end
 「郭婞淳」今天以抓舉103公斤、挺舉133公斤，總和236公斤勝出，三項成績是此次參賽選手之最，也成為最新奧運紀錄保持人。
 另外泰國選手蘇甘雅因禁藥問題遭禁賽，「郭婞淳」實力海放對手，最終順利拿下「金牌」，完成「「金牌」大滿貫」。
 """
+
+keywords = input().split()
+keywords.sort(key=len, reverse=True)
+
+def find_keywords(sentence):
+    for i in range(len(keywords)):
+        sentence = sentence.replace(keywords[i], f'key_{i}')
+
+    for i in range(len(keywords)):
+        sentence = sentence.replace(f'key_{i}', f'「{keywords[i]}」')
+    return sentence
+
+
+while True:
+    sentence = input()
+
+    if sentence == "end":
+        break
+
+    modified_sentence = find_keywords(sentence)
+    print(modified_sentence)

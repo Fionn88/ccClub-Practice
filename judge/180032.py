@@ -30,3 +30,43 @@
 來源
 ccClub Judge
 """
+
+# 重複 Solution 不會 print 出來
+# def threeSum(nums):
+#    nums.sort()
+        
+#    res = []
+#    for index,value in enumerate(nums):
+#     if index > 0 and value == nums[index-1]:
+#        continue
+#     r = len(nums) - 1
+#     l = index + 1
+#     while l < r:
+#         threesum = value + nums[r] + nums[l]
+#         if threesum > 0:
+#            r -= 1
+#         elif threesum < 0:
+#             l += 1
+#         else:
+#             res.append([value,nums[r],nums[l]])
+#             l += 1
+#             while nums[l] == nums[l-1] and l < r :
+#                l += 1
+#    return res
+# n = list(map(int,input().split()))
+
+# answerList = threeSum(n)
+# for i in answerList:
+#    i.sort()
+#    i = map(str,i)
+#    print(" ".join(i))
+
+nums = [int(num) for num in input().split()]
+
+counter = 0
+for i in range(0, len(nums)-2):
+  for j in range(i+1, len(nums)-1):
+    for k in range(j+1, len(nums)):
+      if nums[i] + nums[j] + nums[k] == 0:
+        counter += 1
+        print(nums[i],nums[j],nums[k])

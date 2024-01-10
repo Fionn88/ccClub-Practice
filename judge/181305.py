@@ -32,3 +32,25 @@ lst[i] + lst[j] + lst[k] < n
 來源
 ccClub Judge
 """
+
+def threeSum(nums, n):
+    counter = 0
+    length = len(nums)
+    
+    for i in range(length - 2):
+        j = i + 1
+        k = length - 1
+        
+        while j < k:
+            threesum = nums[i] + nums[j] + nums[k]
+            if threesum < n:
+                counter += (k - j)
+                j += 1
+            else:
+                k -= 1
+
+    return counter
+
+nums = [int(num) for num in input().split()]
+n = int(input())
+print(threeSum(nums,n))

@@ -14,7 +14,6 @@ EXAM11020103e.py
 
 - No Week
 ```
-181305.py
 ```
 
 - Retry The Problem

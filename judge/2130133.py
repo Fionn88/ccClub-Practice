@@ -26,3 +26,19 @@ qwerbbxgghjfds
 sample 1
 \asd\qwe/rt/ -> \asdewqrt/ -> trqwedsa
 """
+
+books = [i for i in input()]
+while '\\' in books:
+    start, end = 0, 0
+    for i in range(len(books)):
+        if books[i] == '\\':
+            start = i
+        elif books[i] == '/' and i > start:
+            end = i
+            break
+
+    books[start+1:end] = books[end-1:start:-1]
+    books.pop(end) 
+    books.pop(start)
+
+print(''.join(books))

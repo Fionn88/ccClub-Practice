@@ -36,3 +36,91 @@
 輸出範例 2
 83 A-
 """
+
+hwN = sorted([int(n) for n in input().split()])
+middleTest = sorted([int(n) for n in input().split()])
+finalTest = int(input())
+
+def countHW(grade):
+    if grade[1] == -1:
+        isDownGrade = True
+        return 0,isDownGrade
+    else:
+        if grade[0] == -1:
+            isDownGrade = True
+            answer = sum(grade[1:])/5
+            if answer > 100:
+                return 100 * 0.5
+            else:
+                return answer * 0.5,isDownGrade
+        else:
+            isDownGrade = False
+            answer = sum(grade[1:])/5
+            if answer > 100:
+                return 100 * 0.5,isDownGrade
+            else:
+                return answer * 0.5,isDownGrade
+        
+def countMiddle(grade):
+    upGrade,lowGrade = 0,0
+    if grade[0] > 100:
+        lowGrade = 100 * 0.1
+    else:
+        lowGrade = grade[0] * 0.1
+    
+    if grade[1] > 100:
+        upGrade = 100 * 0.15
+    else:
+        upGrade = grade[1] * 0.15
+
+    return lowGrade + upGrade
+
+def countFinal(grade):
+    return grade * 0.25
+
+countHwGrade, isDownGrade = countHW(hwN)
+final_score = round(countHwGrade + countMiddle(middleTest) + countFinal(finalTest))
+if 90 <= final_score <= 100:
+    ranking = 'A+'
+    if isDownGrade:
+        ranking = 'A-'
+elif 85 <= final_score <= 89: 
+    ranking = 'A'
+    if isDownGrade:
+        ranking = 'B+'
+elif 80 <= final_score <= 84:
+    ranking = 'A-'
+    if isDownGrade:
+        ranking = 'B'
+elif 77 <= final_score <= 79:
+    ranking = 'B+'
+    if isDownGrade:
+        ranking = 'B-'
+elif 73 <= final_score <= 76:
+    ranking = 'B'
+    if isDownGrade:
+        ranking = 'C+'
+elif 70 <= final_score <= 72:
+    ranking = 'B-'
+    if isDownGrade:
+        ranking = 'C'
+elif 67 <= final_score <= 69:
+    ranking = 'C+'
+    if isDownGrade:
+        ranking = 'C-'
+elif 63 <= final_score <= 66:
+    ranking = 'C'
+    if isDownGrade:
+        ranking = 'F'
+elif 60 <= final_score <= 62:
+    ranking = 'C-'
+    if isDownGrade:
+        ranking = 'X'
+elif 0 < final_score <= 59:
+    ranking = 'F'
+    if isDownGrade:
+        ranking = 'X'
+elif final_score == 0:
+    ranking = 'X'
+
+print(final_score,ranking)

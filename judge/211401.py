@@ -35,3 +35,33 @@ l.kjd@gmail.com,gy+u86-1m@yahoo.com.tw,lkjd@hotmail.com,l..kjd@gmail.com,lkjd@@g
 提示
 使用正規表達式會比較輕鬆
 """
+
+import re
+
+email_pattern = re.compile(r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.]+$')
+def validate_email(email):
+    if email_pattern.match(email):
+        return True
+    else:
+        return False
+    
+def is_valid_username(username):
+    if re.match("^[.+_-]", username):
+        return True
+
+    if re.search("[.+_-]{2,}", username):
+        return True
+
+    return False
+
+listEmail = input().split(',')
+answer = []
+for email in listEmail:
+    if len(email) == 0:
+        answer.append(False)
+    elif is_valid_username(email) or email[-1] == ".":
+        answer.append(False)
+    else:
+        answer.append(validate_email(email))
+
+print(answer)

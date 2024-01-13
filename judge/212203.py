@@ -45,3 +45,33 @@ ABCB
 提示
 奇進偶捨類似四捨五入但更精確，使用 round() 即可實作，更多說明請看這裡
 """
+
+answerN = list(input().replace(" ", ""))
+studentN = int(input())
+length = len(answerN)
+studentGradeD = {}
+accuracy = {i: 0 for i in range(1, length+1)}
+
+for _ in range(studentN):
+
+    student = input().split()
+    name = student[0]
+    problem = list(''.join(student[1:]))
+    correct,problemN = 0,0
+
+    for correctAnswer, studentAnswer in zip(answerN,problem):
+        problemN += 1
+        if correctAnswer == studentAnswer:
+            correct += 1
+            accuracy[problemN] += 1
+
+    studentGradeD[name] = int(100/length*correct)
+
+for key, value in studentGradeD.items():
+    print(key,value)
+for index in range(1,length+1):
+    percent = round(round(accuracy.get(index)/studentN,4)* 100,2)
+    if index == length:
+        print(f"{percent}%")
+    else:
+        print(f"{percent}%",end=' ')

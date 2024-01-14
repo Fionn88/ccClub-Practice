@@ -32,3 +32,25 @@ END
 輸出範例 2
 在能藏身的地方藏起來稱\藏身地\: .
 """
+
+import re
+
+def clean_punctuation(s):
+    # 重複的話留下一個標點符號
+    s = re.sub(r'([.;:,])\1+', r'\1', s)
+    # 把標點符號後面加一個空白
+    s = re.sub(r'([.;:,])\s*', r'\1 ', s)
+    # 在關鍵字前後加上 \
+    s = re.sub(r"藏身地", r"\\藏身地\\", s)
+    
+    return s
+
+ans = []
+while True:
+    string = input().strip()
+    if string == 'END':
+        break
+    ans.append(clean_punctuation(string).strip())
+
+for answer in ans:
+    print(answer)

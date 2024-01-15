@@ -134,3 +134,44 @@ Pokemon 阿爾宙斯,01:46:56
 1 月到 12 月每個月的天數分別為：31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
 sample input 1 中，只出現了「eBASEBALL 實況野球 2020」、「集合啦！動物森友會」、「健身環大冒險」三款遊戲，因此輸出 3，並統計遊玩總時數輸出。
 """
+
+from collections import defaultdict
+from datetime import timedelta
+
+# 加總各個遊戲的遊玩時間
+def sum_times_and_convert_to_hours(time_dict):
+    total_times = {}
+    for key, times in time_dict.items():
+        total = sum((timedelta(hours=int(t.split(':')[0]), minutes=int(t.split(':')[1]), seconds=int(t.split(':')[2])) for t in times), timedelta())
+
+        total_hours = total.days * 24 + total.seconds // 3600
+        total_minutes = (total.seconds % 3600) // 60
+        total_seconds = total.seconds % 60
+        total_times[key] = f"{total_hours:02d}:{total_minutes:02d}:{total_seconds:02d}"
+    return total_times
+
+# 加總所有遊戲的總時間
+def sum_all_times(time_dict):
+    total = timedelta()
+    for time in time_dict.values():
+        hours, minutes, seconds = map(int, time.split(':'))
+        total += timedelta(hours=hours, minutes=minutes, seconds=seconds)
+
+    total_hours = total.days * 24 + total.seconds // 3600
+    total_minutes = (total.seconds % 3600) // 60
+    total_seconds = total.seconds % 60
+    return f"{total_hours:02d}:{total_minutes:02d}:{total_seconds:02d}"
+
+
+monthDay = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+month = int(input())
+game = defaultdict(list)
+for _ in range(1,monthDay.get(month)+1):
+    gameAndTime = input().split(",")
+    game[gameAndTime[0]].append(gameAndTime[1])
+
+
+sumTimeConvertToHours = sum_times_and_convert_to_hours(game)
+sumAllTimes = sum_all_times(sumTimeConvertToHours)
+print(len(sumTimeConvertToHours))
+print(sumAllTimes)

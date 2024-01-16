@@ -133,3 +133,36 @@ Pokemon 阿爾宙斯
 提示
 1 月到 12 月每個月的天數分別為：31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
 """
+
+from collections import defaultdict
+from datetime import timedelta
+
+# 加總各個遊戲的遊玩時間
+def sum_times_and_convert_to_hours(time_dict):
+    total_times = {}
+    for key, times in time_dict.items():
+        total = sum((timedelta(hours=int(t.split(':')[0]), minutes=int(t.split(':')[1]), seconds=int(t.split(':')[2])) for t in times), timedelta())
+        total_times[key] = total
+
+    return total_times
+
+
+monthDay = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+month = int(input())
+game = defaultdict(list)
+for _ in range(1,monthDay.get(month)+1):
+    gameAndTime = input().split(",")
+    game[gameAndTime[0]].append(gameAndTime[1])
+
+
+sumTimeConvertToHours = sum_times_and_convert_to_hours(game)
+maxTimeGame = ""
+maxTime = timedelta(hours=0,minutes=0,seconds=0)
+
+for key,value in sumTimeConvertToHours.items():
+    if value > maxTime:
+        maxTime = value
+        maxTimeGame = key
+print(maxTimeGame)
+# ConvertToHours
+print(f'{maxTime.days * 24 + maxTime.seconds // 3600:02d}:{(maxTime.seconds % 3600) // 60:02d}:{maxTime.seconds % 60:02d}')

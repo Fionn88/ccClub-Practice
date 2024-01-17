@@ -34,3 +34,13 @@ end
 輸出範例 2
 161,413,655
 """
+
+ans = 0
+while True:
+    s = input()
+    if s == "end":
+        break
+    s = int(s.replace(",",""))
+    ans += s
+
+print(format(ans,',d'))

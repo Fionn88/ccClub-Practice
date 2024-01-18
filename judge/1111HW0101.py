@@ -21,3 +21,37 @@ AAAAAAAAAAAAAAAAAAA
 輸出範例 1
 [['a', 38]]
 """
+
+from collections import Counter,defaultdict
+
+def zero():
+    return 0
+
+s = input()
+counterS = Counter(s)
+ansD = defaultdict(zero)
+ansSpeList,ansCharList = [],[]
+for key, value in counterS.items():
+    if key.isalpha():
+        if key.islower():
+            ansD[key] += value
+        else:
+            point = value * 2
+            key = key.lower()
+            ansD[key] += point
+    else:
+        for pos, char in enumerate(s):
+            if char == key:
+                ansSpeList.append((key,pos))
+
+for key,value in ansD.items():
+    ansCharList.append([key,value])
+if ansCharList:
+    print(sorted(ansCharList, key=lambda x: x[0]))
+ansSpe = ''
+if ansSpeList:
+    sortedList = sorted(ansSpeList, key=lambda x: x[1])
+    for i in sortedList:
+        ansSpe += f"('{i[0]}', {i[1]}), "
+    ansSpe = ansSpe.strip(', ')
+    print(f'[{ansSpe}]')

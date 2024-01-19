@@ -32,3 +32,56 @@ slxdvlGTFVBczlrvgwn\hqv//csuaei?
 輸出範例 2
 None
 """
+
+from collections import defaultdict
+
+def zero():
+    return 0
+
+ansD = defaultdict(zero)
+s = list(input())
+ansCharList = []
+for index in range(len(s)):
+    if s[index].isalpha():
+        if s[index].islower():
+            ansD[s[index]] += 1
+        else:
+            ansD[s[index].lower()] += 2
+    else:
+        tag = False
+        if ansD:
+            if s[index] == "\\":
+                for key,value in ansD.items():
+                    if value > 0:
+                        ansD[key] += ansD.get(key)
+            elif s[index] == "/":
+                for key,value in ansD.items():
+                    if value > 0:
+                        ansD[key] += 1
+            elif s[index] == "@":
+                while not s[index].isalpha():
+                    index -= 1
+                    if index == -1:
+                        tag = True
+                        break
+                if not tag:
+                    if s[index].islower():
+                        ansD[s[index]] += 1
+                    else:
+                        ansD[s[index].lower()] += 2
+            elif s[index] == "?":
+                while not s[index].isalpha():
+                    index -= 1
+                    if index == -1:
+                        tag = True
+                        break
+                if not tag:
+                    ansD[s[index].lower()] -= 1
+
+for key,value in ansD.items():
+    if value > 0:
+        ansCharList.append([key,value])
+if ansCharList:
+    print(sorted(ansCharList, key=lambda x: x[0]))
+else:
+    print(None)

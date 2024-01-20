@@ -50,3 +50,37 @@ DVD,10
 EGG roll,19
 flower,0
 """
+
+target = input().split("、")
+listItem, listNumber = [],[]
+ans = {}
+for i in target:
+    ans[i] = 0
+while True:
+    s = input().strip()
+    if s == "end":
+        break
+    for item in target:
+        if item in s:
+            for index,character in enumerate(s):
+                if character == "+" or character == "-":
+                    specificItem = s[:index].strip()
+                    if specificItem in target and specificItem[0] == item[0]:
+                        specificNumber = s[index:]
+                        listItem.append(specificItem)
+                        listNumber.append(specificNumber)
+                        break
+                elif character == "＋" or character == "－":
+                    break
+            
+for index in range(len(listItem)):
+    if listNumber[index][0] == "+":
+        ans[listItem[index]] += int(listNumber[index][1:])
+    else:
+        save = ans.get(listItem[index]) - int(listNumber[index][1:]) 
+        if save < 0:
+            continue
+        ans[listItem[index]] -= int(listNumber[index][1:])
+
+for key,value in ans.items():
+    print(f"{key},{value}")

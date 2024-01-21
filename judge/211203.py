@@ -24,3 +24,21 @@
 輸出範例 2
 271
 """
+
+import math
+
+n = list(map(int,input().split()))
+i = n[0]
+x = n[1]
+t = n[2]
+l = n[3]
+ans = 0
+for j in range(t):
+    if x-(1+0.5*(j+1)) > l:
+        x = x-(1+0.5*(j+1))
+    else:
+        x = l
+    out = math.ceil(i*x/100)
+    ans += out
+
+print(ans)

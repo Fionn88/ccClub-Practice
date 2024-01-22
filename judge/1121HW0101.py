@@ -30,3 +30,20 @@ QAQAQ
 QAQAQ
 （一般的解法可得15分，較有效率的解法可以拿滿20分。）
 """
+
+# TLE
+s = input()
+ans = 0
+for index,fistCharacter in enumerate(s):
+    if fistCharacter != "Q":
+        continue
+    else:
+        for second in range(index+1,len(s)):
+            final = second + 1
+            if s[second] != "A":
+                continue
+            while final != len(s):
+                if s[final] == "Q":
+                    ans += 1
+                final += 1
+print(ans)

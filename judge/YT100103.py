@@ -28,3 +28,15 @@
 來源
 ccClub Judge
 """
+
+def social_distance(x, y):
+  if x == '室外':
+    if y <= 100:
+      return "請維持社交距離"
+    else:
+      return ''
+  elif x == '室內':
+    if y <= 150:
+       return "請維持社交距離"
+    else:
+       return ''

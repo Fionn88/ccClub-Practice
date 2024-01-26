@@ -18,6 +18,7 @@ EXAM1090204.py
 203302.py
 EXAM1120104.py
 EXAM1120102.py
+1111HW0302.py
 ```
 
 - Retry The Problem
@@ -42,6 +43,7 @@ EXAM1090203.py
 - TLE
 ```
 1121HW0101.py
+193504.py
 ```
 
 #### 如有看到請至 judge 查看題目或圖片，到以下連結，在 keyword 貼上檔名 ID 即可找到題目

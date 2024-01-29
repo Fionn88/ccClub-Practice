@@ -26,3 +26,7 @@
 正整數 n 介於 1-3000000 之間
 請讓時間複雜度維持在 O(n)
 """
+
+n = int(input())
+lst = list(map(str,list(range(1, n+1))))
+print(list(map(int,sorted(lst))))

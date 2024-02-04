@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "web-scarping"
+version = "0.1.0"
+description = ""
+authors = ["Yuan-Heng,Kuo <coco8802231225@gmail.com>"]
+readme = "README.md"
+packages = [{include = "web_scarping"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+selenium = "^4.17.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

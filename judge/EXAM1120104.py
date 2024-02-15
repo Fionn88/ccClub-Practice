@@ -50,3 +50,37 @@ pack7 should be sold at price 360.
 y,m,d≥0
 single_price,amount≥0
 """
+
+import datetime
+
+n = int(input())
+originalDate = datetime.date(2023,10,14)
+percent_eightDate = datetime.date(2023,10,7)
+percent_sixDate = datetime.date(2023,9,27)
+
+for index in range(n):
+    s = input().split(",")
+    pack_id = s[0]
+    exp_date = s[1]
+    single_price = int(s[2])
+    amount = int(s[3])
+    if amount not in [3, 6, 9, 12] or single_price not in [60, 70, 80]:
+        print(f'{pack_id} has labeling problem!')
+        continue
+
+    date = exp_date.split('-')
+    try:
+        optimize_expdate = datetime.date(int(date[0]), int(date[1]), int(date[2]))
+    except:
+        print(f'{pack_id} has labeling problem!')
+        continue
+    price = single_price * amount
+    if originalDate > optimize_expdate >= percent_eightDate:
+        price *= 0.8
+    elif percent_eightDate > optimize_expdate >= percent_sixDate:
+        price *= 0.6
+    elif percent_sixDate > optimize_expdate:
+        print(f'{pack_id} has expired, it should not be sold.')
+        continue
+
+    print(f'{pack_id} should be sold at price {int(price)}.')

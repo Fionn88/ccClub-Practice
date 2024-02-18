@@ -27,43 +27,79 @@
 ccClub Judge
 """
 
-# Wrong Answer
-question = input().replace(" ","")
-
-# 必須把式子整理成跟 180038.py 
-point = 0
-if question.startswith('-'):
-    question = question[1:]
-    for index,value in enumerate(question):
-      #   print(value)
-        if value == ".":
-            continue
-        print(question[index])
-      #   print(question[point:index])
-
+def parse_expression(expression):
+    result = []
+    number = ''
+    for i, char in enumerate(expression):
+        if char.isdigit() or char == '.':
+            number += char
+        elif char == '-' and (i == 0 or expression[i-1] in '+-*/'):
+            # If a minus sign is the first character or follows another operator, it's part of a negative number.
+            number += char
+        else:
+            if number:
+                result.append(number)
+                number = ''
+            result.append(char)
     
+    # Add the last number to the result, if any
+    if number:
+        result.append(number)
+    
+    return result
+
+question = input().replace(" ","")
+question = parse_expression(question)
+
+
+# 加減乘除 依然有順序性
 while '*' in question or '/' in question:
-    for i in range(len(question)):
-        if question[i] == '*':
-            ans = float(question[i-1]) * float(question[i+1])
-            question =  question[:i-1] + [ans] + question[i+2:]
-            break
-    for i in range(len(question)):
-        if question[i] == '/':
-            ans = float(question[i-1]) / float(question[i+1])
-            question =  question[:i-1] + [ans] + question[i+2:]
-            break
+    if (question.index("/") if "/" in question else float('Inf')) <  (question.index("*") if "*" in question else float('Inf')):
+      for i in range(len(question)):
+          if question[i] == '/':
+              ans = float(question[i-1]) / float(question[i+1])
+              question =  question[:i-1] + [ans] + question[i+2:]
+              break
+      for i in range(len(question)):
+          if question[i] == '*':
+              ans = float(question[i-1]) * float(question[i+1])
+              question =  question[:i-1] + [ans] + question[i+2:]
+              break
+    else:
+      for i in range(len(question)):
+          if question[i] == '*':
+              ans = float(question[i-1]) * float(question[i+1])
+              question =  question[:i-1] + [ans] + question[i+2:]
+              break
+      for i in range(len(question)):
+          if question[i] == '/':
+              ans = float(question[i-1]) / float(question[i+1])
+              question =  question[:i-1] + [ans] + question[i+2:]
+              break
+
 
 while '+' in question or '-' in question:
-    for i in range(len(question)):
-        if question[i] == '+':
-            ans = float(question[i-1]) + float(question[i+1])
-            question =  question[:i-1] + [ans] + question[i+2:]
-            break
-    for i in range(len(question)):
-        if question[i] == '-':
-            ans = float(question[i-1]) - float(question[i+1])
-            question =  question[:i-1] + [ans] + question[i+2:]
-            break
+    if (question.index("+") if "+" in question else float('Inf')) < (question.index("-") if "-" in question else float('Inf')):
+      for i in range(len(question)):
+          if question[i] == '+':
+              ans = float(question[i-1]) + float(question[i+1])
+              question =  question[:i-1] + [ans] + question[i+2:]
+              break
+      for i in range(len(question)):
+          if question[i] == '-':
+              ans = float(question[i-1]) - float(question[i+1])
+              question =  question[:i-1] + [ans] + question[i+2:]
+              break
+    else:
+      for i in range(len(question)):
+          if question[i] == '-':
+              ans = float(question[i-1]) - float(question[i+1])
+              question =  question[:i-1] + [ans] + question[i+2:]
+              break
+      for i in range(len(question)):
+          if question[i] == '+':
+              ans = float(question[i-1]) + float(question[i+1])
+              question =  question[:i-1] + [ans] + question[i+2:]
+              break
 
 print(float(question[0]))

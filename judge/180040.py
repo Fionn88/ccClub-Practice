@@ -31,5 +31,61 @@
 ccClub Judge
 """
 
-s = input()
-print(float(eval(s)))
+question = input().split()
+queue = []
+
+while len(question) != 1:
+  # 處理括號順序
+
+  # 處理加減乘除
+  while '*' in question or '/' in question:
+      if (question.index("/") if "/" in question else float('Inf')) <  (question.index("*") if "*" in question else float('Inf')):
+        for i in range(len(question)):
+            if question[i] == '/':
+                ans = float(question[i-1]) / float(question[i+1])
+                question =  question[:i-1] + [ans] + question[i+2:]
+                break
+        for i in range(len(question)):
+            if question[i] == '*':
+                ans = float(question[i-1]) * float(question[i+1])
+                question =  question[:i-1] + [ans] + question[i+2:]
+                break
+      else:
+        for i in range(len(question)):
+            if question[i] == '*':
+                ans = float(question[i-1]) * float(question[i+1])
+                question =  question[:i-1] + [ans] + question[i+2:]
+                break
+        for i in range(len(question)):
+            if question[i] == '/':
+                ans = float(question[i-1]) / float(question[i+1])
+                question =  question[:i-1] + [ans] + question[i+2:]
+                break
+  
+  
+  while '+' in question or '-' in question:
+      if (question.index("+") if "+" in question else float('Inf')) < (question.index("-") if "-" in question else float('Inf')):
+        for i in range(len(question)):
+            if question[i] == '+':
+                ans = float(question[i-1]) + float(question[i+1])
+                question =  question[:i-1] + [ans] + question[i+2:]
+                break
+        for i in range(len(question)):
+            if question[i] == '-':
+                ans = float(question[i-1]) - float(question[i+1])
+                question =  question[:i-1] + [ans] + question[i+2:]
+                break
+      else:
+        for i in range(len(question)):
+            if question[i] == '-':
+                ans = float(question[i-1]) - float(question[i+1])
+                question =  question[:i-1] + [ans] + question[i+2:]
+                break
+        for i in range(len(question)):
+            if question[i] == '+':
+                ans = float(question[i-1]) + float(question[i+1])
+                question =  question[:i-1] + [ans] + question[i+2:]
+                break
+
+
+print(float(question[0]))

@@ -27,4 +27,34 @@
 ccClub Judge
 """
 
-# Maybe Use Infix_to_postfix To Solve This Problem
+# Wrong Transfer
+def infix_to_postfix(expression):
+    def precedence(op):
+        precedences = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}
+        return precedences.get(op, 0)
+
+    output = []
+    stack = []
+    for char in expression:
+        if char.isalnum():  # Operand
+            output.append(char)
+        elif char == '(':
+            stack.append(char)
+        elif char == ')':
+            while stack and stack[-1] != '(':
+                output.append(stack.pop())
+            stack.pop()  # Pop '(' from stack
+        else:  # Operator
+            while stack and precedence(char) <= precedence(stack[-1]):
+                output.append(stack.pop())
+            stack.append(char)
+    
+    while stack:
+        output.append(stack.pop())
+    
+    return ''.join(output)
+
+n = input().replace(" ","")
+postfix_expr = infix_to_postfix(n)
+print(postfix_expr)
+

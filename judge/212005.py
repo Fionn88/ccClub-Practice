@@ -41,60 +41,18 @@
 1 3 0 2
 """
 
+# multi-criteria sorting
+def sorting(a):
+    return (
+        1 <= a[3] <= 12,
+        a[1] / (a[0] / 100) ** 2,
+        a[1] - a[0],
+        a[2],
+        a[-1],
+    )
 
-def transpose_matrix(matrix):
-    rows = len(matrix)
-    cols = len(matrix[0])
-
-    transposed = [[0 for _ in range(rows)] for _ in range(cols)]
-
-    for i in range(rows):
-        for j in range(cols):
-            transposed[j][i] = matrix[i][j]
-
-    return transposed
-
-def timing(listData):
-    ans = []
-    for index,month in enumerate(listData):
-        if 1 <= month <= 12:
-            ans.append(index)
-    return ans
-
-def dataHigh(listData):
-    sorted_pairs = sorted(enumerate(listData), key=lambda x: x[1], reverse=True)
-    sorted_indices = [index for index, value in sorted_pairs]
-    return sorted_indices
-
-def diseasePriority(listData):
-    ans = []
-    for index,data in enumerate(listData):
-        if data == 1:
-            ans.append(index)
-
-    return ans
-
-n = int(input())
-allData = []
-for index in range(n):
-    tall, weight, disease, time = map(int,input().split())
-    allData.append([time,weight/tall*tall,weight-tall,disease])
-
-transpose_list = transpose_matrix(allData)
-priority = []
-
-
-# 排序，如遇到相同情況要繼續往下比較，該怎麼做會如何比較有效率。
-first = timing(transpose_list[0])
-if len(first) == 1:
-    priority.append(first[0])
-
-second = dataHigh(transpose_list[1])
-third = dataHigh(transpose_list[2])
-forth = diseasePriority(transpose_list[3])
-fifth = dataHigh(transpose_list[0])
-print(first)
-print(second)
-print(third)
-print(forth)
-print(fifth)
+membersNum = int(input())
+lst_of_members = [[int(n) for n in input().split()] for _ in range(membersNum)]
+ordered_list = sorted(lst_of_members, reverse=True, key=sorting)
+res = [str(lst_of_members.index(i)) for i in ordered_list]
+print(" ".join(res))

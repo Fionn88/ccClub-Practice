@@ -38,19 +38,30 @@ func(l1, l2)
 [1, 1, 2, 2, 2, 3, 3, 4, 4, 4]
 """
 
-# Wrong Answer
+# Using "del" will encounter a TLE => del is O(N)
 def func(l1, l2):
-  sorted_lst = l1 + l2
-  length = len(sorted_lst)
-  for front in range(length-1):
-    for back in range(1,length):
-      if sorted_lst[front] > sorted_lst[back]:
-        swap = sorted_lst[front]
-        sorted_lst[front] = sorted_lst[back]
-        sorted_lst[back] = swap
   
+  if not l1:
+    return l2
+  if not l2:
+    return l1
+  
+  sorted_lst = []
+  i, j = 0, 0
+
+  while i < len(l1) and j < len(l2):
+    if l1[i] <= l2[j]:
+      sorted_lst.append(l1[i])
+      i += 1
+    else:
+      sorted_lst.append(l2[j])
+      j += 1
+
+  sorted_lst.extend(l1[i:])
+  sorted_lst.extend(l2[j:])
+
   return sorted_lst
 
-l1 = [1, 3, 5, 7]
-l2 = [2, 4, 6, 8]
+l1 = [1, 1, 2, 2, 3, 4]
+l2 = [2, 3, 4, 4]
 print(func(l1, l2))

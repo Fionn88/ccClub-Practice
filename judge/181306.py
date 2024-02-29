@@ -28,11 +28,31 @@
 ccClub Judge
 """
 
-s = []
-while True:
-  try:
-    s.extend(list(map(int,input().split())))
-  except:
-    break
-s.sort()
-print(' '.join(map(str,s)))
+def func(l1, l2):
+  
+  if not l1:
+    return l2
+  if not l2:
+    return l1
+  
+  sorted_lst = []
+  i, j = 0, 0
+  l1 = list(map(int,l1))
+  l2 = list(map(int,l2))
+
+  while i < len(l1) and j < len(l2):
+    if l1[i] <= l2[j]:
+      sorted_lst.append(l1[i])
+      i += 1
+    else:
+      sorted_lst.append(l2[j])
+      j += 1
+
+  sorted_lst.extend(l1[i:])
+  sorted_lst.extend(l2[j:])
+
+  return map(str,sorted_lst)
+
+l1 = input().split()
+l2 = input().split()
+print(' '.join(func(l1,l2)))

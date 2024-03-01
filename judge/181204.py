@@ -46,9 +46,18 @@ ccClub Judge
 
 def sorting(lst):
     return (
-        # Do Someting
+        ord(lst[1]),
+        int(lst[2]) < 5,
+        int(lst[2]) < 10,
+        int(lst[2]) >= 5,
+        int(lst[2]) >= 10,
+        int(lst[3]) % 2 == 0,
+        int(lst[3]) % 2 == 1,
     )
 
 membersNum = int(input())
 lst_of_members = [[n for n in input().split()] for _ in range(membersNum)]
-print(lst_of_members)
+ordered_list = sorted(lst_of_members, key=sorting)
+res = [str(i[0]) for i in ordered_list]
+for ans in res:
+    print(ans)

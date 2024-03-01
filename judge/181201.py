@@ -35,35 +35,4 @@ a99703031
 來源
 ccClub Judge
 """
-
-# ==================== Wrong Answer ====================
-s = input().split()
-
-def domain(department):
-  department = department[3:6]
-  if department == '902':
-    return 200
-  elif department == '901':
-    return 100
-  else:
-    return 0
-
-def level(grad):
-  grad = int(grad[1:3])
-  if grad == 4:
-    return 10
-  else:
-    return 0
-
-def factor(code):
-  code = int(code[6:])
-  if code%3==0 or code%5==0 or code%7==0:
-    return 1
-  else:
-    return 0
-
-
-sorted_priority = sorted(s,key=domain,reverse=True)
-sorted_priority = sorted(sorted_priority,key=level,reverse=True)
-sorted_priority = sorted(sorted_priority,key=factor,reverse=True)
-print('\n'.join(sorted_priority))
+ 

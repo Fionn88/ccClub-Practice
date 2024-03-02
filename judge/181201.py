@@ -36,3 +36,19 @@ a99703031
 ccClub Judge
 """
  
+def sorting(lst):
+  return (
+    lst[1] == "902",
+    lst[1] == "901",
+    lst[2] == "a04",
+    int(lst[3]) % 3 == 0 or int(lst[3]) % 5 == 0 or int(lst[3]) % 7 == 0,
+  )
+
+lst = input().split()
+readyToSort = []
+for element in lst:
+  readyToSort.append([element,element[3:6],element[0:3],element[6:]])
+ordered_list = sorted(readyToSort, reverse=True ,key=sorting)
+res = [str(i[0]) for i in ordered_list]
+for ans in res:
+    print(ans)

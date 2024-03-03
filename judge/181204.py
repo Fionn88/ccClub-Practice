@@ -59,5 +59,6 @@ membersNum = int(input())
 lst_of_members = [[n for n in input().split()] for _ in range(membersNum)]
 ordered_list = sorted(lst_of_members, key=sorting)
 res = [str(i[0]) for i in ordered_list]
+
 for ans in res:
     print(ans)

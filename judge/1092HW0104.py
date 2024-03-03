@@ -27,3 +27,31 @@ b06999999 b08402906 b11478532
 輸出範例 2
 6,b11478532
 """
+
+students = input().split()
+points = []
+for student in students:
+    if student[0] == "b" and student[3] == "9":
+        points.append("0")
+        continue
+    point = 0
+    if student[:3] == "b06":
+        point += 3
+    elif student[:3] == "b07":
+        point += 1
+    
+    if int(student[-3:]) % 3 == 0 or int(student[-3:]) % 5 == 0 or int(student[-3:]) % 7 == 0:
+        point += 2
+    
+    if int(student[-3:]) % 2 == 0:
+        point += 1
+
+    s = student[-5:].replace("0", "")
+    product = 1
+    for j in s:
+        product *= int(j) 
+    point += (len(str(product)) - 1)
+    points.append(str(point))
+
+res = sorted(list(zip(points, students)), key=lambda x: int(x[0]), reverse=True)
+print(",".join(res[0]))

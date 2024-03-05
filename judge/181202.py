@@ -47,3 +47,42 @@ q 1
 來源
 ccClub Judge
 """
+
+n = list(map(int,input().split()))
+while True:
+    s = input().split()
+    if s[0] == 'q':
+        try:
+            
+            print(' '.join(map(str,n)))
+            print(float(n[int(s[1])]),sum(map(int,n))/len(n))
+            
+        except:
+            print('Error')
+        
+        finally:
+            break
+        
+    elif s[0] == 'a':
+        n.append(int(s[1]))
+    elif s[0] == 'r':
+        try:
+            n.remove(int(s[1]))
+        except:
+            continue
+    elif s[0] == 'p':
+        try:
+            del n[int(s[1])]
+        except:
+            continue
+    elif s[0] == 'e':
+        try:
+            
+            n[n.index(int(s[1]))] = int(s[2])
+        except:
+            continue
+    elif s[0] == 'm':
+        try:
+            n[int(s[1])] = int(s[2])
+        except:
+            continue

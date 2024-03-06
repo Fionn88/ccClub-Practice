@@ -125,3 +125,27 @@ b09705015
 提示
 10 是 1 年級、09 是 2 年級、08 是 3 年級，以此類推
 """
+
+ans = []
+number_of_all = int(input())
+number_of_ans = int(input())
+for _ in range(number_of_all):
+    if len(ans) == number_of_ans:
+        break
+    input_of_student = input().split()
+    if input_of_student[1] == "資工系":
+        continue
+    elif input_of_student[1] == "電機系":
+        if input_of_student[0][1:3] == "10":
+
+            ans.append(input_of_student[0].lower())
+
+    elif input_of_student[1] == "資管系":
+        if input_of_student[0][1:3] == "10" or input_of_student[0][1:3] == "09":
+            ans.append(input_of_student[0].lower())
+
+    else:
+        ans.append(input_of_student[0].lower())
+
+for student in ans:
+    print(student)

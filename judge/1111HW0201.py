@@ -52,3 +52,56 @@ Age 22
 None
 ['Ben']
 """
+
+from collections import defaultdict
+
+def custom_sort(item):
+    order = {'Gender': 1, 'Age': 2, 'Group': 3, 'Dep': 4}
+    return order.get(item[0], 0)
+
+dict_of_information = defaultdict(list)
+while True:
+    input_of_string = input()
+    if input_of_string == "competitorEND":
+        break
+    information = input_of_string.split(",")
+
+    name = ""
+    for index,element in enumerate(information):
+        element_of_string = element.split(":")
+        if index == 0:
+            name = element_of_string[1]
+        else:
+            if element_of_string[0] == "Group" or element_of_string[0] == "Age":
+                dict_of_information[element_of_string[0]+element_of_string[1]].append(name)
+                dict_of_information[name].append((element_of_string[0],int(element_of_string[1])))
+            else:
+                dict_of_information[element_of_string[0]+element_of_string[1].lower()].append(name)
+                dict_of_information[name].append((element_of_string[0],element_of_string[1].upper()))
+    dict_of_information[name] = sorted(dict_of_information[name], key=custom_sort)
+
+ans = []
+while True:
+    try:
+        question = input().split()
+        if len(question) > 1:
+            if question[0] == "Group" or question[0] == "Age":
+                ans.append(dict_of_information.get(question[0]+question[1]))
+            else:
+                ans.append(dict_of_information.get(question[0]+question[1].lower()))
+        else:
+            ans.append(dict_of_information.get(question[0]))
+
+    except:
+        break
+
+def is_list_of_tuples(variable):
+    return isinstance(variable, list) and all(isinstance(item, tuple) for item in variable)
+
+for elementAns in ans:
+    if is_list_of_tuples(elementAns):
+        print(elementAns)
+    elif type(elementAns) is list:
+        print(sorted(elementAns))
+    else:
+        print(elementAns)

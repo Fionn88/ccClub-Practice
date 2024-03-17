@@ -84,3 +84,12 @@ None
 第二個加分方式為3 David:4代表加分的為 3 號評審，對於 David 加 4 分，
 又因為 David 的科系和年齡都和 3 號評審相同，所以取 1.5 倍分數：4*1.5=6，以及加三分：4+3=7，兩個分數中較高者作為本次加分，因此執行後 David 的分數會增加 7
 """
+
+import json
+jsonD = json.loads(input())
+reviewer_information = {}
+for _ in range(4):
+    reviewer = input().split()
+    reviewer_information[int(reviewer[0])] = (reviewer[1], int(reviewer[2]))
+
+print(reviewer_information)

@@ -27,3 +27,37 @@ count_price(["W134526774", "A123465784", "O142333468"])
 輸出範例 2
 1279
 """
+
+import math
+
+def firstDiscount(idLst,cashLst):
+    ans = sum(cashLst)
+    if idLst[0][1] == idLst[1][1] == idLst[2][1]:
+        ans = math.ceil(ans * 0.8)
+    if idLst[0][0] != idLst[1][0] and idLst[1][0] != idLst[2][0] and idLst[0][0] != idLst[2][0]:
+        ans = math.ceil(ans * 0.8)
+
+    return ans
+
+def secondDiscount(idLst,cashLst):
+    ans = sum(cashLst)
+    for id in idLst:
+        if int(id[-3:]) % 7 == 0:
+            ans -= 77
+        for char in id:
+            if char == "7":
+                ans -= 70
+
+    return ans
+
+def count_price(guest_lst):
+    # do something
+    cashLst = []
+    for guest in guest_lst:
+        if guest[0] == "O":
+            cashLst.append(599)
+        else:
+            cashLst.append(699)
+
+
+    return min(firstDiscount(guest_lst,cashLst),secondDiscount(guest_lst,cashLst))

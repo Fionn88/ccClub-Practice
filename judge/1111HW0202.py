@@ -86,10 +86,56 @@ None
 """
 
 import json
+from collections import defaultdict
+
 jsonD = json.loads(input())
 reviewer_information = {}
 for _ in range(4):
     reviewer = input().split()
     reviewer_information[int(reviewer[0])] = (reviewer[1], int(reviewer[2]))
 
-print(reviewer_information)
+point = defaultdict(int)
+error = []
+
+while True:
+    try:
+        review, target = input().split()
+        # 判斷評分者是否合法
+        if int(review) > 4:
+            continue
+        target = target.split(":")
+        # 判斷被評分者是否合法
+        if len(target[0]) != 2 and jsonD.get(target[0]) == None:
+            error.append(f'ValueError {target}')
+            continue
+
+        # 判斷是否為 群組
+        if 'G' in target[0]:
+            # 尋找參賽者
+            for key,value in jsonD.items():
+                # 是否有符合的群組
+                if value.get("Group") == int(target[0][1]):
+                    point[key] += int(target[1])
+
+                    # 如有符合比對是否有跟評審者相同科系或是相同年齡
+                    if value.get("Dep") == reviewer_information.get(int(review))[0].upper() and value.get("Age") == reviewer_information.get(int(review))[1]:
+                        point[key] = max(point[key] * 1.5, point[key] + 3)
+                    elif value.get("Dep") == reviewer_information.get(int(review))[0].upper():
+                        point[key] += 2
+                    elif value.get("Age") == reviewer_information.get(int(review))[1]:
+                        point[key] += 1
+
+        else:
+
+            point[target[0]] += int(target[1])
+            if jsonD.get(target[0]).get("Dep") == reviewer_information.get(int(review))[0].upper() and jsonD.get(target[0]).get("Age") == reviewer_information.get(int(review))[1]:
+                point[target[0]] = max(point[target[0]] * 1.5, point[target[0]] + 3)
+            elif jsonD.get(target[0]).get("Dep") == reviewer_information.get(int(review))[0].upper():
+                point[target[0]] += 2
+            elif jsonD.get(target[0]).get("Age") == reviewer_information.get(int(review))[1]:
+                point[target[0]] += 1
+    
+    except:
+        break
+
+

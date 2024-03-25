@@ -88,7 +88,85 @@ None
 import json
 from collections import defaultdict
 
-jsonD = json.loads(input())
+def selectFemale(point, participate_information):
+    if not point:
+        return None
+    
+    maxPoint = 0
+    people = []
+    for key,value in point.items():
+        if participate_information.get(key).get("Gender") == "F":
+            if maxPoint < value:
+                maxPoint = value
+
+    if maxPoint == 0:
+        return None
+    for key,value in point.items():
+        if value != maxPoint:
+            continue
+        elif participate_information.get(key).get("Gender") == "F":
+            people.append(key)
+    
+    if people:
+        people = sorted(people)
+        return '-'.join(people)
+    else:
+        return None
+    
+def selectMale(point, participate_information):
+    if not point:
+        return None
+
+    maxPoint = 0
+    people = []
+    for key,value in point.items():
+        if participate_information.get(key).get("Gender") == "M":
+            if maxPoint < value:
+                maxPoint = value
+    if maxPoint == 0:
+        return None
+    for key,value in point.items():
+        if value != maxPoint:
+            continue
+        elif participate_information.get(key).get("Gender") == "M":
+            people.append(key)
+            
+    if people:
+        people = sorted(people)
+        return '-'.join(people)
+    else:
+        return None
+    
+def selectGroup(point, participate_information):
+    if not point:
+        return None
+    
+    group = defaultdict(int)
+    for key,value in point.items():
+        group[participate_information.get(key).get("Group")] += value
+    
+    maxPoint = max(group.values())
+    maxGroup = {}
+    
+    for key,value in group.items():
+        if maxPoint == value:
+            maxGroup[key] = []
+
+    if not maxGroup:
+        return None
+        
+    for key,value in participate_information.items():
+        if value.get("Group") in maxGroup:
+            maxGroup[value.get("Group")].append(key)
+
+    ans = []
+    for id in sorted(maxGroup):
+        maxGroup[id] = sorted(maxGroup[id])
+        ans.append(f'Group {id}: {"-".join(maxGroup[id])}')
+    
+    return ans
+
+participate_information = json.loads(input())
 reviewer_information = {}
 for _ in range(4):
     reviewer = input().split()
@@ -101,41 +179,58 @@ while True:
     try:
         review, target = input().split()
         # 判斷評分者是否合法
-        if int(review) > 4:
+        if int(review) not in list(reviewer_information):
             continue
         target = target.split(":")
         # 判斷被評分者是否合法
-        if len(target[0]) != 2 and jsonD.get(target[0]) == None:
-            error.append(f'ValueError {target}')
+        if len(target[0]) != 2 and participate_information.get(target[0]) == None:
+            error.append(f'ValueError {":".join(target)}')
             continue
 
         # 判斷是否為 群組
-        if 'G' in target[0]:
+        if 'G' in target[0] and len(target[0]) == 2:
             # 尋找參賽者
-            for key,value in jsonD.items():
+            for key,value in participate_information.items():
                 # 是否有符合的群組
                 if value.get("Group") == int(target[0][1]):
-                    point[key] += int(target[1])
 
                     # 如有符合比對是否有跟評審者相同科系或是相同年齡
                     if value.get("Dep") == reviewer_information.get(int(review))[0].upper() and value.get("Age") == reviewer_information.get(int(review))[1]:
-                        point[key] = max(point[key] * 1.5, point[key] + 3)
-                    elif value.get("Dep") == reviewer_information.get(int(review))[0].upper():
+                        point[key] = max(int(target[1]) * 1.5, int(target[1]) + 3)
+                        continue
+                    
+                    point[key] += int(target[1])
+                    if value.get("Dep") == reviewer_information.get(int(review))[0].upper():
                         point[key] += 2
                     elif value.get("Age") == reviewer_information.get(int(review))[1]:
                         point[key] += 1
 
+
         else:
 
+            if participate_information.get(target[0]).get("Dep") == reviewer_information.get(int(review))[0].upper() and participate_information.get(target[0]).get("Age") == reviewer_information.get(int(review))[1]:
+                point[target[0]] += max(int(target[1]) * 1.5, int(target[1]) + 3)
+                continue
+
             point[target[0]] += int(target[1])
-            if jsonD.get(target[0]).get("Dep") == reviewer_information.get(int(review))[0].upper() and jsonD.get(target[0]).get("Age") == reviewer_information.get(int(review))[1]:
-                point[target[0]] = max(point[target[0]] * 1.5, point[target[0]] + 3)
-            elif jsonD.get(target[0]).get("Dep") == reviewer_information.get(int(review))[0].upper():
+            if participate_information.get(target[0]).get("Dep") == reviewer_information.get(int(review))[0].upper():
                 point[target[0]] += 2
-            elif jsonD.get(target[0]).get("Age") == reviewer_information.get(int(review))[1]:
+            elif participate_information.get(target[0]).get("Age") == reviewer_information.get(int(review))[1]:
                 point[target[0]] += 1
+
     
     except:
         break
 
+if error:
+    for errorElement in error:
+        print(errorElement)
 
+print(selectFemale(point,participate_information))
+print(selectMale(point,participate_information))
+listMaxGroup = selectGroup(point, participate_information)
+if listMaxGroup:
+    for group in listMaxGroup:
+        print(group)
+else:
+    print(listMaxGroup)

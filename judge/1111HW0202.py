@@ -183,16 +183,16 @@ while True:
             continue
         target = target.split(":")
         # 判斷被評分者是否合法
-        if len(target[0]) != 2 and participate_information.get(target[0]) == None:
+        if not ''.join(target[0][1:]).isdigit() and participate_information.get(target[0]) == None:
             error.append(f'ValueError {":".join(target)}')
             continue
 
         # 判斷是否為 群組
-        if 'G' in target[0] and len(target[0]) == 2:
+        if 'G' in target[0] and ''.join(target[0][1:]).isdigit():
             # 尋找參賽者
             for key,value in participate_information.items():
                 # 是否有符合的群組
-                if value.get("Group") == int(target[0][1]):
+                if value.get("Group") == int(''.join(target[0][1:])):
 
                     # 如有符合比對是否有跟評審者相同科系或是相同年齡
                     if value.get("Dep") == reviewer_information.get(int(review))[0].upper() and value.get("Age") == reviewer_information.get(int(review))[1]:

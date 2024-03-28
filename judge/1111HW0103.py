@@ -34,9 +34,48 @@ def vertical(pos,y):
     ans = []
     for number in y:
         if number != pos[1]:
-            ans.append(f'{pos[0]}{i}')
+            ans.append(f'{pos[0]}{number}')
+    return ans
+
+def slash(pos,x):
+    ans = []
+
+    # 左下方
+    index = x.index(pos[0])
+    number = int(pos[1])
+    while index != 0 and number != 1:
+        index -= 1
+        number -= 1
+        ans.append(f'{x[index]}{number}')
+
+    # 右上方
+    index = x.index(pos[0])
+    number = int(pos[1])
+    while index != len(x) - 1 and number != 8:
+        index += 1
+        number += 1
+        ans.append(f'{x[index]}{number}')
+
+    # 左上方
+    index = x.index(pos[0])
+    number = int(pos[1])
+    while index != 0 and number != 8:
+        index -= 1
+        number += 1
+        ans.append(f'{x[index]}{number}')
+    
+    # 右下方
+    index = x.index(pos[0])
+    number = int(pos[1])
+    while index != len(x) - 1 and number != 1:
+        index += 1
+        number -= 1
+        ans.append(f'{x[index]}{number}')
+
     return ans
 
 x = "ABCDEFGH"
 y = "12345678"
 pos = input()
+
+print(sorted(horizontal(pos,x) + vertical(pos,y) + slash(pos,x)))

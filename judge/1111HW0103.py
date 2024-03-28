@@ -21,3 +21,22 @@ D4
 輸出範例 1
 ['A1', 'A4', 'A7', 'B2', 'B4', 'B6', 'C3', 'C4', 'C5', 'D1', 'D2', 'D3', 'D5', 'D6', 'D7', 'D8', 'E3', 'E4', 'E5', 'F2', 'F4', 'F6', 'G1', 'G4', 'G7', 'H4', 'H8']
 """
+
+def horizontal(pos,x):
+    ans = []
+    index = x.index(pos[0])
+    for alphabet in x:
+        if alphabet != x[index]:
+            ans.append(f'{alphabet}{pos[1]}')
+    return ans
+
+def vertical(pos,y):
+    ans = []
+    for number in y:
+        if number != pos[1]:
+            ans.append(f'{pos[0]}{i}')
+    return ans
+
+x = "ABCDEFGH"
+y = "12345678"
+pos = input()

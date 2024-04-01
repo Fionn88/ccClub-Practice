@@ -23,3 +23,12 @@ is_armstrong(115132219018763992565095597973971522401)
 輸出範例 2
 True
 """
+
+def is_armstrong(num):
+    #do something
+    num = str(num)
+    count = 0
+    length = len(num)
+    for i in num:
+        count = count + int(i) ** length
+    return (count == int(num))

@@ -39,3 +39,37 @@ m, n 為正整數。
 2. 貓只有一顆頭和四隻腳，犯人只有一顆頭和兩隻腳，監獄裡不存在違反規則的生物。
 3. 監獄至少收容了一隻生物。
 """
+
+s = input()
+head = 0
+leg = 0
+if ',' in s:
+    s = s.split(',')
+    for char in s:
+        if 'cat' in char:
+            char = char.split()
+            leg = leg + int(char[0]) * 4
+            head += int(char[0])
+        if 'people' in char:
+            char = char.split()
+            leg = leg + int(char[0]) * 2
+            head += int(char[0])
+        if 'person' in char:
+            leg = leg + 2
+            head += 1
+else:
+    if 'cat' in s:
+        char = s.split()
+        leg = leg + int(char[0]) * 4
+        head += int(char[0])
+    if 'people' in s:
+        char = s.split()
+        leg = leg + int(char[0]) * 2
+        head += int(char[0])
+    if 'person' in s:
+        leg = leg + 2
+        head += 1
+if head == 1:
+    print(f'{head} head, {leg} legs.')
+else:
+    print(f'{head} heads, {leg} legs.')

@@ -22,3 +22,19 @@ Gur dhvpx oebja sbk whzcf bire gur ynml qbt.
 輸出範例 2
 The quick brown fox jumps over the lazy dog.
 """
+
+s = input()
+def decode_sentence(sentence):
+    decoded_sentence = ""
+    for char in sentence:
+        if char.isalpha():
+            if char.islower():
+                decoded_char = chr((ord(char) - ord('a') + 13) % 26 + ord('a'))
+            elif char.isupper():
+                decoded_char = chr((ord(char) - ord('A') + 13) % 26 + ord('A'))
+        else:
+            decoded_char = char
+        decoded_sentence += decoded_char
+    return decoded_sentence
+
+print(decode_sentence(s))

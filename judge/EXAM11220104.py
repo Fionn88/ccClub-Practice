@@ -32,3 +32,13 @@ n a b
 [1, 3]
 [0, 5]
 """
+
+n, a, b = map(int,input().split())
+ansA = n // a
+ans = []
+while ansA >= 0:
+    ansB = (n - ansA * a) // b
+    ans.append([ansA, ansB])
+    ansA -= 1
+for element in ans:
+    print(element)

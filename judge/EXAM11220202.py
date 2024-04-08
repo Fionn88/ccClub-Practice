@@ -31,30 +31,42 @@ AbacCbZ 整理後為 A A B B C C Z
 目前已點技能皆為1級，就繼續往A的2級開始點。
 """
 
-# TLE
-n = sorted(input().upper())
-ans = [-1]
-indices_to_delete = []
+# Method 1: TLE
+# n = sorted(input().upper())
+# ans = [-1]
+# indices_to_delete = []
 
-while n:
-    # 遍歷整個 list
-    for char in n:
-        # 如果上一個元素，跟這次的相同則跳過
-        if ans[-1] == char:
-            continue
-        else:
-            # 加入 ans list 也加入待刪除名單
-            ans.append(char)
-            indices_to_delete.append(char)
-    # 遍歷待刪除名單，並把 n 裡的特定元素刪掉
-    for i in indices_to_delete:
-        # 如果為 -1 則跳過
-        if i == -1:
-            continue
-        n.remove(i)
-    # 初始化待刪除名單
-    indices_to_delete = []
+# while n:
+#     # 遍歷整個 list
+#     for char in n:
+#         # 如果上一個元素，跟這次的相同則跳過
+#         if ans[-1] == char:
+#             continue
+#         else:
+#             # 加入 ans list 也加入待刪除名單
+#             ans.append(char)
+#             indices_to_delete.append(char)
+#     # 遍歷待刪除名單，並把 n 裡的特定元素刪掉
+#     for i in indices_to_delete:
+#         # 如果為 -1 則跳過
+#         if i == -1:
+#             continue
+#         n.remove(i)
+#     # 初始化待刪除名單
+#     indices_to_delete = []
 
-# 刪除掉 -1
-del ans[0]
-print(ans)
+# # 刪除掉 -1
+# del ans[0]
+# print(ans)
+
+
+# Method 2: Using a dictionary to solve it.
+from collections import Counter
+
+s = Counter(input().upper())
+result = []
+while s:
+    result.extend(sorted(s.keys()))
+    s = {k: (v - 1) for k, v in s.items() if v != 1}
+    print(s)
+print(result)

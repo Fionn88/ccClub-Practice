@@ -27,3 +27,17 @@ fail
 輸出範例 2
 fail
 """
+
+import math
+x, y, z, m, a = map(int,input().split())
+if x < 0 or y < 0 or z < 0 or m < 0 or a < 0:
+    print("fail")
+    exit()
+try:
+    ans = (math.ceil(( a + 12 * m ) / ( x - ( y + z ))))
+    if ans < 0:
+        print("fail")
+    else:
+        print(ans)
+except:
+    print("fail")

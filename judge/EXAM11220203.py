@@ -32,3 +32,21 @@ y=-1.0x+3.0
 輸出範例 2
 y=1.16x-0.01
 """
+
+l1,l2 = input().split()
+l1 = l1.replace('(','')
+l1 = l1.replace(')','')
+l2 = l2.replace('(','')
+l2 = l2.replace(')','')
+x1, y1 = map(float,l1.split(','))
+x2, y2 = map(float,l2.split(','))
+try:
+    a = round((y2 - y1) / (x2 - x1),2)
+except:
+    print("None")
+    exit()
+b = round(y1 - a * x1,2)
+if b < 0:
+    print(f'y={a}x{b}')
+else:
+    print(f'y={a}x+{b}')

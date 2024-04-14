@@ -40,3 +40,33 @@ end
 輸出範例 2
 [['DogDay', 1], ['CatNap', 1], ['PickyPiggy', 1], ['CraftyCorn', 1], ['KickinChicken', 1], ['HoppyHopscotch', 1], ['BubbaBubbaphant', 1]]
 """
+
+from collections import defaultdict
+import re
+
+pattern = re.compile(r"[a-zA-Z]")
+def custom_sort(lst):
+    if pattern.search(lst[0]) is not None:
+        return True
+    else:
+        return False
+productDict = defaultdict(int)
+productListSet = list()
+while True:
+    product = input()
+    if product == 'end':
+        break
+    productDict[product] += 1
+    if not productListSet:
+        productListSet.append(product)
+    elif product in productListSet:
+         continue
+    else:
+         productListSet.append(product)
+
+ans = []
+productDict = dict(sorted(productDict.items(), key=lambda item: (-custom_sort(item[0]),item[1],-len(item[0])), reverse=True))
+
+for key, item in productDict.items():
+    ans.append([key,item])
+print(ans)

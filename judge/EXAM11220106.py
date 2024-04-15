@@ -31,3 +31,24 @@
 提示
 請盡量按照題目公式計算，用等比級數公式可能會有浮點數誤差
 """
+
+inputData = input().replace('[','')
+inputData = inputData.replace(']','')
+inputData = inputData.split(',')
+cleanData = []
+for data in inputData:
+    data = data.strip()
+    if '%' in data:
+        data = data.split('%')
+        data = float(data[0]) * 0.01
+        cleanData.append(data)
+    else:
+        cleanData.append(float(data))
+
+p = 0
+for year in range(1,int(cleanData[0])):
+    c = cleanData[1] * cleanData[3]
+    p += c / (1 + cleanData[2]) ** year
+# last year
+p +=  (c + cleanData[3]) / (1 + cleanData[2]) ** cleanData[0] 
+print(int(round(p,0)))

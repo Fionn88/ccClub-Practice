@@ -34,3 +34,17 @@ BBBB
  BBBB
 BBBBB
 """
+
+def right_triangle(n):
+	for i in range(1, n + 1):
+		print(f"{' ' * (n - i)}{'B' * i}")
+
+Sn = int(input())
+
+high = (-1 + (1 + 8 * Sn) ** 0.5) / 2
+high = int(high)
+sum = high * (high + 1) / 2
+right_triangle(high)
+remainder = int(Sn - sum)
+if remainder != 0:
+	print(remainder)

@@ -33,3 +33,26 @@
 1 <= n <= 6
 100 <= Aij <= 100
 """
+
+def determinant(matrix):
+    n = len(matrix)
+    if n == 1:
+        return matrix[0][0]
+    else:
+        det = 0
+        for j in range(n):
+            cofactor = matrix[0][j] * determinant(cofactor_matrix(matrix, 0, j))
+            det += (-1) ** j * cofactor
+        return det
+
+def cofactor_matrix(matrix, row, col):
+    n = len(matrix)
+    return [[matrix[i][j] for j in range(n) if j != col] for i in range(n) if i != row]
+
+length = int(input())
+matrix = []
+for _ in range(length):
+    input_data = list(map(int,input().split()))
+    matrix.append(input_data)
+
+print(determinant(matrix)) 

@@ -37,3 +37,29 @@
 來源
 ccClub Judge
 """
+
+n = int(input())
+matrix = []
+result = []
+for _ in range(n):
+    a1, b1, c1, d1 = map(int,input().split())
+    matrix.append([a1,b1,c1,d1])
+
+for index in range(n-1):
+    if index == 0:
+        a = matrix[0][0] * matrix[1][0] + matrix[0][1] * matrix[1][2]
+        b = matrix[0][0] * matrix[1][1] + matrix[0][1] * matrix[1][3]
+        c = matrix[1][0] * matrix[0][2] + matrix[1][2] * matrix[0][3]
+        d = matrix[1][1] * matrix[0][2] + matrix[0][3] * matrix[1][3]
+        result.extend([a,b,c,d])
+    else:
+        a = result[0] * matrix[index+1][0] + result[1] * matrix[index+1][2]
+        b = result[0] * matrix[index+1][1] + result[1] * matrix[index+1][3]
+        c = matrix[index+1][0] * result[2] + matrix[index+1][2] * result[3]
+        d = matrix[index+1][1] * result[2] + result[3] * matrix[index+1][3]
+        result[0] = a
+        result[1] = b
+        result[2] = c
+        result[3] = d
+
+print(result)

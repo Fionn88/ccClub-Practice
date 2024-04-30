@@ -28,68 +28,20 @@
 19 46 5 25 34 5 17
 """
 
-# Runtime Error
-class Node:
-    def __init__(self, value):
+# 用這解法，順序不一樣答案就會因此不同
+class LinkedListNode:
+    def __init__(self, value, next_node = None):
         self.value = value
-        self.next = None
+        self.next_node = next_node
 
-class LinkedList:
-    def __init__(self):
-        self.head = None
+allFriend, deleted = map(int,input().split())
+impression = input().split()
+for index,element in enumerate(impression):
+    if index == 0:
+        node = LinkedListNode(element)
+    elif index == 1:
+        node = LinkedListNode(element,node)
 
-    def append(self, value):
-        if not self.head:
-            self.head = Node(value)
-            return
-        current = self.head
-        while current.next:
-            current = current.next
-        current.next = Node(value)
-
-    def remove_next(self, prev_node):
-        if prev_node.next:
-            prev_node.next = prev_node.next.next
-
-    def delete_from_end(self):
-        if not self.head or not self.head.next:
-            self.head = None
-            return
-        current = self.head
-        while current.next.next:
-            current = current.next
-        current.next = None
-
-def process_input(input_list, delete_count):
-    linked_list = LinkedList()
-    for item in input_list:
-        linked_list.append(item)
-
-    while delete_count > 0:
-        current = linked_list.head
-        deleted = False
-        while current and current.next:
-            if current.value < current.next.value:
-                if current == linked_list.head:
-                    linked_list.head = current.next
-                else:
-                    linked_list.remove_next(prev)
-                deleted = True
-                delete_count -= 1
-                break
-            prev, current = current, current.next
-
-        if not deleted:
-            linked_list.delete_from_end()
-            delete_count -= 1
-
-    return linked_list.head
-
-N, T = map(int,input().split())
-interaction_levels = map(int,input().split())
-head = process_input(interaction_levels, T)
-
-current = head
-while current:
-    print(current.value, end=" ")
-    current = current.next
+for _ in range(6):
+    print(node.value)
+    node = node.next_node

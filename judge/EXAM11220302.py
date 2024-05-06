@@ -38,3 +38,25 @@ apple2
 輸出範例 3
 [('1', '2'), ('A', 'a'), ('E', 'e'), ('L', 'l'), ('P', 'p')]
 """
+
+def check_unique_first_elements(lst):
+    seen = set()
+    for tup in lst:
+        if tup[0] in seen:
+            return False
+        seen.add(tup[0])
+    return True
+
+s = input()
+t = input()
+res = []
+if len(set(s)) == len(set(t)):
+    for i, j in zip(s,t):
+        res.append((i,j))
+    ans = sorted(list(set(res)))
+    if not check_unique_first_elements(ans):
+        print(False)
+    else:
+        print(ans)
+else:
+    print(False)

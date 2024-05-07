@@ -25,3 +25,17 @@ AAAAAAAA
 8, 1
 """
 
+# Partial Accepted
+s = input()
+temp = ""
+seen = set()
+for element in s:
+    if element not in seen:
+        seen.add(element)
+        temp += element
+    else:
+        break
+
+s = s.split(temp)
+
+print(str(len(s) - 1) + ",", len(seen))

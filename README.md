@@ -77,6 +77,11 @@ EXAM1090203.py
 193504.py
 ```
 
+- Self-thinking
+```
+numberToChinese.py
+```
+
 #### 如有看到請至 judge 查看題目或圖片，到以下連結，在 keyword 貼上檔名 ID 即可找到題目
 
 > https://judge.ccclub.io/problem

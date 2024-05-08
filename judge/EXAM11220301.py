@@ -25,7 +25,9 @@ AAAAAAAA
 8, 1
 """
 
-# Partial Accepted
+# Partial Accepted：I'm currently trying to communicate with the team about some inaccuracies in the task description.
+from collections import Counter
+
 s = input()
 temp = ""
 seen = set()
@@ -36,6 +38,16 @@ for element in s:
     else:
         break
 
-s = s.split(temp)
+sList = s.split(temp)
+counter = Counter(sList)
+flag = False
+if counter.get('', 0) < sum(v for k,v in counter.items() if k != ''):
+    for element in sList:
+         if element:
+              temp += element
+              flag = True
+              break
+if flag:
+    sList = s.split(temp)
 
-print(str(len(s) - 1) + ",", len(seen))
+print(str(len(sList) - 1) + ",", len(temp))

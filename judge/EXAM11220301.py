@@ -25,7 +25,7 @@ AAAAAAAA
 8, 1
 """
 
-# Partial Accepted：I'm currently trying to communicate with the team about some inaccuracies in the task description.
+# All gifts need to be wrapped.
 from collections import Counter
 
 s = input()
@@ -47,6 +47,9 @@ if counter.get('', 0) < sum(v for k,v in counter.items() if k != ''):
               temp += element
               flag = True
               break
+elif sum(v for k,v in counter.items() if k != '') != 0:
+    flag = True
+    temp = s
 if flag:
     sList = s.split(temp)
 
